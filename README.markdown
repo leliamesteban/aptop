@@ -23,3 +23,8 @@ Stuff that's set up
 
 REQUIREMENTS
 +   python-apt
+
+Test with ...
+(install vagrant)
+vagrant up
+Run with ...
