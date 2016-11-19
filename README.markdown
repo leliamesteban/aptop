@@ -17,6 +17,7 @@ Programs
 +   Transmission
 +   Sickrage
 +   htpc-manager
++   [managethis](https://gitlab.com/david.ellinger/Managethis)
 
 Stuff that's set up
 +   Bluetooth
