@@ -1,0 +1,4 @@
+---
+
+- name: Configure xmonad
+  # https://wiki.haskell.org/Xmonad/Config_archive/John_Goerzen's_Configuration

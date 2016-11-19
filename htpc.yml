@@ -1,0 +1,11 @@
+---
+
+- name: Default
+
+  hosts: all
+  roles: 
+    - 1.preup
+    - 2.usable
+    - 3.pacman
+    - 6.x11
+  sudo: yes

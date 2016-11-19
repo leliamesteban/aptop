@@ -1,0 +1,7 @@
+---
+
+- name: Set up ssh
+  # ip, password vars from host machine
+  # ssh liam@ip
+  # ssh-keygen
+  # ssh-copy-id

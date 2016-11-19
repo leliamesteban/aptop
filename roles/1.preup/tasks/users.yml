@@ -1,0 +1,16 @@
+---
+
+- name: Add liam to users
+  user: 
+    name: liam
+    state: present
+    group: wheel
+    # created with:
+    # python -c 'import crypt; print crypt.crypt("This is my Password", "pass.enact")'
+    password: $1$hJMQsBpT$Ntyf8loFwE4CemlRdZDtR/
+
+- name: Changing passwords
+  user: name={{ username }} password={{ password |password_hash('sha512') }} groups=admin append=yes
+
+- name: Change su password
+  user: name=root update_password=always password=$1$l/OnVhNn$qKPz3.hfDwaFzpWETAq/P1

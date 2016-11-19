@@ -1,0 +1,12 @@
+---
+
+- name: Generate locale
+  locale_gen: name=en_GB.UTF-8 state=present
+
+- name: Generate ssh key
+  user: name=root generate_ssh_key=yes ssh_key_bits=2048
+  register: generated_ssh_key
+
+- hostname: name=htpc
+
+- include: sudo.yml

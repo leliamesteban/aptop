@@ -1,0 +1,13 @@
+---
+
+- name: Laptop customization ansible
+
+  hosts: all
+  roles: 
+    - 1.preup
+    - 2.usable
+    - 3.pacman
+    - 4.software
+    - 6.x11
+
+  sudo: yes

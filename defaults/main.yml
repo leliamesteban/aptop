@@ -1,0 +1,6 @@
+---
+
+sudo_password: pass.enact
+hostname: laptop
+timezone: Europe/Madrid
+language: 'en_GB:en'

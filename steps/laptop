@@ -1,0 +1,15 @@
+1. users
+3. visudo # member of wheel group?, no pass
+4. set up the network. grab important files (sys/backup/etc) and reload/reboot (hopefully not reboot and hopefully just cp the files)
+4. set up ssh, locale, time
+5. install basic
+6. clone bin
+7. clone dotfiles and setup
+8. install bspwm or wm
+9. misc x stuff (xresources, 256 colors etc)
+10. set up audio
+10. install some fonts
+9. login automatically, startx (load .Xresources, solarised, tmux etc) - ie, make dotfiles work
+9. -optional- create 1600x900 resolution and set
+10. set up apt (copy from sys/backup/etc)
+11. install extra software (from apt and from source and from pip)

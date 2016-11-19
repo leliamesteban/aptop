@@ -1,0 +1,8 @@
+done
+apt basic sources list
+
+to do
+apt custom sources list
+only execute if OS matches
+update package manager
+define sid or stable for debian

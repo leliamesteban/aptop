@@ -1,0 +1,37 @@
+---
+
+- name: Install bspwm deps
+  apt: name="{{ item }}" state=present
+  with_items: 
+    - git
+    - gcc
+    - make
+    - xcb
+    - libxcb-util0-dev 
+    - libxcb-ewmh-dev 
+    - libxcb-randr0-dev 
+    - libxcb-icccm4-dev 
+    - libxcb-keysyms1-dev 
+    - libxcb-xinerama0-dev 
+    - libxcb-ewmh2 
+  when: (ansible_os_family == "Debian" and ansible_distribution_major_version == "8")
+
+- name: Clone bspwm
+  git: repo=https://github.com/baskerville/bspwm clone=yes dest=/home/liam/sys/source/bspwm
+
+- name: make bspwm
+  make: chdir=/home/liam/sys/source/bspwm
+
+- name: make install bspwm
+  make: chdir=/home/liam/sys/source/bspwm target=install
+  become: yes
+
+- name: Clone sxhkd
+  git: repo=https://github.com/baskerville/sxhkd clone=yes dest=/home/liam/sys/source/sxhkd
+
+- name: make sxhkd
+  make: chdir=/home/liam/sys/source/sxhkd
+
+- name: make install sxhkd
+  make: chdir=/home/liam/sys/source/sxhkd target=install
+  become: yes
