@@ -1,10 +1,10 @@
 Ansible configuration for HTPC
 
 Programs
-+   Sick{beard,rage}
++   Sonnar
 +   Headphones
 +   Deluge (remote+gtk)
-+   (Transmission)
++   rtorrent + rutorrent
 +   Kodi
 +   Couch Potato
 
@@ -14,10 +14,13 @@ Programs
 +   docker
 +   muximux
 +   caketop-theater
++   Transmission
++   Sickrage
++   htpc-manager
 
 Stuff that's set up
 +   Bluetooth
-+   Audio streaming (mopidy, pulseaudio, mpv ...?)
++   Audio streaming
 +   Misc (users, sudo, dots)
 +   Support for vagrant
 
