@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  author: Liam Esteban <leliam.esteban@gmail.com>
+  description: Ansible roles to set up debian, arch, rasbpian, alarm, void etc ...
+  license: MIT
+  min_ansible_version: 1.9
+  dependencies: []
