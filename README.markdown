@@ -21,6 +21,8 @@ Programs
 
 Stuff that's set up
 +   Bluetooth
++   Network boot (messages show on vm) (uboot,
+    https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/net_tutorial.md)
 +   Remote control
 +   UpNP DLNA stuff
 +   Audio streaming
