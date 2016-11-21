@@ -4,7 +4,7 @@
   apt:  name=sudo
         state=installed
 
-- name: Make sure we have a 'wheel' group
+- name: "Make sure there's a 'wheel' group"
   group:
     name: wheel
     state: present

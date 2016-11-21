@@ -1,6 +1,6 @@
 ---
 
-- name: Laptop customization ansible
+- name: Bas(ic)
 
   hosts: all
   roles: 

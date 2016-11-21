@@ -1,6 +1,3 @@
-Dotfiles and backup
-home should be the same
-git: Pictures, bin, Books
-home: sys, VMs, 
-
+Dotfiles (gitlab, dotbot + etckeeper) and backup (home)
+gitlab.com has an unknown hostkey
 https://github.com/geerlingguy/ansible-role-dotfiles

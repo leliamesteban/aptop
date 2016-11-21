@@ -1,0 +1,7 @@
+---
+
+- name: Clone dotfiles from gitlab.com
+  git: repo=git@gitlab.com:liamesteban/dotfiles.git dest=/home/liam/.dotfiles
+
+- name: Install dotfiles with dotbot
+  shell: chdir=/home/liam/.dotfiles bash ./install
