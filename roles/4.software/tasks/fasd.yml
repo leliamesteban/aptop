@@ -3,6 +3,6 @@
 - name: Clone fasd to sys/source
   git: repo=https://github.com/clvv/fasd dest=/home/liam/sys/source/fasd
 
-- name: Make fasd
-  make: chdir=/home/liam/sys/source/fasd 
+- name: Make install fasd
+  make: chdir=/home/liam/sys/source/fasd target=install
   become: yes

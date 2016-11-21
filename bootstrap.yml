@@ -1,6 +1,6 @@
 ---
 
-- name: Bas(ic)
+- name: Basic - base
 
   hosts: all
   roles: 

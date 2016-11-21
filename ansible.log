@@ -1880,3 +1880,50 @@ The offending line appears to be:
 2016-11-21 22:52:27,255 p=27417 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "cmd": "/usr/bin/make", "failed": true, "msg": "make: pandoc: Command not found\nmake: *** [fasd.1] Error 127", "rc": 2, "stderr": "make: pandoc: Command not found\nmake: *** [fasd.1] Error 127\n", "stdout": "pandoc -s -w man fasd.1.md -o fasd.1\nMakefile:24: recipe for target 'fasd.1' failed\n", "stdout_lines": ["pandoc -s -w man fasd.1.md -o fasd.1", "Makefile:24: recipe for target 'fasd.1' failed"]}
 2016-11-21 22:52:27,256 p=27417 u=liam |  PLAY RECAP *********************************************************************
 2016-11-21 22:52:27,256 p=27417 u=liam |  laptop                     : ok=20   changed=5    unreachable=0    failed=1   
+2016-11-21 22:56:29,975 p=28723 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:56:29,996 p=28723 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:56:35,818 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:35,821 p=28723 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:56:36,276 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:36,278 p=28723 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:56:37,049 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:37,051 p=28723 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:56:37,446 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:37,447 p=28723 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:56:37,949 p=28723 u=liam |  changed: [laptop]
+2016-11-21 22:56:37,951 p=28723 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:56:38,326 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:38,329 p=28723 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:56:38,706 p=28723 u=liam |  changed: [laptop]
+2016-11-21 22:56:38,708 p=28723 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:56:38,990 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:38,993 p=28723 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:56:39,318 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:39,322 p=28723 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-21 22:56:39,951 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:39,954 p=28723 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-21 22:56:40,492 p=28723 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 22:56:40,493 p=28723 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-21 22:56:40,960 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:40,963 p=28723 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-21 22:56:41,575 p=28723 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 22:56:41,577 p=28723 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-21 22:56:43,137 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:43,140 p=28723 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-21 22:56:43,475 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:43,477 p=28723 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-21 22:56:43,777 p=28723 u=liam |  changed: [laptop]
+2016-11-21 22:56:43,778 p=28723 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-21 22:56:45,232 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:45,234 p=28723 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-21 22:56:45,487 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:45,489 p=28723 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-21 22:56:45,750 p=28723 u=liam |  changed: [laptop]
+2016-11-21 22:56:45,752 p=28723 u=liam |  TASK [4.software : Clone fasd to sys/source] ***********************************
+2016-11-21 22:56:47,555 p=28723 u=liam |  ok: [laptop]
+2016-11-21 22:56:47,557 p=28723 u=liam |  TASK [4.software : Make install fasd] ******************************************
+2016-11-21 22:56:47,867 p=28723 u=liam |  changed: [laptop]
+2016-11-21 22:56:47,869 p=28723 u=liam |  TASK [6.x11 : Install packages for X] ******************************************
+2016-11-21 22:56:51,846 p=28723 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 22:56:51,848 p=28723 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:56:51,848 p=28723 u=liam |  laptop                     : ok=22   changed=6    unreachable=0    failed=0   

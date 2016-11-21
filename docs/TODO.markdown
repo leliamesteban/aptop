@@ -1,7 +1,7 @@
 0.all
-+   add support for different OSes
-+   add support for lxc and vmware
 +   begin generalizing (variables and OSes)
++   add support for lxc and vmware
++   depends (start thinking themes)
 
 99.Irritations
 +   remove defaults/main.yml if not right
@@ -9,6 +9,7 @@
 +   remove vagrant user?
 +   hostname without reboot || rebooting
 +   variables inside the yaml files (just for rewriting/changing long directories)
++   remove vagrant inconsistencies
 +   speed a concern?
 
 1.preup
