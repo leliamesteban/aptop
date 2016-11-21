@@ -1,18 +1,16 @@
 ---
 
-- name: Add liam to users
+- name: "Add liam as a user and to wheel (sudo no password)"
   user: 
     name: liam
     state: present
+    home: yes
+    shell: /bin/bash
     group: wheel
-    # created with:
+    # created with either or:
     # python -c 'import crypt; print crypt.crypt("pass.enact", "$1$SomeSalt$")'
-    # password: $1$SomeSalt$nehS/McXrUaA3I9OUvPuh0
     # openssl passwd -1 -salt $(openssl rand -base64 6) ThePassword
     password: $1$RWCxHaNh$EJnQcPt0e0itS.JnSJuT00
-
-- name: Changing passwords
-  user: name={{ username }} password={{ password |password_hash('sha512') }} groups=admin append=yes
 
 - name: Change su password
   user: name=root update_password=always password=$1$l/OnVhNn$qKPz3.hfDwaFzpWETAq/P1

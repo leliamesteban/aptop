@@ -1,11 +1,25 @@
 0.all
 +   add support for different OSes
 +   add support for lxc and vmware
++   begin generalizing (variables and OSes)
+
+99.Irritations
++   remove defaults/main.yml if not right
++   ~/True?
++   remove vagrant user?
++   hostname without reboot || rebooting
++   variables inside the yaml files (just for rewriting/changing long directories)
++   speed a concern?
+
 1.preup
 +   passwords using
 [vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#best-practices-for-variables-and-vaults)
 +   ssh keys and test
-+   variables
++   generate ssh keys user: name={{item}} with_items: root, user
+    +   automagically get host ip and set to var
+    +   gen keys (a la ssh-keygen)
+    +   ssh-copy-id
++   variables to everything
 +   hostname without reboot
 2.usable/shell
 +   test dotfiles
@@ -14,13 +28,16 @@
 +   add fasd (from source)
 +   add fonts/add more dotfiles to dotbot ~/.dotfiles on host
 +   add a backup solution
++   less colors (and other miscellaneous stuff)
 3.pacman
 +   add custom sources list for extra software
 +   add sid or stable to global variables
 4.software
 +   sort packages by themes and overlap
 +   add software from source and pip and ruby
+
 Not ready
+
 5.wifi
 +   use lookup file
 6.x11

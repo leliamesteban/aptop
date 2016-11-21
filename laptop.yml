@@ -1,7 +1,6 @@
 ---
 
 - name: Laptop customization ansible
-
   hosts: all
   roles: 
     - 1.preup
@@ -10,3 +9,5 @@
     - 4.software
     - 6.x11
   sudo: yes
+  vars: 
+    hostname: laptop

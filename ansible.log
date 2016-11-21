@@ -1406,3 +1406,477 @@ deprecation_warnings=False in ansible.cfg.
 2016-11-21 20:28:01,812 p=7518 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
 2016-11-21 20:28:01,814 p=7518 u=liam |  PLAY RECAP *********************************************************************
 2016-11-21 20:28:01,814 p=7518 u=liam |  laptop                     : ok=18   changed=3    unreachable=0    failed=0   
+2016-11-21 22:05:45,541 p=8862 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 22:05:45,570 p=8862 u=liam |  ERROR! unexpected parameter type in action: <class 'ansible.parsing.yaml.objects.AnsibleSequence'>
+
+The error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/main.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- include:
+  ^ here
+
+
+The error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/main.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- include:
+  ^ here
+
+2016-11-21 22:06:52,728 p=9297 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 22:06:52,766 p=9297 u=liam |  ERROR! no action detected in task. This often indicates a misspelled module name, or incorrect module path.
+
+The error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/ssh.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Set up ssh
+  ^ here
+
+
+The error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/ssh.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Set up ssh
+  ^ here
+
+2016-11-21 22:14:13,712 p=10120 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 22:14:14,208 p=10120 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:14:14,229 p=10120 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:14:24,641 p=10120 u=liam |  ok: [laptop]
+2016-11-21 22:14:24,646 p=10120 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:14:25,952 p=10120 u=liam |  ok: [laptop]
+2016-11-21 22:14:25,956 p=10120 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:14:28,836 p=10120 u=liam |  ok: [laptop]
+2016-11-21 22:14:28,838 p=10120 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:14:29,994 p=10120 u=liam |  ok: [laptop]
+2016-11-21 22:14:29,998 p=10120 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:14:30,982 p=10120 u=liam |  ok: [laptop]
+2016-11-21 22:14:30,984 p=10120 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:14:31,603 p=10120 u=liam |  ok: [laptop]
+2016-11-21 22:14:31,605 p=10120 u=liam |  TASK [1.preup : Add liam to users] *********************************************
+2016-11-21 22:14:32,748 p=10120 u=liam |  changed: [laptop]
+2016-11-21 22:14:32,751 p=10120 u=liam |  TASK [1.preup : Changing passwords] ********************************************
+2016-11-21 22:14:33,444 p=10120 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "msg": "Group admin does not exist"}
+2016-11-21 22:14:33,447 p=10120 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:14:33,447 p=10120 u=liam |  laptop                     : ok=7    changed=1    unreachable=0    failed=1   
+2016-11-21 22:15:16,780 p=10776 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 22:15:17,280 p=10776 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:15:17,301 p=10776 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:15:18,036 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:18,040 p=10776 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:15:18,884 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:18,888 p=10776 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:15:19,595 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:19,597 p=10776 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:15:19,923 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:19,926 p=10776 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:15:20,412 p=10776 u=liam |  changed: [laptop]
+2016-11-21 22:15:20,414 p=10776 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:15:20,724 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:20,726 p=10776 u=liam |  TASK [1.preup : Add liam to users] *********************************************
+2016-11-21 22:15:21,060 p=10776 u=liam |  changed: [laptop]
+2016-11-21 22:15:21,062 p=10776 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:15:21,402 p=10776 u=liam |  changed: [laptop]
+2016-11-21 22:15:21,405 p=10776 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:15:21,814 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:21,816 p=10776 u=liam |  TASK [1.preup : Set hostname] **************************************************
+2016-11-21 22:15:22,531 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:22,534 p=10776 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-21 22:15:23,121 p=10776 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 22:15:23,123 p=10776 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-21 22:15:23,660 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:23,662 p=10776 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-21 22:15:24,542 p=10776 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 22:15:24,544 p=10776 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-21 22:15:29,362 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:29,365 p=10776 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-21 22:15:29,738 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:29,741 p=10776 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-21 22:15:30,212 p=10776 u=liam |  changed: [laptop]
+2016-11-21 22:15:30,215 p=10776 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-21 22:15:31,596 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:31,598 p=10776 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-21 22:15:31,880 p=10776 u=liam |  ok: [laptop]
+2016-11-21 22:15:31,882 p=10776 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-21 22:15:32,168 p=10776 u=liam |  changed: [laptop]
+2016-11-21 22:15:32,170 p=10776 u=liam |  TASK [6.x11 : Install packages for X] ******************************************
+2016-11-21 22:15:36,541 p=10776 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 22:15:36,543 p=10776 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:15:36,545 p=10776 u=liam |  laptop                     : ok=20   changed=6    unreachable=0    failed=0   
+2016-11-21 22:16:49,511 p=11537 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 22:16:50,017 p=11537 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:16:50,039 p=11537 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:16:50,735 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:50,738 p=11537 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:16:51,057 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:51,059 p=11537 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:16:51,714 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:51,716 p=11537 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:16:52,042 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:52,045 p=11537 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:16:52,537 p=11537 u=liam |  changed: [laptop]
+2016-11-21 22:16:52,540 p=11537 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:16:52,862 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:52,865 p=11537 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:16:53,278 p=11537 u=liam |  changed: [laptop]
+2016-11-21 22:16:53,281 p=11537 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:16:53,612 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:53,614 p=11537 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:16:53,924 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:53,927 p=11537 u=liam |  TASK [1.preup : Set hostname] **************************************************
+2016-11-21 22:16:54,585 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:54,588 p=11537 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-21 22:16:55,161 p=11537 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 22:16:55,164 p=11537 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-21 22:16:55,646 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:55,648 p=11537 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-21 22:16:56,259 p=11537 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 22:16:56,261 p=11537 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-21 22:16:58,181 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:58,185 p=11537 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-21 22:16:58,557 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:16:58,559 p=11537 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-21 22:16:58,851 p=11537 u=liam |  changed: [laptop]
+2016-11-21 22:16:58,854 p=11537 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-21 22:17:00,322 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:17:00,324 p=11537 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-21 22:17:00,588 p=11537 u=liam |  ok: [laptop]
+2016-11-21 22:17:00,590 p=11537 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-21 22:17:00,865 p=11537 u=liam |  changed: [laptop]
+2016-11-21 22:17:00,868 p=11537 u=liam |  TASK [6.x11 : Install packages for X] ******************************************
+2016-11-21 22:17:03,739 p=11537 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 22:17:03,742 p=11537 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:17:03,742 p=11537 u=liam |  laptop                     : ok=20   changed=5    unreachable=0    failed=0   
+2016-11-21 22:18:16,466 p=12785 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 22:18:16,970 p=12785 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:18:16,991 p=12785 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:18:29,438 p=12785 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+2016-11-21 22:18:29,439 p=12785 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:18:29,440 p=12785 u=liam |  laptop                     : ok=0    changed=0    unreachable=0    failed=1   
+2016-11-21 22:18:34,802 p=13286 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:18:34,822 p=13286 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:18:35,484 p=13286 u=liam |  ok: [laptop]
+2016-11-21 22:18:35,487 p=13286 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:18:47,689 p=13286 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+2016-11-21 22:18:47,690 p=13286 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:18:47,691 p=13286 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-21 22:34:23,287 p=20204 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:34:23,307 p=20204 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:34:24,084 p=20204 u=liam |  ok: [laptop]
+2016-11-21 22:34:24,086 p=20204 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:34:24,409 p=20204 u=liam |  ok: [laptop]
+2016-11-21 22:34:24,411 p=20204 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:34:25,087 p=20204 u=liam |  ok: [laptop]
+2016-11-21 22:34:25,089 p=20204 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:34:25,405 p=20204 u=liam |  ok: [laptop]
+2016-11-21 22:34:25,408 p=20204 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:34:25,887 p=20204 u=liam |  changed: [laptop]
+2016-11-21 22:34:25,889 p=20204 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:34:26,238 p=20204 u=liam |  ok: [laptop]
+2016-11-21 22:34:26,240 p=20204 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:34:26,587 p=20204 u=liam |  changed: [laptop]
+2016-11-21 22:34:26,589 p=20204 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:34:26,892 p=20204 u=liam |  ok: [laptop]
+2016-11-21 22:34:26,894 p=20204 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:34:27,205 p=20204 u=liam |  ok: [laptop]
+2016-11-21 22:34:27,207 p=20204 u=liam |  TASK [1.preup : Set hostname] **************************************************
+2016-11-21 22:34:27,265 p=20204 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "template error while templating string: no filter named 'laptop'. String: {{ hostname | laptop}}"}
+2016-11-21 22:34:27,267 p=20204 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:34:27,267 p=20204 u=liam |  laptop                     : ok=9    changed=2    unreachable=0    failed=1   
+2016-11-21 22:34:43,381 p=20711 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:34:43,402 p=20711 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:34:49,299 p=20711 u=liam |  ok: [laptop]
+2016-11-21 22:34:49,301 p=20711 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:34:49,664 p=20711 u=liam |  ok: [laptop]
+2016-11-21 22:34:49,666 p=20711 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:34:50,445 p=20711 u=liam |  ok: [laptop]
+2016-11-21 22:34:50,447 p=20711 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:34:50,807 p=20711 u=liam |  ok: [laptop]
+2016-11-21 22:34:50,809 p=20711 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:34:51,300 p=20711 u=liam |  changed: [laptop]
+2016-11-21 22:34:51,302 p=20711 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:34:51,672 p=20711 u=liam |  ok: [laptop]
+2016-11-21 22:34:51,674 p=20711 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:34:52,031 p=20711 u=liam |  changed: [laptop]
+2016-11-21 22:34:52,033 p=20711 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:34:52,340 p=20711 u=liam |  ok: [laptop]
+2016-11-21 22:34:52,342 p=20711 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:34:52,663 p=20711 u=liam |  ok: [laptop]
+2016-11-21 22:34:52,665 p=20711 u=liam |  TASK [1.preup : Set hostname] **************************************************
+2016-11-21 22:34:52,680 p=20711 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'hostname' is undefined\n\nThe error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/hostname.yml': line 3, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Set hostname\n  ^ here\n"}
+2016-11-21 22:34:52,681 p=20711 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:34:52,681 p=20711 u=liam |  laptop                     : ok=9    changed=2    unreachable=0    failed=1   
+2016-11-21 22:34:57,681 p=21275 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:34:57,702 p=21275 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:34:58,294 p=21275 u=liam |  ok: [laptop]
+2016-11-21 22:34:58,296 p=21275 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:34:58,606 p=21275 u=liam |  ok: [laptop]
+2016-11-21 22:34:58,608 p=21275 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:34:59,200 p=21275 u=liam |  ok: [laptop]
+2016-11-21 22:34:59,202 p=21275 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:34:59,512 p=21275 u=liam |  ok: [laptop]
+2016-11-21 22:34:59,515 p=21275 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:34:59,994 p=21275 u=liam |  changed: [laptop]
+2016-11-21 22:34:59,996 p=21275 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:35:00,292 p=21275 u=liam |  ok: [laptop]
+2016-11-21 22:35:00,294 p=21275 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:35:00,621 p=21275 u=liam |  changed: [laptop]
+2016-11-21 22:35:00,623 p=21275 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:35:00,928 p=21275 u=liam |  ok: [laptop]
+2016-11-21 22:35:00,931 p=21275 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:35:01,248 p=21275 u=liam |  ok: [laptop]
+2016-11-21 22:35:01,250 p=21275 u=liam |  TASK [1.preup : Set hostname] **************************************************
+2016-11-21 22:35:01,265 p=21275 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'hostname' is undefined\n\nThe error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/hostname.yml': line 3, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Set hostname\n  ^ here\n"}
+2016-11-21 22:35:01,267 p=21275 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:35:01,267 p=21275 u=liam |  laptop                     : ok=9    changed=2    unreachable=0    failed=1   
+2016-11-21 22:41:27,747 p=23020 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:41:27,767 p=23020 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:41:28,501 p=23020 u=liam |  ok: [laptop]
+2016-11-21 22:41:28,504 p=23020 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:41:28,811 p=23020 u=liam |  ok: [laptop]
+2016-11-21 22:41:28,814 p=23020 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:41:29,504 p=23020 u=liam |  ok: [laptop]
+2016-11-21 22:41:29,506 p=23020 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:41:29,819 p=23020 u=liam |  ok: [laptop]
+2016-11-21 22:41:29,821 p=23020 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:41:30,310 p=23020 u=liam |  changed: [laptop]
+2016-11-21 22:41:30,312 p=23020 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:41:30,621 p=23020 u=liam |  ok: [laptop]
+2016-11-21 22:41:30,623 p=23020 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:41:30,986 p=23020 u=liam |  changed: [laptop]
+2016-11-21 22:41:30,988 p=23020 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:41:31,292 p=23020 u=liam |  ok: [laptop]
+2016-11-21 22:41:31,295 p=23020 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:41:31,608 p=23020 u=liam |  ok: [laptop]
+2016-11-21 22:41:31,610 p=23020 u=liam |  TASK [1.preup : Set hostname] **************************************************
+2016-11-21 22:41:31,624 p=23020 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'testvm' is undefined\n\nThe error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/hostname.yml': line 3, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Set hostname\n  ^ here\n"}
+2016-11-21 22:41:31,625 p=23020 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:41:31,626 p=23020 u=liam |  laptop                     : ok=9    changed=2    unreachable=0    failed=1   
+2016-11-21 22:42:00,310 p=23488 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:42:00,330 p=23488 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:42:00,931 p=23488 u=liam |  ok: [laptop]
+2016-11-21 22:42:00,934 p=23488 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:42:06,258 p=23488 u=liam |  ok: [laptop]
+2016-11-21 22:42:06,260 p=23488 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:42:06,928 p=23488 u=liam |  ok: [laptop]
+2016-11-21 22:42:06,931 p=23488 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:42:07,309 p=23488 u=liam |  ok: [laptop]
+2016-11-21 22:42:07,311 p=23488 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:42:07,787 p=23488 u=liam |  changed: [laptop]
+2016-11-21 22:42:07,789 p=23488 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:42:08,146 p=23488 u=liam |  ok: [laptop]
+2016-11-21 22:42:08,149 p=23488 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:42:08,471 p=23488 u=liam |  changed: [laptop]
+2016-11-21 22:42:08,473 p=23488 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:42:08,778 p=23488 u=liam |  ok: [laptop]
+2016-11-21 22:42:08,779 p=23488 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:42:09,095 p=23488 u=liam |  ok: [laptop]
+2016-11-21 22:42:09,097 p=23488 u=liam |  TASK [1.preup : hostname] ******************************************************
+2016-11-21 22:42:09,111 p=23488 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'testvm' is undefined\n\nThe error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/hostname.yml': line 3, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- hostname: name={{ hostname | default(testvm)}}\n  ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes.  Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+2016-11-21 22:42:09,112 p=23488 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:42:09,113 p=23488 u=liam |  laptop                     : ok=9    changed=2    unreachable=0    failed=1   
+2016-11-21 22:42:36,960 p=23886 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:42:36,981 p=23886 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:42:37,566 p=23886 u=liam |  ok: [laptop]
+2016-11-21 22:42:37,569 p=23886 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:42:37,893 p=23886 u=liam |  ok: [laptop]
+2016-11-21 22:42:37,895 p=23886 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:42:38,532 p=23886 u=liam |  ok: [laptop]
+2016-11-21 22:42:38,534 p=23886 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:42:38,848 p=23886 u=liam |  ok: [laptop]
+2016-11-21 22:42:38,850 p=23886 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:42:39,418 p=23886 u=liam |  changed: [laptop]
+2016-11-21 22:42:39,420 p=23886 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:42:39,730 p=23886 u=liam |  ok: [laptop]
+2016-11-21 22:42:39,732 p=23886 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:42:40,058 p=23886 u=liam |  changed: [laptop]
+2016-11-21 22:42:40,060 p=23886 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:42:40,365 p=23886 u=liam |  ok: [laptop]
+2016-11-21 22:42:40,367 p=23886 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:42:40,677 p=23886 u=liam |  ok: [laptop]
+2016-11-21 22:42:40,679 p=23886 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-21 22:42:40,694 p=23886 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'hostname' is undefined\n\nThe error appears to have been in '/home/liam/sys/automation/laptop/roles/1.preup/tasks/hostname.yml': line 3, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Set the hostname\n  ^ here\n"}
+2016-11-21 22:42:40,695 p=23886 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:42:40,695 p=23886 u=liam |  laptop                     : ok=9    changed=2    unreachable=0    failed=1   
+2016-11-21 22:45:03,061 p=24507 u=liam |  ERROR! 'hostname' is not a valid attribute for a Play
+
+The error appears to have been in '/home/liam/sys/automation/laptop/laptop.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Laptop customization ansible
+  ^ here
+
+2016-11-21 22:45:40,029 p=24852 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:45:40,052 p=24852 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:45:40,805 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:40,808 p=24852 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:45:41,181 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:41,183 p=24852 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:45:41,960 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:41,962 p=24852 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:45:42,277 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:42,279 p=24852 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:45:42,815 p=24852 u=liam |  changed: [laptop]
+2016-11-21 22:45:42,818 p=24852 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:45:43,133 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:43,136 p=24852 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:45:43,500 p=24852 u=liam |  changed: [laptop]
+2016-11-21 22:45:43,503 p=24852 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:45:43,814 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:43,818 p=24852 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:45:44,145 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:44,147 p=24852 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-21 22:45:45,482 p=24852 u=liam |  changed: [laptop]
+2016-11-21 22:45:45,486 p=24852 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-21 22:45:46,189 p=24852 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 22:45:46,191 p=24852 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-21 22:45:47,022 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:47,024 p=24852 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-21 22:45:47,633 p=24852 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 22:45:47,635 p=24852 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-21 22:45:50,907 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:50,910 p=24852 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-21 22:45:51,272 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:51,275 p=24852 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-21 22:45:52,392 p=24852 u=liam |  changed: [laptop]
+2016-11-21 22:45:52,394 p=24852 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-21 22:45:54,165 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:54,168 p=24852 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-21 22:45:54,467 p=24852 u=liam |  ok: [laptop]
+2016-11-21 22:45:54,470 p=24852 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-21 22:45:54,745 p=24852 u=liam |  changed: [laptop]
+2016-11-21 22:45:54,747 p=24852 u=liam |  TASK [6.x11 : Install packages for X] ******************************************
+2016-11-21 22:45:57,848 p=24852 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 22:45:57,851 p=24852 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:45:57,852 p=24852 u=liam |  laptop                     : ok=20   changed=6    unreachable=0    failed=0   
+2016-11-21 22:51:17,250 p=26482 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:51:17,273 p=26482 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:51:17,981 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:17,983 p=26482 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:51:18,295 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:18,297 p=26482 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:51:18,921 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:18,923 p=26482 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:51:19,236 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:19,238 p=26482 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:51:19,701 p=26482 u=liam |  changed: [laptop]
+2016-11-21 22:51:19,703 p=26482 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:51:20,012 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:20,015 p=26482 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:51:20,296 p=26482 u=liam |  changed: [laptop]
+2016-11-21 22:51:20,298 p=26482 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:51:20,813 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:20,815 p=26482 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:51:21,346 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:21,348 p=26482 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-21 22:51:21,929 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:21,931 p=26482 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-21 22:51:22,493 p=26482 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 22:51:22,496 p=26482 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-21 22:51:22,916 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:22,919 p=26482 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-21 22:51:23,501 p=26482 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 22:51:23,503 p=26482 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-21 22:51:25,226 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:25,228 p=26482 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-21 22:51:25,605 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:25,608 p=26482 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-21 22:51:25,899 p=26482 u=liam |  changed: [laptop]
+2016-11-21 22:51:25,901 p=26482 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-21 22:51:27,381 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:27,383 p=26482 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-21 22:51:27,626 p=26482 u=liam |  ok: [laptop]
+2016-11-21 22:51:27,628 p=26482 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-21 22:51:27,894 p=26482 u=liam |  changed: [laptop]
+2016-11-21 22:51:27,896 p=26482 u=liam |  TASK [6.x11 : Install packages for X] ******************************************
+2016-11-21 22:51:30,823 p=26482 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 22:51:30,829 p=26482 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:51:30,829 p=26482 u=liam |  laptop                     : ok=20   changed=5    unreachable=0    failed=0   
+2016-11-21 22:51:57,593 p=27099 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:51:57,614 p=27099 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:52:09,944 p=27099 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+2016-11-21 22:52:09,946 p=27099 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:52:09,946 p=27099 u=liam |  laptop                     : ok=0    changed=0    unreachable=0    failed=1   
+2016-11-21 22:52:14,492 p=27417 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 22:52:14,513 p=27417 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 22:52:15,115 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:15,118 p=27417 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 22:52:15,423 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:15,426 p=27417 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 22:52:16,059 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:16,061 p=27417 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 22:52:16,371 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:16,373 p=27417 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 22:52:16,851 p=27417 u=liam |  changed: [laptop]
+2016-11-21 22:52:16,852 p=27417 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 22:52:17,160 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:17,162 p=27417 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-21 22:52:17,492 p=27417 u=liam |  changed: [laptop]
+2016-11-21 22:52:17,494 p=27417 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-21 22:52:17,800 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:17,802 p=27417 u=liam |  TASK [1.preup : Generate ssh key for root] *************************************
+2016-11-21 22:52:18,115 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:18,117 p=27417 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-21 22:52:18,711 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:18,713 p=27417 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-21 22:52:19,262 p=27417 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 22:52:19,264 p=27417 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-21 22:52:19,721 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:19,723 p=27417 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-21 22:52:20,304 p=27417 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 22:52:20,306 p=27417 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-21 22:52:21,959 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:21,961 p=27417 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-21 22:52:22,327 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:22,330 p=27417 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-21 22:52:22,611 p=27417 u=liam |  changed: [laptop]
+2016-11-21 22:52:22,613 p=27417 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-21 22:52:24,004 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:24,006 p=27417 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-21 22:52:24,260 p=27417 u=liam |  ok: [laptop]
+2016-11-21 22:52:24,262 p=27417 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-21 22:52:24,525 p=27417 u=liam |  changed: [laptop]
+2016-11-21 22:52:24,527 p=27417 u=liam |  TASK [4.software : Clone fasd to sys/source] ***********************************
+2016-11-21 22:52:26,998 p=27417 u=liam |  changed: [laptop]
+2016-11-21 22:52:27,000 p=27417 u=liam |  TASK [4.software : Make fasd] **************************************************
+2016-11-21 22:52:27,255 p=27417 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "cmd": "/usr/bin/make", "failed": true, "msg": "make: pandoc: Command not found\nmake: *** [fasd.1] Error 127", "rc": 2, "stderr": "make: pandoc: Command not found\nmake: *** [fasd.1] Error 127\n", "stdout": "pandoc -s -w man fasd.1.md -o fasd.1\nMakefile:24: recipe for target 'fasd.1' failed\n", "stdout_lines": ["pandoc -s -w man fasd.1.md -o fasd.1", "Makefile:24: recipe for target 'fasd.1' failed"]}
+2016-11-21 22:52:27,256 p=27417 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 22:52:27,256 p=27417 u=liam |  laptop                     : ok=20   changed=5    unreachable=0    failed=1   
