@@ -1,4 +1,0 @@
-#!/bin/bash
-# layout of the project
-# tree $git_root
-tree ..
