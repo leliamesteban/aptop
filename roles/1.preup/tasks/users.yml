@@ -6,8 +6,10 @@
     state: present
     group: wheel
     # created with:
-    # python -c 'import crypt; print crypt.crypt("This is my Password", "pass.enact")'
-    password: $1$hJMQsBpT$Ntyf8loFwE4CemlRdZDtR/
+    # python -c 'import crypt; print crypt.crypt("pass.enact", "$1$SomeSalt$")'
+    # password: $1$SomeSalt$nehS/McXrUaA3I9OUvPuh0
+    # openssl passwd -1 -salt $(openssl rand -base64 6) ThePassword
+    password: $1$RWCxHaNh$EJnQcPt0e0itS.JnSJuT00
 
 - name: Changing passwords
   user: name={{ username }} password={{ password |password_hash('sha512') }} groups=admin append=yes

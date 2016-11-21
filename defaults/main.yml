@@ -4,3 +4,5 @@ sudo_password: pass.enact
 hostname: laptop
 timezone: Europe/Madrid
 language: 'en_GB:en'
+password: 
+  $1$SomeSalt$nehS/McXrUaA3I9OUvPuh0

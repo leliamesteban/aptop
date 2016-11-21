@@ -702,3 +702,707 @@ deprecation_warnings=False in ansible.cfg.
 
 
 2016-11-20 14:02:36,904 p=3716 u=liam |  laptop                     : ok=17   changed=2    unreachable=0    failed=1   
+2016-11-21 20:23:00,854 p=2941 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 20:23:01,820 p=2941 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:01,938 p=2941 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:03,278 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:03,312 p=2941 u=liam |   __________________________________
+< TASK [1.preup : Generate locale] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:03,871 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:03,902 p=2941 u=liam |   ___________________________________
+< TASK [1.preup : Generate ssh key] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:04,662 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:04,699 p=2941 u=liam |   ___________________________
+< TASK [1.preup : hostname] >
+ ---------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:05,892 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:05,931 p=2941 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:06,739 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:06,772 p=2941 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:07,416 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:07,452 p=2941 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:07,779 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:07,813 p=2941 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:08,182 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:08,216 p=2941 u=liam |   __________________________________________________
+/ TASK [2.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:10,737 p=2941 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 20:23:10,772 p=2941 u=liam |   ___________________________________________
+< TASK [3.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:11,270 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:11,303 p=2941 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:11,873 p=2941 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 20:23:11,909 p=2941 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:13,308 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:13,341 p=2941 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:13,687 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:13,720 p=2941 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:14,050 p=2941 u=liam |  changed: [laptop]
+2016-11-21 20:23:14,083 p=2941 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:15,308 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:15,343 p=2941 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:15,611 p=2941 u=liam |  ok: [laptop]
+2016-11-21 20:23:15,643 p=2941 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:15,908 p=2941 u=liam |  changed: [laptop]
+2016-11-21 20:23:15,942 p=2941 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for X] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:22,653 p=2941 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 20:23:22,691 p=2941 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:23:22,691 p=2941 u=liam |  laptop                     : ok=18   changed=3    unreachable=0    failed=0   
+2016-11-21 20:24:51,256 p=4552 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 20:24:51,761 p=4552 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:51,808 p=4552 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:52,640 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:52,672 p=4552 u=liam |   __________________________________
+< TASK [1.preup : Generate locale] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:52,990 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:53,022 p=4552 u=liam |   ___________________________________
+< TASK [1.preup : Generate ssh key] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:53,477 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:53,508 p=4552 u=liam |   ___________________________
+< TASK [1.preup : hostname] >
+ ---------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:54,117 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:54,149 p=4552 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:54,824 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:54,856 p=4552 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:55,199 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:55,236 p=4552 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:55,542 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:55,577 p=4552 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:55,873 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:55,906 p=4552 u=liam |   __________________________________________________
+/ TASK [2.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:56,493 p=4552 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 20:24:56,525 p=4552 u=liam |   ___________________________________________
+< TASK [3.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:57,128 p=4552 u=liam |  ok: [laptop]
+2016-11-21 20:24:57,163 p=4552 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:24:57,856 p=4552 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 20:24:57,890 p=4552 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:18,384 p=4552 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "cmd": ["/usr/bin/git", "fetch", "--tags", "origin"], "failed": true, "msg": "Failed to download remote objects and refs:  fatal: unable to access 'https://github.com/baskerville/bspwm/': Could not resolve host: github.com\n"}
+2016-11-21 20:25:18,417 p=4552 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:18,417 p=4552 u=liam |  laptop                     : ok=11   changed=0    unreachable=0    failed=1   
+2016-11-21 20:25:22,549 p=5237 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 20:25:23,061 p=5237 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:23,109 p=5237 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:23,793 p=5237 u=liam |  ok: [laptop]
+2016-11-21 20:25:23,827 p=5237 u=liam |   __________________________________
+< TASK [1.preup : Generate locale] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:36,030 p=5237 u=liam |  fatal: [laptop]: FAILED! => {"failed": true, "msg": "Timeout (12s) waiting for privilege escalation prompt: "}
+2016-11-21 20:25:36,061 p=5237 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:36,061 p=5237 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-21 20:25:41,334 p=5691 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 20:25:41,851 p=5691 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:41,900 p=5691 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:42,678 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:42,711 p=5691 u=liam |   __________________________________
+< TASK [1.preup : Generate locale] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:43,023 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:43,055 p=5691 u=liam |   ___________________________________
+< TASK [1.preup : Generate ssh key] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:43,522 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:43,556 p=5691 u=liam |   ___________________________
+< TASK [1.preup : hostname] >
+ ---------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:44,214 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:44,246 p=5691 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:49,932 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:49,967 p=5691 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:50,339 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:50,371 p=5691 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:50,679 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:50,712 p=5691 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:51,062 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:51,096 p=5691 u=liam |   __________________________________________________
+/ TASK [2.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:51,643 p=5691 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 20:25:51,677 p=5691 u=liam |   ___________________________________________
+< TASK [3.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:52,140 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:52,173 p=5691 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:52,749 p=5691 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 20:25:52,783 p=5691 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:54,127 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:54,169 p=5691 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:54,536 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:54,569 p=5691 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:54,857 p=5691 u=liam |  changed: [laptop]
+2016-11-21 20:25:54,889 p=5691 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:56,459 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:56,493 p=5691 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:56,966 p=5691 u=liam |  ok: [laptop]
+2016-11-21 20:25:57,000 p=5691 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:25:57,271 p=5691 u=liam |  changed: [laptop]
+2016-11-21 20:25:57,304 p=5691 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for X] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:26:05,339 p=5691 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 20:26:05,371 p=5691 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-21 20:26:05,371 p=5691 u=liam |  laptop                     : ok=18   changed=3    unreachable=0    failed=0   
+2016-11-21 20:27:43,992 p=7518 u=liam |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-11-21 20:27:44,476 p=7518 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-21 20:27:44,493 p=7518 u=liam |  TASK [setup] *******************************************************************
+2016-11-21 20:27:50,275 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:50,277 p=7518 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-21 20:27:50,683 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:50,685 p=7518 u=liam |  TASK [1.preup : Generate ssh key] **********************************************
+2016-11-21 20:27:51,156 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:51,158 p=7518 u=liam |  TASK [1.preup : hostname] ******************************************************
+2016-11-21 20:27:51,793 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:51,795 p=7518 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-21 20:27:52,470 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:52,472 p=7518 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-21 20:27:52,836 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:52,839 p=7518 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-21 20:27:53,151 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:53,153 p=7518 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-21 20:27:53,506 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:53,508 p=7518 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-21 20:27:54,051 p=7518 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux'])
+2016-11-21 20:27:54,054 p=7518 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-21 20:27:54,526 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:54,528 p=7518 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-21 20:27:55,069 p=7518 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-21 20:27:55,072 p=7518 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-21 20:27:56,611 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:56,613 p=7518 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-21 20:27:57,026 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:57,029 p=7518 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-21 20:27:57,426 p=7518 u=liam |  changed: [laptop]
+2016-11-21 20:27:57,428 p=7518 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-21 20:27:58,896 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:58,898 p=7518 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-21 20:27:59,159 p=7518 u=liam |  ok: [laptop]
+2016-11-21 20:27:59,161 p=7518 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-21 20:27:59,419 p=7518 u=liam |  changed: [laptop]
+2016-11-21 20:27:59,421 p=7518 u=liam |  TASK [6.x11 : Install packages for X] ******************************************
+2016-11-21 20:28:01,812 p=7518 u=liam |  changed: [laptop] => (item=[u'xserver-xorg-core', u'xinit', u'xmonad', u'rxvt-unicode-256color', u'xterm', u'scrot', u'ranger', u'nautilus', u'mpv', u'lxappearance'])
+2016-11-21 20:28:01,814 p=7518 u=liam |  PLAY RECAP *********************************************************************
+2016-11-21 20:28:01,814 p=7518 u=liam |  laptop                     : ok=18   changed=3    unreachable=0    failed=0   

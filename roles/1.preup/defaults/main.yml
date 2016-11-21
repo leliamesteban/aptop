@@ -1,4 +1,5 @@
 ---
 
 username: liam
-password: pass.enact
+# generated with openssl passwd -salt SMCXu1+4 pass.enact | tail -1
+password: SM3ijlizt2SXA
