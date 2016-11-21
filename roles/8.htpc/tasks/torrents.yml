@@ -1,8 +1,32 @@
 ---
 
+# Installs deluge on a server. Should be trivial to modify for laptop/GUI too
 - name: Install deluge + web-ui
   apt: name="{{ item }}" state=present
   with_items:
     - deluge
     - deluged
     - deluge-web
+
+- name: Install deluge
+  apt: name=deluge state=installed
+
+- name: Install deluge-web
+  apt: name=deluge-web state=installed
+
+- name: Start systemd service
+
+- name: Enable systemd service
+
+- name: Add password to auth config file
+  # deluged must not be running
+  # echo "liam:password:10" >> ~/.config/deluge/auth # 10 is for admin
+
+- name: Allow remote
+  # change config file: ~/.config/deluge/core.conf
+- name: Start deluged
+
+- name: "Start, enable systemd service for deluge-web, port is 8112"
+
+- name: Configure more/my settings # probably from configs I guess
+# http://dev.deluge-torrent.org/wiki/UserGuide/ThinClient

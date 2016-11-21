@@ -1,0 +1,20 @@
+# basic for all architectures
+aptitude
+coreutils
+dunst
+git
+imagemagick
+make
+mpv
+pythonpy
+nodejs
+ruby
+scrot
+stow
+tmux
+beets
+vim 
+netcat
+sox
+lsof
+jekyll

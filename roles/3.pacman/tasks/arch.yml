@@ -2,3 +2,4 @@
 
 - name: Update Arch Linux
   pacman: update_cache=yes upgrade=yes
+  when: ansible_os_family == "Arch Linux"
