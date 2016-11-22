@@ -1,11 +1,15 @@
 ---
 
-- name: Default
-
+- name: HTPC (Home Media PC)
   hosts: all
   roles: 
     - 1.preup
     - 2.usable
     - 3.pacman
+    - 4.software
     - 6.x11
+    - 8.htpc
   sudo: yes
+  vars: 
+    hostname: laptop
+    username: liam

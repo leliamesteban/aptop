@@ -1,6 +1,7 @@
 ---
 
 # Installs deluge on a server. Should be trivial to modify for laptop/GUI too
+# deluge web port is 8112
 - name: Install deluge + web-ui
   apt: name="{{ item }}" state=present
   with_items:
@@ -14,19 +15,28 @@
 - name: Install deluge-web
   apt: name=deluge-web state=installed
 
-- name: Start systemd service
+- name: Start, enable deluged systemd service
+  service: name=deluged state=started enabled=yes
 
-- name: Enable systemd service
+- name: Stop deluged
+  service: name=deluged state=stopped
 
+  # deluged must not be running (see above) 
+  # 10 is for admin
 - name: Add password to auth config file
-  # deluged must not be running
-  # echo "liam:password:10" >> ~/.config/deluge/auth # 10 is for admin
+  lineinfile: dest=/home/liam/.config/deluge/auth line="liam:password:10" state=present create=True
 
-- name: Allow remote
-  # change config file: ~/.config/deluge/core.conf
+  # on line that matches allow_remote, replace false with true
+  #- name: Allow remote
+  #  inline: "dest=/home/liam/.config/deluge/core.conf regexp='allow_remote' line='"allow_remote"\: true,' state=present create=True"
+
+- name: Start, enable deluge-web systemd service
+  service: name=deluge-web state=started enabled=yes
+
 - name: Start deluged
+  service: name=deluged state=started
 
-- name: "Start, enable systemd service for deluge-web, port is 8112"
+# Configure more/my settings # probably from dotfiles
 
-- name: Configure more/my settings # probably from configs I guess
 # http://dev.deluge-torrent.org/wiki/UserGuide/ThinClient
+# template @ https://github.com/GR360RY/ansible-role-deluge/blob/master/templates/core.conf.j2

@@ -115,7 +115,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # If you're using the Opscode platform, your validator client is
   # ORGNAME-validator, replacing ORGNAME with your organization name.
   
-  # HTPC (Pi)
+  # Laptop
   config.vm.define "laptop", primary: true do |laptop|
       config.vm.provider :virtualbox do |virtualbox|
           virtualbox.memory = "1024"
@@ -126,12 +126,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
   end
 
-  # Laptop
+  # HTPC (Pi)
   config.vm.define "htpc", autostart: false do |htpc|
       config.vm.provider :virtualbox do |virtualbox|
-          virtualbox.gui = "true"
+          virtualbox.gui = "false"
       end
-      config.vm.box = "debian/jessie64"
+      config.vm.box = "bugyt/archlinux"
       config.vm.provision :ansible do |ansible|
           ansible.playbook = "htpc.yml"
       end

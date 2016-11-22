@@ -2,4 +2,5 @@
 
 hostname: laptop
 timezone: Europe/Madrid
+user: liam
 language: 'en_GB:en'

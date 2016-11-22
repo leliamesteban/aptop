@@ -4,7 +4,6 @@
   user: 
     name: liam
     state: present
-    home: yes
     shell: /bin/bash
     group: wheel
     # created with either or:

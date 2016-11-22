@@ -1,5 +1,8 @@
 ---
 
-- name: Generate ssh key for root
-  user: name=root generate_ssh_key=yes ssh_key_bits=2048
+- name: Generate ssh keys 
+  user: name={{ item }} generate_ssh_key=yes ssh_key_bits=2048
+  with_items: 
+    - root
+    - "{{ username }}"
   register: generated_ssh_key

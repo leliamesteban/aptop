@@ -1,7 +1,9 @@
 ---
 
+# prompt https://www.claudiokuenzler.com/blog/604/clone-a-private-git-repository-with-ansible-password-prompt#.WDSh63UrKCg
+# copy ssh keys https://github.com/jcalazan/ansible-django-stack/issues/11
 - name: Clone dotfiles from gitlab.com
-  git: repo=git@gitlab.com:liamesteban/dotfiles.git dest=/home/liam/.dotfiles
+  git: repo=git@gitlab.com:liamesteban/dotfiles.git dest=/home/liam/.dotfiles accept_hostkey=yes
 
 - name: Install dotfiles with dotbot
   shell: chdir=/home/liam/.dotfiles bash ./install

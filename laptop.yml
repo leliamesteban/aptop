@@ -8,6 +8,8 @@
     - 3.pacman
     - 4.software
     - 6.x11
+    - 8.htpc
   sudo: yes
   vars: 
     hostname: laptop
+    username: liam
