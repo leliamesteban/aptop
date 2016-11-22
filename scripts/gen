@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo "Generating passwords"
-# read password
-
-python -c 'import crypt ...'

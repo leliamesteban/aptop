@@ -1,16 +1,22 @@
-0.all
+0.all/ansible
 +   begin generalizing (variables and OSes)
 +   add support for lxc and vmware
 +   depends (start thinking themes)
 +   grouping other than playbooks?
-
-45.ansible
 +   rollback is essential: undo feature (ie declarative but standard base)
-+   grouping (how does this normally work other than playbooks?)
++   dependencies everywhere
++   configure ssh keys like [this](http://hakunin.com/six-ansible-practices)
++   add layout to project
++   bare metal (cobbler?)
++   rpi without a keyboard
 
 99.Irritations
 +   remove defaults/main.yml if not right
++   why are new users created all the damn time?
++   make it look professional/consistent/easy to debug
 +   test x11 (turn gui on and off)
++   get rid of perpetual "changed" errors like
+    !http://hakunin.com/six-ansible-practices
 +   whitespace in yaml
 +   unable to resolve hostname without reboot
 +   ~/True?
@@ -28,6 +34,7 @@
 1.preup
 +   passwords using
 [vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#best-practices-for-variables-and-vaults)
++   keyboard config
 +   test ssh keys 
     +   automagically get host ip and set to var
     +   gen keys (a la ssh-keygen)
@@ -38,8 +45,11 @@
         be deleted
 2.usable/shell
 +   dotfiles/ gitlab.com keys
++   make home look the same (but not always?)
 +   add zsh and vim plugins to dotfiles repo
 +   add a backup solution
+    +   dotfiles on gitlab
+    +   home on laptop
 +   less colors (and other miscellaneous stuff)
 3.pacman
 +   add custom sources list for extra software
@@ -53,6 +63,7 @@ Not ready
 
 5.wifi
 +   use lookup file
++   get school password
 6.x11
 +   set up the audio
 +   auto-login
@@ -62,6 +73,8 @@ Not ready
 7.specificity
 +   virtualbox custom resolutions inside guest
 +   vbox guest additions
+    +   see
+        [here](https://github.com/PeterMosmans/ansible-role-virtualbox-guest)
 +   should branch out to other projects by themes (ie htpc, torrents, audio etc)
 8.htpc
 +   modify deluge for laptop + GUI

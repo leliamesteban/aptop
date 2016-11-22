@@ -1,0 +1,6 @@
+---
+
+- name: Set the keyboard
+  # command?
+  command: loadkeys uk
+  # /etc/vconsole.conf

@@ -1,4 +1,7 @@
 extra software
 ruby
 python
-from source
+from source - keep urls lying around for easy uninstall or BETTER - integrated with package manager
++   human
++   wmutils
++   rofi

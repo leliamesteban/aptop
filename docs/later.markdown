@@ -1,15 +1,16 @@
 Ansible configuration for laptop and htpc
 see drafts/{htpc,automation}
 automating [this](http://disconnected.systems/posts/raspberry-pi-archlinuxarm-setup/) using ansible
+[deluge setup](https://gitlab.com/MathieuMD/ansible-role-deluge)
 
 Programs
-+   Sonnar
++   Sonarr
 +   Headphones
 +   Deluge (remote+gtk)
 +   rtorrent + rutorrent
 +   OpenSubtitles.py
 +   Kodi
-+   Couch Potato
++   Couch Potato - [couch potato](https://github.com/cmacrae/ansible-couchpotato)
 
 +   musicbrainz
 +   beets
@@ -17,8 +18,13 @@ Programs
 +   caketop-theater
 +   Transmission
 +   Sickrage
++   [playlistcurator](https://github.com/jokeofweek/playlistcurator)
 +   htpc-manager
 +   [managethis](https://gitlab.com/david.ellinger/Managethis)
++   [hanzo](https://github.com/palazzem/hanzo)
++   [mastermind (htpc)](https://github.com/jalaziz/mastermind)
++   [desktop custard](https://github.com/oneirosFade/ansible-custard)
++   [jacket](https://github.com/Jackett/Jackett) - API support for your favorite trackers
 
 Features/Stuff that's set up
 +   Bluetooth

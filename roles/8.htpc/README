@@ -1,17 +1,2 @@
-see /home/liam/sys/web/jekyll/_drafts/linux/htpc.markdown
-other projects
-[deluge setup](https://gitlab.com/MathieuMD/ansible-role-deluge)
-[hanzo](https://github.com/palazzem/hanzo)
-[mastermind (htpc)](https://github.com/jalaziz/mastermind)
-[couch potato](https://github.com/cmacrae/ansible-couchpotato)
-[desktop custard](https://github.com/oneirosFade/ansible-custard)
-
-software
-[jacket](https://github.com/Jackett/Jackett) - API support for your favorite trackers
-
-pi 192.168.1.39
-sickrage 
-transmission-remote 9091
-couch potato 5050
-sickrage 8081
-headphones 8181
+all software is in laptop/docs/later.markdown
++   bluetooth

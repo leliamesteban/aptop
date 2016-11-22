@@ -1,5 +1,5 @@
-Here is where the main bulk happens
-This sets the installation apart from the standard base
+Should probably be its own subrepo
+Set the installation apart from the standard base
 Categories
  - Emulation-specific configuration
   - creating custom resolution

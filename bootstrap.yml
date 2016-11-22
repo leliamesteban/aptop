@@ -1,7 +1,6 @@
 ---
 
 - name: Basic - base
-
   hosts: all
   roles: 
     - 1.preup
