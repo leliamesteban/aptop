@@ -1,6 +1,4 @@
 ---
 
-- name: Set the keyboard
-  # command?
-  command: loadkeys uk
+#- name: Set the keyboard
   # /etc/vconsole.conf

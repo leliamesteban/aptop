@@ -1,0 +1,7 @@
+- name: HTPC
+  include: remote.yml
+  include: network.yml
+
+- name: animation
+
+- name: midi

@@ -2,3 +2,4 @@
 
 - include: bspwm.yml
 - include: fasd.yml
+- include: rofi.yml

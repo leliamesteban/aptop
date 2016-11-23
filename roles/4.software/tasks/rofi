@@ -1,0 +1,110 @@
+# https://github.com/iqbalansari/dotPlaybook/blob/xenial/roles/rofi/tasks/main.yaml
+# https://gist.githubusercontent.com/Benoth/e1a0503e432b44a6448839bbeb235e00/raw/ede0f2a698387fb399c1e040adbdf8afae653a3d/compile-rofi.sh
+# https://davedavenport.github.io/rofi/p08-INSTALL.html
+#
+- name: Get xcb-util-xrm (dependency for rofi)
+  git: repo=https://github.com/Airblader/xcb-util-xrm/ accept_hostkey=True dest=~/software/xcb-util-xrm
+  register: xcb_util_xrm_checkout
+
+- name: Install xcb-util-xrm
+  shell: cd ~/software/xcb-util-xrm && ./autogen.sh --prefix=$HOME/.local && make && make install
+  when: xcb_util_xrm_checkout|changed
+
+- name: Install dependencies for Rofi
+  apt: pkg={{ item }} update_cache=yes cache_valid_time=604800 install_recommends=no
+  with_items:
+    - autoconf
+    - automake
+    - pkg-config
+    - libpango1.0-dev
+    - libpangocairo-1.0-0
+    - libcairo2-dev
+    - libglib2.0-dev
+    - libstartup-notification0-dev
+    - libxcb-util-dev
+    - libxkbcommon-x11-dev
+    - libxcb-ewmh-dev
+    - libxcb-xinerama0-dev
+    - libxcb-icccm4-dev
+  sudo: yes
+
+- name: Get Rofi source code
+  git: repo=https://github.com/DaveDavenport/rofi.git accept_hostkey=True dest=~/software/rofi version={{rofi_version}}
+  register: rofi_checkout
+
+- name: Check if rofi is installed
+  shell: which rofi
+  register: rofi_installed
+  ignore_errors: yes
+  changed_when: False
+
+- name: Install Rofi
+  shell: cd ~/software/rofi && make distclean ; autoreconf -i && mkdir -p build && cd build && ../configure --prefix=$HOME/.local/ --disable-i3support && make && make install
+  when: rofi_checkout|changed or rofi_installed.rc == 1
+
+- name: Create Xresources.d if it does not exist
+  shell: mkdir ~/Xresources.d creates=~/Xresources.d
+
+- name: Copy Rofi config
+  file: src={{ role_path }}/files/rofi dest=~/Xresources.d/rofi state=link
+  register: rofi_config
+
+- name: Include rofi config in ~/.Xresources
+  lineinfile: dest=~/.Xresources line='#include "Xresources.d/rofi"' create=yes state=present
+
+#### My changes
+
+- name: Get xcb-util-xrm (dependency for rofi)
+  git: repo=https://github.com/Airblader/xcb-util-xrm/ accept_hostkey=True dest=/home/liam/sys/source/rofi/xcb-util-xrm
+  register: xcb_util_xrm_checkout
+
+  # /home/liam/sys/source/rofi/xcb-util-xrm
+
+- name: 'Install autoreconf (dependency for xcb-util-xrm)'
+  apt: name={{ item }} state=present
+  with_items:
+    - dh-autoreconf
+    - xutils-dev
+
+- name: Run autogen script for xcb-util-xrm
+  command: chdir=/home/liam/sys/source/rofi/xcb-util-xrm ./autogen.sh --prefix=$HOME/.local
+  become: yes
+
+- name: Make xcb-util-xrm
+  make: chdir=/home/liam/sys/source/rofi/xcb-util-xrm
+
+- name: Make install xcb-util-xrm
+  make: chdir=/home/liam/sys/source/rofi/xcb-util-xrm target=install become=yes
+  when: xcb_util_xrm_checkout|changed
+
+- name: Install dependencies for Rofi
+  apt: pkg={{ item }} update_cache=yes cache_valid_time=604800 install_recommends=no
+  with_items:
+    - autoconf
+    - automake
+    - pkg-config
+    - libpango1.0-dev
+    - libpangocairo-1.0-0
+    - libcairo2-dev
+    - libglib2.0-dev
+    - libstartup-notification0-dev
+    - libxcb-util-dev
+    - libxkbcommon-x11-dev
+    - libxcb-ewmh-dev
+    - libxcb-xinerama0-dev
+    - libxcb-icccm4-dev
+  sudo: yes
+
+- name: Get Rofi source code
+  git: repo=https://github.com/DaveDavenport/rofi.git accept_hostkey=True dest=/home/liam/sys/source/rofi/rofi version={{rofi_version}}
+  register: rofi_checkout
+
+- name: Check if rofi is installed
+  shell: which rofi
+  register: rofi_installed
+  ignore_errors: yes
+  changed_when: False
+
+- name: Install Rofi
+  shell: cd ~/software/rofi && make distclean ; autoreconf -i && mkdir -p build && cd build && ../configure --prefix=$HOME/.local/ --disable-i3support && make && make install
+  when: rofi_checkout|changed or rofi_installed.rc == 1

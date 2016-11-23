@@ -27,8 +27,14 @@
   lineinfile: dest=/home/liam/.config/deluge/auth line="liam:password:10" state=present create=True
 
   # on line that matches allow_remote, replace false with true
-  #- name: Allow remote
-  #  inline: "dest=/home/liam/.config/deluge/core.conf regexp='allow_remote' line='"allow_remote"\: true,' state=present create=True"
+- name: Allow remote
+  # or inline
+  lineinfile: 
+    dest: /home/liam/.config/deluge/core.conf
+    state: present 
+    create: True
+    regexp: 'allow_remote'
+    line: '"allow_remote"\: true,'
 
 - name: Start, enable deluge-web systemd service
   service: name=deluge-web state=started enabled=yes

@@ -53,4 +53,5 @@ Testing
 +   vagrant provision
 +   [Travis-CI](http://www.jeffgeerling.com/blog/2016/how-i-test-ansible-configuration-on-7-different-oses-docker)
 Run with ...
++   heroku? 
 +   ansible-playbook laptop.yml -i hosts --ask-sudo-pass --check # dry run
