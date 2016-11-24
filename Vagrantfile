@@ -5,8 +5,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure('2') do |config|
-#   config.vm.box = 'debian/jessie64'
-    config.vm.box = 'bugyt/archlinux'
+    config.vm.box = 'debian/jessie64'
+#   config.vm.box = 'bugyt/archlinux'
     {
         'laptop'    => '192.168.2.42',
         'htpc'   => '192.168.2.39',
@@ -16,6 +16,9 @@ Vagrant.configure('2') do |config|
 #           host.vm.hostname = "#{short_name}"
             host.vm.provision :ansible do |ansible|
                 ansible.playbook = "#{short_name}.yml"
+            end
+            host.vm.provider :virtualbox do |vbox|
+                vbox.name = "#{short_name}"
             end
         end
     end

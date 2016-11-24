@@ -12,10 +12,13 @@
 +   bare metal (cobbler?)
 +   rpi without a keyboard
 +   convert between other solutions (salt) and increase speed
++   change apt: and pacman: to package:
++   add [blocks](http://docs.ansible.com/ansible/playbooks_blocks.html)
 
 99.Irritations
 +   remove defaults/main.yml if not right
 +   test just one role/task?
++   ansible os family (don't repeat tasks: x11/pacakges.yml)
 +   new lines in output
 +   why are new users created all the damn time?
 +   make it look professional/consistent/easy to debug
@@ -33,7 +36,7 @@
 +   check for best practices
 +   automate standard procedure (vagrant reload, ssh etc)
 
-1.preup
+1.preup [~]
 +   passwords using
 [vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#best-practices-for-variables-and-vaults)
 +   keyboard config
@@ -46,23 +49,26 @@
     +   clone "me" to different machines (probably only useful if all trace can
         be deleted)
     +   get info from "account/identity"
-2.usable/shell
+2.usable/shell [-]
 +   dotfiles depends on gitlab_key being defined
 +   add zsh and vim plugins to dotfiles repo
 +   add a backup solution
     +   dotfiles on gitlab
     +   home on laptop
-+   less colors (and other miscellaneous stuff)
-3.pacman
++   miscellaneous commands (unless all in dotfiles)
++   generate usable shell from scratch
+3.pacman [-]
 +   add custom sources list for extra software
 +   add sid or stable to global variables
-4.software
+4.software [-]
 +   add software from source (sys/source)
 +   add software from ~/.local/bin
 +   add packages used for building software somewhere
-+   compile 
++   jessie compile 
     +   rofi
     +   lemonbar
++   aur
+    +   fasd 
 +   sort packages by themes and overlap
 +   add software from source and pip and ruby
 

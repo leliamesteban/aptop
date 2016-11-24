@@ -1,0 +1,19 @@
+- name: Install packages for x
+  apt: name={{ item }} state=present
+  with_items:
+    - xserver-xorg-core
+    - xmonad
+    - xinit
+    - xterm
+    - dunst
+  when: ansible_os_family == "Debian"
+
+- name: Install packages for x
+  pacman: name={{ item }} state=present
+  with_items:
+    - xserver-xorg-core
+    - xmonad
+    - xinit
+    - xterm
+    - dunst
+  when: ansible_os_family == "Arch Linux"

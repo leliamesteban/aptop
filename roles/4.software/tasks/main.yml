@@ -3,3 +3,6 @@
 - include: bspwm.yml
 - include: fasd.yml
 - include: rofi.yml
+  when: ansible_os_family == "Debian" and rofi is defined
+- include: arch.yml
+  when: ansible_os_family == "Arch Linux"

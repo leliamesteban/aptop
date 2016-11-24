@@ -8,12 +8,15 @@
     - deluge
     - deluged
     - deluge-web
+  when: ansible_os_family == "Debian"
 
-- name: Install deluge
-  apt: name=deluge state=installed
-
-- name: Install deluge-web
-  apt: name=deluge-web state=installed
+- name: Install deluge + web-ui
+  pacman: name="{{ item }}" state=present
+  with_items:
+    - deluge
+    - deluged
+    - deluge-web
+  when: ansible_os_family == "Arch Linux"
 
 - name: Start, enable deluged systemd service
   service: name=deluged state=started enabled=yes

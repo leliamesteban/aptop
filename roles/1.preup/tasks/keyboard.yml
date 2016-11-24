@@ -1,4 +1,7 @@
 ---
 
-#- name: Set the keyboard
+- name: Set the keyboard
+  command: loadkeys uk
+  become: yes
+  when: ansible_os_family == "Arch Linux"
   # /etc/vconsole.conf

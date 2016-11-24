@@ -1,0 +1,7 @@
+- name: Install arch userland programs
+  pacman: name={{ item }} state=present
+  with_items: 
+    - lemonbar
+    - rofi
+    - fasd
+    - percol

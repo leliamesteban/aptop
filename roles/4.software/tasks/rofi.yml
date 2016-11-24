@@ -14,11 +14,6 @@
     - libxcb-ewmh-dev
     - libxcb-xinerama0-dev
     - libxcb-icccm4-dev
-    - libxkbcommon
-    - libxkbcommon-x11
-
-xcb-ewmh xcb-icccm xcb-xrm xcb-randr xcb-xinerama
-  sudo: yes
 
 - name: Get Rofi source code
   git: repo=https://github.com/DaveDavenport/rofi.git accept_hostkey=True dest=/home/liam/sys/source/rofi/rofi
