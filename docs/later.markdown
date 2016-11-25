@@ -45,6 +45,9 @@ laptop or phone
     +   completely configured from the start
 +   Support for different architectures
 +   NFS/ Network storage
++   bare metal (cobbler)
++   os agnostic, support for multiple hypervisors
++   Easy way to configure RPi without a keyboard
 
 REQUIREMENTS
 +   python-apt
@@ -55,3 +58,4 @@ Testing
 Run with ...
 +   heroku? 
 +   ansible-playbook laptop.yml -i hosts --ask-sudo-pass --check # dry run
+

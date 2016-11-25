@@ -4338,3 +4338,153 @@ xcb-ewmh xcb-icccm xcb-xrm xcb-randr xcb-xinerama
 2016-11-24 22:35:20,359 p=2167 u=liam |  htpc                       : ok=12   changed=10   unreachable=1    failed=0   
 2016-11-24 22:49:57,228 p=5657 u=liam |  PLAY [Laptop customization ansible] ********************************************
 2016-11-24 22:49:57,423 p=5657 u=liam |  TASK [setup] *******************************************************************
+2016-11-25 17:44:30,547 p=31617 u=liam |  PLAY [HTPC (Home Media PC)] ****************************************************
+2016-11-25 17:44:30,622 p=31617 u=liam |  TASK [setup] *******************************************************************
+2016-11-25 17:44:32,260 p=31617 u=liam |  ok: [htpc]
+2016-11-25 17:44:32,262 p=31617 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-25 17:44:32,692 p=31617 u=liam |  ok: [htpc]
+2016-11-25 17:44:32,694 p=31617 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-25 17:44:33,728 p=31617 u=liam |  ok: [htpc]
+2016-11-25 17:44:33,730 p=31617 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-25 17:44:34,312 p=31617 u=liam |  ok: [htpc]
+2016-11-25 17:44:34,315 p=31617 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-25 17:44:34,923 p=31617 u=liam |  changed: [htpc]
+2016-11-25 17:44:34,925 p=31617 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-25 17:44:35,832 p=31617 u=liam |  ok: [htpc]
+2016-11-25 17:44:35,834 p=31617 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-25 17:44:36,335 p=31617 u=liam |  changed: [htpc]
+2016-11-25 17:44:36,337 p=31617 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-25 17:44:36,672 p=31617 u=liam |  ok: [htpc]
+2016-11-25 17:44:36,675 p=31617 u=liam |  TASK [1.preup : Generate ssh keys] *********************************************
+2016-11-25 17:44:37,377 p=31617 u=liam |  ok: [htpc] => (item=root)
+2016-11-25 17:44:37,690 p=31617 u=liam |  ok: [htpc] => (item=liam)
+2016-11-25 17:44:37,693 p=31617 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-25 17:44:38,938 p=31617 u=liam |  ok: [htpc]
+2016-11-25 17:44:38,940 p=31617 u=liam |  TASK [1.preup : Set the keyboard] **********************************************
+2016-11-25 17:44:38,957 p=31617 u=liam |  skipping: [htpc]
+2016-11-25 17:44:38,959 p=31617 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-25 17:44:39,675 p=31617 u=liam |  ok: [htpc] => (item=[u'make', u'vim', u'git', u'tmux', u'zsh'])
+2016-11-25 17:44:39,677 p=31617 u=liam |  TASK [2.usable : Clone dotfiles from gitlab.com] *******************************
+2016-11-25 17:44:39,692 p=31617 u=liam |  skipping: [htpc]
+2016-11-25 17:44:39,694 p=31617 u=liam |  TASK [2.usable : Install dotfiles with dotbot] *********************************
+2016-11-25 17:44:39,709 p=31617 u=liam |  skipping: [htpc]
+2016-11-25 17:44:39,711 p=31617 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-25 17:44:39,726 p=31617 u=liam |  skipping: [htpc]
+2016-11-25 17:44:39,728 p=31617 u=liam |  TASK [3.pacman : Update Arch Linux] ********************************************
+2016-11-25 17:44:39,743 p=31617 u=liam |  skipping: [htpc]
+2016-11-25 17:44:39,746 p=31617 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-25 17:44:40,093 p=31617 u=liam |  failed: [htpc] (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2']) => {"failed": true, "item": ["git", "gcc", "make", "xcb", "libxcb-util0-dev", "libxcb-ewmh-dev", "libxcb-randr0-dev", "libxcb-icccm4-dev", "libxcb-keysyms1-dev", "libxcb-xinerama0-dev", "libxcb-ewmh2"], "msg": "No package matching 'gcc' is available"}
+2016-11-25 17:44:40,095 p=31617 u=liam |  PLAY RECAP *********************************************************************
+2016-11-25 17:44:40,095 p=31617 u=liam |  htpc                       : ok=11   changed=2    unreachable=0    failed=1   
+2016-11-25 17:44:51,198 p=32290 u=liam |  PLAY [HTPC (Home Media PC)] ****************************************************
+2016-11-25 17:44:51,223 p=32290 u=liam |  TASK [setup] *******************************************************************
+2016-11-25 17:44:51,844 p=32290 u=liam |  ok: [htpc]
+2016-11-25 17:44:51,846 p=32290 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-25 17:44:52,162 p=32290 u=liam |  ok: [htpc]
+2016-11-25 17:44:52,164 p=32290 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-25 17:44:52,664 p=32290 u=liam |  ok: [htpc]
+2016-11-25 17:44:52,667 p=32290 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-25 17:44:52,980 p=32290 u=liam |  ok: [htpc]
+2016-11-25 17:44:52,983 p=32290 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-25 17:44:53,477 p=32290 u=liam |  changed: [htpc]
+2016-11-25 17:44:53,480 p=32290 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-25 17:44:53,791 p=32290 u=liam |  ok: [htpc]
+2016-11-25 17:44:53,793 p=32290 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-25 17:44:54,119 p=32290 u=liam |  changed: [htpc]
+2016-11-25 17:44:54,121 p=32290 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-25 17:44:54,425 p=32290 u=liam |  ok: [htpc]
+2016-11-25 17:44:54,427 p=32290 u=liam |  TASK [1.preup : Generate ssh keys] *********************************************
+2016-11-25 17:44:54,747 p=32290 u=liam |  ok: [htpc] => (item=root)
+2016-11-25 17:44:55,062 p=32290 u=liam |  ok: [htpc] => (item=liam)
+2016-11-25 17:44:55,064 p=32290 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-25 17:44:55,705 p=32290 u=liam |  ok: [htpc]
+2016-11-25 17:44:55,707 p=32290 u=liam |  TASK [1.preup : Set the keyboard] **********************************************
+2016-11-25 17:44:55,723 p=32290 u=liam |  skipping: [htpc]
+2016-11-25 17:44:55,725 p=32290 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-25 17:44:56,112 p=32290 u=liam |  ok: [htpc] => (item=[u'make', u'vim', u'git', u'tmux', u'zsh'])
+2016-11-25 17:44:56,114 p=32290 u=liam |  TASK [2.usable : Clone dotfiles from gitlab.com] *******************************
+2016-11-25 17:44:56,129 p=32290 u=liam |  skipping: [htpc]
+2016-11-25 17:44:56,131 p=32290 u=liam |  TASK [2.usable : Install dotfiles with dotbot] *********************************
+2016-11-25 17:44:56,146 p=32290 u=liam |  skipping: [htpc]
+2016-11-25 17:44:56,148 p=32290 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-25 17:44:56,164 p=32290 u=liam |  skipping: [htpc]
+2016-11-25 17:44:56,165 p=32290 u=liam |  TASK [3.pacman : Update Arch Linux] ********************************************
+2016-11-25 17:44:56,180 p=32290 u=liam |  skipping: [htpc]
+2016-11-25 17:44:56,182 p=32290 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-25 17:44:56,573 p=32290 u=liam |  failed: [htpc] (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2']) => {"failed": true, "item": ["git", "gcc", "make", "xcb", "libxcb-util0-dev", "libxcb-ewmh-dev", "libxcb-randr0-dev", "libxcb-icccm4-dev", "libxcb-keysyms1-dev", "libxcb-xinerama0-dev", "libxcb-ewmh2"], "msg": "No package matching 'gcc' is available"}
+2016-11-25 17:44:56,574 p=32290 u=liam |  PLAY RECAP *********************************************************************
+2016-11-25 17:44:56,575 p=32290 u=liam |  htpc                       : ok=11   changed=2    unreachable=0    failed=1   
+2016-11-25 17:45:11,180 p=356 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-25 17:45:11,206 p=356 u=liam |  TASK [setup] *******************************************************************
+2016-11-25 17:45:12,284 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:12,287 p=356 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-25 17:45:12,633 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:12,635 p=356 u=liam |  TASK [1.preup : install sudo] **************************************************
+2016-11-25 17:45:13,455 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:13,458 p=356 u=liam |  TASK [1.preup : Make sure there's a 'wheel' group] *****************************
+2016-11-25 17:45:13,777 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:13,780 p=356 u=liam |  TASK [1.preup : Add sudoers users to wheel group] ******************************
+2016-11-25 17:45:14,384 p=356 u=liam |  changed: [laptop]
+2016-11-25 17:45:14,387 p=356 u=liam |  TASK [1.preup : Allow 'wheel' group to have passwordless sudo] *****************
+2016-11-25 17:45:14,747 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:14,749 p=356 u=liam |  TASK [1.preup : Add liam as a user and to wheel (sudo no password)] ************
+2016-11-25 17:45:15,080 p=356 u=liam |  changed: [laptop]
+2016-11-25 17:45:15,083 p=356 u=liam |  TASK [1.preup : Change su password] ********************************************
+2016-11-25 17:45:15,392 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:15,396 p=356 u=liam |  TASK [1.preup : Generate ssh keys] *********************************************
+2016-11-25 17:45:15,787 p=356 u=liam |  ok: [laptop] => (item=root)
+2016-11-25 17:45:16,127 p=356 u=liam |  ok: [laptop] => (item=liam)
+2016-11-25 17:45:16,130 p=356 u=liam |  TASK [1.preup : Set the hostname] **********************************************
+2016-11-25 17:45:16,922 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:16,925 p=356 u=liam |  TASK [1.preup : Set the keyboard] **********************************************
+2016-11-25 17:45:16,940 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:16,942 p=356 u=liam |  TASK [2.usable : Install packages to set up base environment] ******************
+2016-11-25 17:45:17,515 p=356 u=liam |  ok: [laptop] => (item=[u'make', u'vim', u'git', u'tmux', u'zsh'])
+2016-11-25 17:45:17,518 p=356 u=liam |  TASK [2.usable : Clone dotfiles from gitlab.com] *******************************
+2016-11-25 17:45:17,533 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:17,535 p=356 u=liam |  TASK [2.usable : Install dotfiles with dotbot] *********************************
+2016-11-25 17:45:17,549 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:17,551 p=356 u=liam |  TASK [3.pacman : Set up apt/sources-list] **************************************
+2016-11-25 17:45:17,566 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:17,568 p=356 u=liam |  TASK [3.pacman : Update Arch Linux] ********************************************
+2016-11-25 17:45:17,582 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:17,585 p=356 u=liam |  TASK [4.software : Install bspwm deps] *****************************************
+2016-11-25 17:45:18,204 p=356 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-25 17:45:18,207 p=356 u=liam |  TASK [4.software : Clone bspwm] ************************************************
+2016-11-25 17:45:20,625 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:20,627 p=356 u=liam |  TASK [4.software : make bspwm] *************************************************
+2016-11-25 17:45:21,019 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:21,021 p=356 u=liam |  TASK [4.software : make install bspwm] *****************************************
+2016-11-25 17:45:21,356 p=356 u=liam |  changed: [laptop]
+2016-11-25 17:45:21,359 p=356 u=liam |  TASK [4.software : Clone sxhkd] ************************************************
+2016-11-25 17:45:23,075 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:23,078 p=356 u=liam |  TASK [4.software : make sxhkd] *************************************************
+2016-11-25 17:45:23,330 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:23,332 p=356 u=liam |  TASK [4.software : make install sxhkd] *****************************************
+2016-11-25 17:45:23,622 p=356 u=liam |  changed: [laptop]
+2016-11-25 17:45:23,624 p=356 u=liam |  TASK [4.software : Clone fasd to sys/source] ***********************************
+2016-11-25 17:45:25,252 p=356 u=liam |  ok: [laptop]
+2016-11-25 17:45:25,254 p=356 u=liam |  TASK [4.software : Make install fasd] ******************************************
+2016-11-25 17:45:25,556 p=356 u=liam |  changed: [laptop]
+2016-11-25 17:45:25,559 p=356 u=liam |  TASK [4.software : Install dependencies for Rofi] ******************************
+2016-11-25 17:45:25,597 p=356 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-25 17:45:25,599 p=356 u=liam |  TASK [4.software : Get Rofi source code] ***************************************
+2016-11-25 17:45:25,615 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:25,618 p=356 u=liam |  TASK [4.software : Install dependencies for building software from source] *****
+2016-11-25 17:45:25,633 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:25,636 p=356 u=liam |  TASK [4.software : autoreconf] *************************************************
+2016-11-25 17:45:25,652 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:25,655 p=356 u=liam |  TASK [4.software : configure] **************************************************
+2016-11-25 17:45:25,672 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:25,674 p=356 u=liam |  TASK [4.software : make] *******************************************************
+2016-11-25 17:45:25,690 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:25,693 p=356 u=liam |  TASK [4.software : make install] ***********************************************
+2016-11-25 17:45:25,710 p=356 u=liam |  skipping: [laptop]
+2016-11-25 17:45:25,712 p=356 u=liam |  TASK [4.software : Install arch userland programs] *****************************
+2016-11-25 17:45:25,734 p=356 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-25 17:45:25,736 p=356 u=liam |  TASK [6.x11 : Install packages for x] ******************************************
+2016-11-25 17:45:26,300 p=356 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst'])
+2016-11-25 17:45:26,302 p=356 u=liam |  TASK [6.x11 : Install packages for x] ******************************************
+2016-11-25 17:45:26,325 p=356 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-25 17:45:26,328 p=356 u=liam |  PLAY RECAP *********************************************************************
+2016-11-25 17:45:26,328 p=356 u=liam |  laptop                     : ok=21   changed=5    unreachable=0    failed=0   

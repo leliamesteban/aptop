@@ -5,3 +5,5 @@ from source - keep urls lying around for easy uninstall or BETTER - integrated w
 +   human
 +   wmutils
 +   rofi
++   gns3
++   wireshark

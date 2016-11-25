@@ -1,5 +1,7 @@
 ---
 
+# depends on package manager being set up +
+# - python-pip, ruby, make etc
 - include: bspwm.yml
 - include: fasd.yml
 - include: rofi.yml

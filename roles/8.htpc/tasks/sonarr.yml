@@ -1,1 +1,19 @@
 # https://github.com/Sonarr/Sonarr/wiki/Installation#linux
+# https://github.com/cmacrae/ansible-sonarr
+# port is 8989
+- name: Depend on aur being set up
+
+- name: Install dependencies
+  pacman: name={{ item }} state=present
+  with_items: 
+    - mono
+    - libmediainfo
+
+- name: Makepkg
+
+- name: Modify service file to remove -nobrowser
+  # file: /etc/systemd/system/multi-user.target-wants/sonarr.service
+  # sudo systemctl daemon-reload
+
+- name: Enable on boot and start
+  systemctl: state=started target=enable name=sonarr

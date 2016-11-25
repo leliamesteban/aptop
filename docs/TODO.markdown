@@ -1,21 +1,28 @@
-0.all/ansible
-+   begin generalizing (variables and OSes)
-+   add when: ansible_os_family == ""
-+   add support for lxc and vmware
-+   depends (start thinking themes)
-+   grouping other than playbooks?
-+   rollback is essential: undo feature (ie declarative but standard base)
-+   dependencies everywhere
-+   register ...
-+   configure ssh keys like [this](http://hakunin.com/six-ansible-practices)
+0.all/ansible [-]
++   generalisation, operating systems, hypervisors, use cases
++   testing
++   add depends to roles (start thinking themes)
++   undo feature (or make unecessary, if possible)
 +   add layout to project
-+   bare metal (cobbler?)
-+   rpi without a keyboard
 +   convert between other solutions (salt) and increase speed
-+   change apt: and pacman: to package:
-+   add [blocks](http://docs.ansible.com/ansible/playbooks_blocks.html)
++   edit Vagrantfile for best format
++   reorder project
++   add dependencies to global (third party modules)
++   vagrant filesystems getting full (tmpfs,/usr/bin)
++   generate bases with packer
 
-99.Irritations
+0.git [-]
++   add features, not meaningless commits
++   add submodules
+
+0.roles
++   dependencies in roles
++   add [blocks](http://docs.ansible.com/ansible/playbooks_blocks.html)
++   add [ansible-packer](https://github.com/austinhyde/ansible-packer)
++   register: ...?
++   package: 
+
+99.Irritations [-]
 +   remove defaults/main.yml if not right
 +   test just one role/task?
 +   ansible os family (don't repeat tasks: x11/pacakges.yml)
@@ -27,7 +34,6 @@
     !http://hakunin.com/six-ansible-practices
 +   whitespace in yaml
 +   unable to resolve hostname without reboot
-+   ~/True?
 +   remove vagrant user?
 +   hostname without reboot || rebooting
 +   variables inside the yaml files (just for rewriting/changing long directories)
@@ -40,26 +46,29 @@
 +   passwords using
 [vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#best-practices-for-variables-and-vaults)
 +   keyboard config
++   configure ssh keys like [this](http://hakunin.com/six-ansible-practices)
 +   test ssh keys 
     +   automagically get host ip and set to var
     +   gen keys (a la ssh-keygen)
     +   ssh-copy-id
-+   variables to everything
 +   submodule 
     +   clone "me" to different machines (probably only useful if all trace can
         be deleted)
     +   get info from "account/identity"
-2.usable/shell [-]
+2.pacman [-]
++   add custom sources list for extra software
++   set up aur
++   use 3rd party ansible module for packer
++   add sid or stable to global variables
+3.usable/shell [-]
 +   dotfiles depends on gitlab_key being defined
 +   add zsh and vim plugins to dotfiles repo
 +   add a backup solution
     +   dotfiles on gitlab
     +   home on laptop
 +   miscellaneous commands (unless all in dotfiles)
-+   generate usable shell from scratch
-3.pacman [-]
-+   add custom sources list for extra software
-+   add sid or stable to global variables
++   generate usable shell from scratch (as in generate dotfiles
+    programatically/didactically)
 4.software [-]
 +   add software from source (sys/source)
 +   add software from ~/.local/bin

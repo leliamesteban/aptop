@@ -1,12 +1,2 @@
-Should probably be its own subrepo
-Set the installation apart from the standard base
-Categories
- - Emulation-specific configuration
-  - creating custom resolution
- - HTPC media viewer
- - Torrenting
- - Audio/ Midi stuff
- - programming
- - fast boot time/ boot from NFS
- - pi (boot/config.txt)
- - shell environment customization (base16)
+256mb in boot/config.txt
+sudo pacman -Qdt to autoremove
