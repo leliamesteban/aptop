@@ -1,5 +1,7 @@
 ---
 
+ansible_python_interpreter: /usr/bin/python2
+ansible_os_family: "ArchLinux"
 hostname: laptop
 timezone: Europe/Madrid
 user: liam

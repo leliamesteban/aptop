@@ -11,9 +11,9 @@
 - name: Install packages for x
   pacman: name={{ item }} state=present
   with_items:
-    - xserver-xorg-core
+    - xorg
     - xmonad
-    - xinit
+    - xorg-xinit
     - xterm
     - dunst
-  when: ansible_os_family == "Arch Linux"
+  when: ansible_os_family == "ArchLinux"
