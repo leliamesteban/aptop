@@ -1,7 +1,7 @@
 ---
 
 - name: install sudo
-  apt:  name=sudo state=installed
+  package:  name=sudo state=installed
 
 - name: "Make sure there's a 'wheel' group"
   group:

@@ -6,7 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure('2') do |config|
 #   config.vm.box = 'debian/jessie64'
-    config.vm.box = 'bugyt/archlinux'
+#   config.vm.box = 'bugyt/archlinux'
+    config.vm.box = 'arch'
     {
         'laptop'    => '192.168.2.42',
         'htpc'   => '192.168.2.39',

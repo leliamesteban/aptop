@@ -10,3 +10,7 @@
   shell: chdir=/home/liam/sys/source/packer makepkg -si --noconfirm
 
 - name: Synchronize package database
+  shell: packer -Syu
+
+- name: Update Arch Linux
+  pacman: update_cache=yes upgrade=yes

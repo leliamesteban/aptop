@@ -3,8 +3,10 @@
 # depends on package manager being set up +
 # - python-pip, ruby, make etc
 - include: bspwm.yml
+  when: ansible_os_family == "Debian"
 - include: fasd.yml
+  when: ansible_os_family == "Debian"
 - include: rofi.yml
   when: ansible_os_family == "Debian" and rofi is defined
 - include: arch.yml
-  when: ansible_os_family == "Arch Linux"
+  when: ansible_os_family == "ArchLinux"

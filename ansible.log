@@ -4488,3 +4488,1516 @@ xcb-ewmh xcb-icccm xcb-xrm xcb-randr xcb-xinerama
 2016-11-25 17:45:26,325 p=356 u=liam |  skipping: [laptop] => (item=[]) 
 2016-11-25 17:45:26,328 p=356 u=liam |  PLAY RECAP *********************************************************************
 2016-11-25 17:45:26,328 p=356 u=liam |  laptop                     : ok=21   changed=5    unreachable=0    failed=0   
+2016-11-26 00:53:32,982 p=22635 u=liam |  ERROR! no action detected in task. This often indicates a misspelled module name, or incorrect module path.
+
+The error appears to have been in '/home/liam/sys/automation/laptop/roles/2.pacman/tasks/aur.yml': line 12, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Synchronize package database
+  ^ here
+
+
+The error appears to have been in '/home/liam/sys/automation/laptop/roles/2.pacman/tasks/aur.yml': line 12, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Synchronize package database
+  ^ here
+
+2016-11-26 00:54:07,893 p=23163 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 00:54:08,089 p=23163 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 00:54:08,770 p=23163 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 00:54:08,771 p=23163 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 00:54:08,772 p=23163 u=liam |  laptop                     : ok=0    changed=0    unreachable=0    failed=1   
+2016-11-26 00:54:16,825 p=23438 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 00:54:16,851 p=23438 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 00:54:17,242 p=23438 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 00:54:17,244 p=23438 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 00:54:17,244 p=23438 u=liam |  laptop                     : ok=0    changed=0    unreachable=0    failed=1   
+2016-11-26 00:55:00,830 p=23996 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 00:55:00,856 p=23996 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 00:55:01,832 p=23996 u=liam |  ok: [laptop]
+2016-11-26 00:55:01,834 p=23996 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-26 00:55:02,276 p=23996 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_b5il16wp/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_b5il16wp/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_b5il16wp/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_b5il16wp/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_b5il16wp/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 00:55:02,277 p=23996 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 00:55:02,277 p=23996 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 00:55:44,323 p=24308 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 00:55:44,350 p=24308 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 00:55:45,133 p=24308 u=liam |  ok: [laptop]
+2016-11-26 00:55:45,135 p=24308 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-26 00:55:45,505 p=24308 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_9xswvv_s/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_9xswvv_s/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_9xswvv_s/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_9xswvv_s/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_9xswvv_s/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 00:55:45,507 p=24308 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 00:55:45,507 p=24308 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 00:56:02,885 p=24597 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 00:56:02,911 p=24597 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 00:56:03,654 p=24597 u=liam |  ok: [laptop]
+2016-11-26 00:56:03,657 p=24597 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-26 00:56:04,024 p=24597 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_xu24jixn/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_xu24jixn/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_xu24jixn/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_xu24jixn/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_xu24jixn/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 00:56:04,026 p=24597 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 00:56:04,026 p=24597 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 00:56:38,173 p=25151 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 00:56:38,199 p=25151 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 00:56:39,028 p=25151 u=liam |  ok: [laptop]
+2016-11-26 00:56:39,030 p=25151 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-26 00:56:39,409 p=25151 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_4mpy197h/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_4mpy197h/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_4mpy197h/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_4mpy197h/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_4mpy197h/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 00:56:39,411 p=25151 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 00:56:39,411 p=25151 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 00:57:07,139 p=25447 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 00:57:07,166 p=25447 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 00:57:07,934 p=25447 u=liam |  ok: [laptop]
+2016-11-26 00:57:07,937 p=25447 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-26 00:57:08,309 p=25447 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_qc0nuai6/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_qc0nuai6/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_qc0nuai6/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_qc0nuai6/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_qc0nuai6/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 00:57:08,310 p=25447 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 00:57:08,310 p=25447 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 11:40:00,293 p=24461 u=liam |  PLAY [Laptop customization ansible] ********************************************
+2016-11-26 11:40:00,320 p=24461 u=liam |  TASK [setup] *******************************************************************
+2016-11-26 11:40:01,975 p=24461 u=liam |  ok: [laptop]
+2016-11-26 11:40:01,978 p=24461 u=liam |  TASK [1.preup : Generate locale] ***********************************************
+2016-11-26 11:40:02,360 p=24461 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_un9whey_/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_un9whey_/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_un9whey_/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_un9whey_/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_un9whey_/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 11:40:02,362 p=24461 u=liam |  PLAY RECAP *********************************************************************
+2016-11-26 11:40:02,362 p=24461 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 11:41:18,233 p=24675 u=liam |  ERROR! Extranous options or arguments
+2016-11-26 11:41:31,691 p=24942 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 11:41:31,747 p=24942 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 11:41:32,593 p=24942 u=liam |  ok: [laptop]
+2016-11-26 11:41:32,624 p=24942 u=liam |   __________________________________
+< TASK [1.preup : Generate locale] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 11:41:33,014 p=24942 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_b8odo5wj/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_b8odo5wj/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_b8odo5wj/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_b8odo5wj/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_b8odo5wj/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 11:41:33,044 p=24942 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 11:41:33,044 p=24942 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 12:01:26,362 p=4319 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:01:26,418 p=4319 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:01:28,160 p=4319 u=liam |  ok: [laptop]
+2016-11-26 12:01:28,191 p=4319 u=liam |   __________________________________
+< TASK [1.preup : Generate locale] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:01:28,680 p=4319 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "module_stderr": "Shared connection to 127.0.0.1 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/tmp/ansible_zmqf__vp/ansible_module_locale_gen.py\", line 239, in <module>\r\n    main()\r\n  File \"/tmp/ansible_zmqf__vp/ansible_module_locale_gen.py\", line 217, in main\r\n    if is_present(name):\r\n  File \"/tmp/ansible_zmqf__vp/ansible_module_locale_gen.py\", line 96, in is_present\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_zmqf__vp/ansible_module_locale_gen.py\", line 96, in <genexpr>\r\n    return any(fix_case(name) == fix_case(line) for line in output.splitlines())\r\n  File \"/tmp/ansible_zmqf__vp/ansible_module_locale_gen.py\", line 101, in fix_case\r\n    for s, r in LOCALE_NORMALIZATION.iteritems():\r\nAttributeError: 'dict' object has no attribute 'iteritems'\r\n", "msg": "MODULE FAILURE"}
+2016-11-26 12:01:28,710 p=4319 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:01:28,711 p=4319 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 12:03:21,194 p=4799 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:03:21,249 p=4799 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:03:22,103 p=4799 u=liam |  ok: [laptop]
+2016-11-26 12:03:22,134 p=4799 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:03:22,859 p=4799 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "cmd": "apt-get update", "failed": true, "msg": "[Errno 2] No such file or directory: 'apt-get'", "rc": 2}
+2016-11-26 12:03:22,890 p=4799 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:03:22,890 p=4799 u=liam |  laptop                     : ok=1    changed=0    unreachable=0    failed=1   
+2016-11-26 12:04:28,145 p=5312 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:28,199 p=5312 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:29,064 p=5312 u=liam |  ok: [laptop]
+2016-11-26 12:04:29,121 p=5312 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:31,249 p=5312 u=liam |  ok: [laptop]
+2016-11-26 12:04:31,279 p=5312 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:31,715 p=5312 u=liam |  ok: [laptop]
+2016-11-26 12:04:31,746 p=5312 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:32,424 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:32,455 p=5312 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:32,879 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:32,910 p=5312 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:33,336 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:33,366 p=5312 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:33,714 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:33,744 p=5312 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:34,210 p=5312 u=liam |  changed: [laptop] => (item=root)
+2016-11-26 12:04:34,734 p=5312 u=liam |  changed: [laptop] => (item=liam)
+2016-11-26 12:04:34,764 p=5312 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:36,794 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:36,825 p=5312 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:36,902 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:36,933 p=5312 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:36,949 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:36,979 p=5312 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:36,993 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:37,024 p=5312 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:37,038 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:37,069 p=5312 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:37,083 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:37,113 p=5312 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:37,137 p=5312 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:04:37,169 p=5312 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:37,183 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:37,214 p=5312 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:37,228 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:37,258 p=5312 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:37,291 p=5312 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:04:37,322 p=5312 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:43,976 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:44,007 p=5312 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:47,145 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:47,176 p=5312 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:47,595 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:47,626 p=5312 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:50,460 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:50,492 p=5312 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:51,154 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:51,185 p=5312 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:51,503 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:51,535 p=5312 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:53,824 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:53,854 p=5312 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,190 p=5312 u=liam |  changed: [laptop]
+2016-11-26 12:04:54,221 p=5312 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,256 p=5312 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:04:54,287 p=5312 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,302 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:54,333 p=5312 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,348 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:54,379 p=5312 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,394 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:54,425 p=5312 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,441 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:54,472 p=5312 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,488 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:54,519 p=5312 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,534 p=5312 u=liam |  skipping: [laptop]
+2016-11-26 12:04:54,565 p=5312 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,586 p=5312 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:04:54,617 p=5312 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,640 p=5312 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:04:54,670 p=5312 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,693 p=5312 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:04:54,724 p=5312 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:04:54,724 p=5312 u=liam |  laptop                     : ok=17   changed=14   unreachable=0    failed=0   
+2016-11-26 12:09:40,693 p=6225 u=liam |   [WARNING]: provided hosts list is empty, only localhost is available
+
+2016-11-26 12:09:40,693 p=6225 u=liam |   [WARNING]: No hosts matched, nothing to do
+
+2016-11-26 12:10:08,302 p=6281 u=liam |  10.0.2.15 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.0.2.15 port 22: Connection timed out\r\n", 
+    "unreachable": true
+}
+2016-11-26 12:11:11,238 p=6341 u=liam |   [WARNING]: provided hosts list is empty, only localhost is available
+
+2016-11-26 12:11:11,239 p=6341 u=liam |   [WARNING]: No hosts matched, nothing to do
+
+2016-11-26 12:11:26,497 p=6368 u=liam |  10.0.2.15 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.0.2.15 port 22: Connection timed out\r\n", 
+    "unreachable": true
+}
+2016-11-26 12:11:48,920 p=6432 u=liam |  ERROR! Missing target hosts
+2016-11-26 12:12:12,450 p=6511 u=liam |  ERROR! Missing target hosts
+2016-11-26 12:12:20,533 p=6536 u=liam |  ERROR! Missing target hosts
+2016-11-26 12:12:28,129 p=6562 u=liam |  ERROR! Missing target hosts
+2016-11-26 12:21:51,539 p=7271 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:51,595 p=7271 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:52,433 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:52,464 p=7271 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:53,208 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:53,239 p=7271 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:53,616 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:53,648 p=7271 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:54,161 p=7271 u=liam |  changed: [laptop]
+2016-11-26 12:21:54,193 p=7271 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:54,563 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:54,594 p=7271 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:55,019 p=7271 u=liam |  changed: [laptop]
+2016-11-26 12:21:55,050 p=7271 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:55,375 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:55,406 p=7271 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:55,743 p=7271 u=liam |  ok: [laptop] => (item=root)
+2016-11-26 12:21:56,070 p=7271 u=liam |  ok: [laptop] => (item=liam)
+2016-11-26 12:21:56,102 p=7271 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,104 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:57,135 p=7271 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,151 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,181 p=7271 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,196 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,227 p=7271 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,241 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,272 p=7271 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,287 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,318 p=7271 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,332 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,363 p=7271 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,377 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,408 p=7271 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,432 p=7271 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:21:57,464 p=7271 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,479 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,510 p=7271 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,525 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:21:57,556 p=7271 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:57,589 p=7271 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:21:57,620 p=7271 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:58,970 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:59,001 p=7271 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:59,412 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:21:59,443 p=7271 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:21:59,777 p=7271 u=liam |  changed: [laptop]
+2016-11-26 12:21:59,808 p=7271 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:01,205 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:22:01,236 p=7271 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:01,538 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:22:01,569 p=7271 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:01,887 p=7271 u=liam |  changed: [laptop]
+2016-11-26 12:22:01,918 p=7271 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,312 p=7271 u=liam |  ok: [laptop]
+2016-11-26 12:22:03,344 p=7271 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,698 p=7271 u=liam |  changed: [laptop]
+2016-11-26 12:22:03,729 p=7271 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,764 p=7271 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:22:03,795 p=7271 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,810 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:22:03,841 p=7271 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,857 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:22:03,888 p=7271 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,903 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:22:03,934 p=7271 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,950 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:22:03,980 p=7271 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:03,995 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:22:04,026 p=7271 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:04,041 p=7271 u=liam |  skipping: [laptop]
+2016-11-26 12:22:04,072 p=7271 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:04,094 p=7271 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:22:04,124 p=7271 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:04,147 p=7271 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:22:04,179 p=7271 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:04,202 p=7271 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:22:04,232 p=7271 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:22:04,232 p=7271 u=liam |  laptop                     : ok=17   changed=5    unreachable=0    failed=0   
+2016-11-26 12:24:57,132 p=8438 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:24:57,188 p=8438 u=liam |   ______________
+< TASK [setup] >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:24:58,037 p=8438 u=liam |  ok: [laptop]
+2016-11-26 12:24:58,068 p=8438 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:24:58,810 p=8438 u=liam |  ok: [laptop]
+2016-11-26 12:24:58,842 p=8438 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:24:59,218 p=8438 u=liam |  ok: [laptop]
+2016-11-26 12:24:59,249 p=8438 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:24:59,763 p=8438 u=liam |  changed: [laptop]
+2016-11-26 12:24:59,794 p=8438 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:00,163 p=8438 u=liam |  ok: [laptop]
+2016-11-26 12:25:00,194 p=8438 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:00,538 p=8438 u=liam |  changed: [laptop]
+2016-11-26 12:25:00,570 p=8438 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:00,897 p=8438 u=liam |  ok: [laptop]
+2016-11-26 12:25:00,928 p=8438 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:01,263 p=8438 u=liam |  ok: [laptop] => (item=root)
+2016-11-26 12:25:01,580 p=8438 u=liam |  ok: [laptop] => (item=liam)
+2016-11-26 12:25:01,611 p=8438 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,356 p=8438 u=liam |  ok: [laptop]
+2016-11-26 12:25:02,388 p=8438 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,403 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,434 p=8438 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,450 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,480 p=8438 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,495 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,526 p=8438 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,540 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,572 p=8438 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,587 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,618 p=8438 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,633 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,665 p=8438 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,690 p=8438 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:25:02,721 p=8438 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,735 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,767 p=8438 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,782 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,814 p=8438 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,844 p=8438 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:25:02,875 p=8438 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,890 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,921 p=8438 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,936 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:02,967 p=8438 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:02,982 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,013 p=8438 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,028 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,060 p=8438 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,074 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,106 p=8438 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,120 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,152 p=8438 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,167 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,198 p=8438 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,212 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,244 p=8438 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,279 p=8438 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:25:03,311 p=8438 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,326 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,357 p=8438 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,373 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,404 p=8438 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,419 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,450 p=8438 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,465 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,496 p=8438 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,511 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,543 p=8438 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,558 p=8438 u=liam |  skipping: [laptop]
+2016-11-26 12:25:03,590 p=8438 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,612 p=8438 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:25:03,643 p=8438 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,666 p=8438 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:25:03,697 p=8438 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,720 p=8438 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-26 12:25:03,751 p=8438 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-26 12:25:03,751 p=8438 u=liam |  laptop                     : ok=9    changed=2    unreachable=0    failed=0   

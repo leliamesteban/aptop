@@ -14,7 +14,6 @@
     - libxcb-keysyms1-dev 
     - libxcb-xinerama0-dev 
     - libxcb-ewmh2 
-  when: (ansible_os_family == "Debian" and ansible_distribution_major_version == "8")
 
 - name: Clone bspwm
   git: repo=https://github.com/baskerville/bspwm clone=yes dest=/home/liam/sys/source/bspwm

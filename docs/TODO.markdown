@@ -10,10 +10,12 @@
 +   add dependencies to global (third party modules)
 +   vagrant filesystems getting full (tmpfs,/usr/bin)
 +   generate bases with packer
++   remove old interfaces on host
 
 0.git [-]
 +   add features, not meaningless commits
 +   add submodules
++   make packer-arch a submodule and give proper credit
 
 0.roles
 +   dependencies in roles
@@ -51,13 +53,15 @@
     +   automagically get host ip and set to var
     +   gen keys (a la ssh-keygen)
     +   ssh-copy-id
++   locale-gen
++   add date
 +   submodule 
     +   clone "me" to different machines (probably only useful if all trace can
         be deleted)
     +   get info from "account/identity"
 2.pacman [-]
 +   add custom sources list for extra software
-+   set up aur
++   use packer module for aur
 +   use 3rd party ansible module for packer
 +   add sid or stable to global variables
 3.usable/shell [-]
@@ -73,6 +77,7 @@
 +   add software from source (sys/source)
 +   add software from ~/.local/bin
 +   add packages used for building software somewhere
++   move packages to 6.x11 if x11
 +   jessie compile 
     +   rofi
     +   lemonbar

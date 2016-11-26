@@ -1,6 +1,0 @@
----
-
-- name: Install most packages
-  package: name={{ item }} state=present
-  with_items: 
-    - ranger

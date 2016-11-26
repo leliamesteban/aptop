@@ -1,6 +1,5 @@
 ---
 
 - include: apt.yml
-- include: arch.yml
 - include: aur.yml
-  when: ansible_os_family == "Arch Linux"
+  when: ansible_os_family == "ArchLinux"
