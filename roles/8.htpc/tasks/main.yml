@@ -1,4 +1,4 @@
 ---
 
-#- include: torrents.yml
+- include: torrents.yml
 # see ~/bin/pi_install

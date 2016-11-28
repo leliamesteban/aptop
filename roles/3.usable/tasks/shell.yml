@@ -1,0 +1,2 @@
+- name: Fix things like less colors
+  shell: echo use `watch`
