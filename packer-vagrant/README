@@ -1,0 +1,3 @@
+Generic packer stuff for booting HTPC VMs from iso
+https://www.packer.io/docs/builders/virtualbox-iso.html
+https://github.com/ChiperSoft/Packer-Vagrant-Example/blob/master/packer/ubuntu.json
