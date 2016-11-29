@@ -1,0 +1,15 @@
+---
+
+- name: Install mopidy
+  package: name=mopidy state=present
+
+- name: Get config file
+  # update file
+  copy: src=../files/mopidy.conf dest=/home/liam/.config/mopidy/mopidy.conf create=yes
+
+- name: Install web interfaces
+  # depends: pip installed
+  shell: become=yes pip install Mopidy-Mopify Mopidy-Local-Images Mopidy-Moped Mopidy-SpotMop Mopidy-Beets
+
+- name: Install beets
+  pacman: name=beets state=present
