@@ -1,7 +1,9 @@
  before_script: 
   - apt-get update -y -qq
   - apt-get install -y -qq python-dev libxml2-dev libxslt-dev python-pip python-apt git
-  - pip install ansible markupsafe
+  - echo "deb http://ftp.debian.org/debian jessie-backports main" | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
+  - sudo apt-get install -t jessie-backports install ansible
  # - pip install git+git://github.com/ansible/ansible.git@devel
  
  ansible: 
