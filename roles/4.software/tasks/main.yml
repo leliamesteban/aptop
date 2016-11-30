@@ -6,7 +6,5 @@
   when: ansible_os_family == "Debian"
 - include: fasd.yml
   when: ansible_os_family == "Debian"
-- include: rofi.yml
-  when: ansible_os_family == "Debian" and rofi is defined
 - include: arch.yml
   when: ansible_os_family == "ArchLinux"

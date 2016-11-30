@@ -40,10 +40,10 @@
     line: '"allow_remote"\: true,'
 
 - name: Copy deluge-web systemd service file
-  copy: src=deluge-web.service dest=/etc/systemd/system/multi-user.target.wants
+  copy: src=deluge-web.service dest=/etc/systemd/system
 
 - name: Start, enable deluge-web systemd service
-  service: name=deluge-web state=started enabled=yes
+  service: name=deluge-web state=started
 
 - name: Start deluged
   service: name=deluged state=started

@@ -1,2 +1,0 @@
-256mb in boot/config.txt
-sudo pacman -Qdt to autoremove
