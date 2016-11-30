@@ -1,7 +1,8 @@
  before_script: 
   - apt-get update -y -qq
-  - apt-get install -y -qq python-dev libxml2-dev libxslt-dev python-pip python-apt
-  - pip install git+git://github.com/ansible/ansible.git@devel
+  - apt-get install -y -qq python-dev libxml2-dev libxslt-dev python-pip python-apt git
+  - pip install ansible markupsafe
+ # - pip install git+git://github.com/ansible/ansible.git@devel
  
  ansible: 
   script:
