@@ -9903,3 +9903,3432 @@ The offending line appears to be:
 
 2016-11-27 17:53:14,102 p=12134 u=liam |   [ERROR]: User interrupted execution
 
+2016-11-30 21:17:47,343 p=23933 u=liam |  Using /home/liam/sys/automation/laptop/ansible.cfg as config file
+2016-11-30 21:17:48,932 p=23933 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:17:49,395 p=23933 u=liam |   ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:17:52,475 p=23933 u=liam |  ok: [laptop]
+2016-11-30 21:17:52,532 p=23933 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:17:55,875 p=23933 u=liam |  ok: [laptop] => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false}
+2016-11-30 21:17:55,908 p=23933 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:17:57,977 p=23933 u=liam |  ok: [laptop] => {"changed": false, "gid": 1001, "name": "wheel", "state": "present", "system": false}
+2016-11-30 21:17:58,026 p=23933 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:17:59,085 p=23933 u=liam |  changed: [laptop] => {"append": true, "changed": true, "comment": "", "group": 1001, "groups": "wheel", "home": "/home/liam", "move_home": false, "name": "liam", "password": "NOT_LOGGING_PASSWORD", "shell": "/bin/bash", "state": "present", "uid": 1001}
+2016-11-30 21:17:59,119 p=23933 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:17:59,449 p=23933 u=liam |  ok: [laptop] => {"backup": "", "changed": false, "msg": ""}
+2016-11-30 21:17:59,483 p=23933 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:17:59,862 p=23933 u=liam |  changed: [laptop] => {"append": false, "changed": true, "comment": "", "group": 1001, "home": "/home/liam", "move_home": false, "name": "liam", "password": "NOT_LOGGING_PASSWORD", "shell": "/bin/bash", "state": "present", "uid": 1001}
+2016-11-30 21:17:59,895 p=23933 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:00,212 p=23933 u=liam |  ok: [laptop] => {"append": false, "changed": false, "comment": "root", "group": 0, "home": "/root", "move_home": false, "name": "root", "password": "NOT_LOGGING_PASSWORD", "shell": "/bin/bash", "state": "present", "uid": 0}
+2016-11-30 21:18:00,248 p=23933 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:00,757 p=23933 u=liam |  ok: [laptop] => (item=root) => {"append": false, "changed": false, "comment": "root", "group": 0, "home": "/root", "item": "root", "move_home": false, "name": "root", "shell": "/bin/bash", "ssh_fingerprint": "2048 f4:19:4f:55:4f:b8:11:5e:af:4b:e2:61:18:93:e5:dc /root/.ssh/id_rsa.pub (RSA)", "ssh_key_file": "/root/.ssh/id_rsa", "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDi4oN6YI+li0p9NxlpDb8HiqZlFIHypfYrwl+LHsTIbOK8zc5ak0E/CczJkhlQBih43cXOqRRpccBBoNpmAWgOVjqWfBq7TMlTwvjIqVkzaMIs0ftYRLeLHYrCP0zWeP8tecZ/EsnMaYzm3R80jNX886nJhGf5BGs7n41xVKU2n/GI/K7jJL00qExvjOAqq3ni/w4YWfgN9YiD4+Ug6wEDqLkWqVvgjAU71+y4j/Znb/KF2AdSKQ7W+EcH2I/A3b5zFnstGN9DBscSOhNKcuprWqnrnsBsKSBAjpHeJ5nilYnh7UlfkvfQ0W+Abp9kj/D0Ih6e37DREoNlVPDmmA8P ansible-generated on jessie", "state": "present", "uid": 0}
+2016-11-30 21:18:01,216 p=23933 u=liam |  ok: [laptop] => (item=liam) => {"append": false, "changed": false, "comment": "", "group": 1001, "home": "/home/liam", "item": "liam", "move_home": false, "name": "liam", "shell": "/bin/bash", "ssh_fingerprint": "2048 1f:c8:a9:86:b3:63:4b:f8:be:5b:0e:b8:47:00:d3:b0 /home/liam/.ssh/id_rsa.pub (RSA)", "ssh_key_file": "/home/liam/.ssh/id_rsa", "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCib93mOXcUBScsPPhqDasvcnelTgRmXrtB794LUmVsBsemzgIDgaUhQ0NJIMgER1n2VKdSIwt7S2yeS17jBL9RzdNomaz9ag9+U/9YKf7DnUXIOS8FGIEJZY7twTU/9/1aY///k15Q9c/71KJ9qwnd4IHCm8kala52TkB/Efnl3jsX19HfQrjDadIhLureMtLrJ7C4vIqf4WxdgvEb/ULunnPfav7XPJDw6zYR3cx7tTgdvHyITfao5AYzX0CfUTFWiLPfLNVmBuug8e8n9a6ZMCXdh13gf0GGbC+xXxdrRJRUwZiVLAmHoC59saKg8TculCi9k7B2L6SVc6R1qWRl ansible-generated on jessie", "state": "present", "uid": 1001}
+2016-11-30 21:18:01,252 p=23933 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,212 p=23933 u=liam |  ok: [laptop] => {"ansible_facts": {"ansible_domain": "", "ansible_fqdn": "laptop", "ansible_hostname": "laptop", "ansible_nodename": "laptop"}, "changed": false, "name": "laptop"}
+2016-11-30 21:18:02,248 p=23933 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,281 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,316 p=23933 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,335 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,368 p=23933 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,386 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,420 p=23933 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,436 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,471 p=23933 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,490 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,540 p=23933 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,558 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,607 p=23933 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,649 p=23933 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,684 p=23933 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,701 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,736 p=23933 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:02,754 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:02,789 p=23933 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:04,040 p=23933 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2']) => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false, "item": ["git", "gcc", "make", "xcb", "libxcb-util0-dev", "libxcb-ewmh-dev", "libxcb-randr0-dev", "libxcb-icccm4-dev", "libxcb-keysyms1-dev", "libxcb-xinerama0-dev", "libxcb-ewmh2"]}
+2016-11-30 21:18:04,075 p=23933 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:06,179 p=23933 u=liam |  ok: [laptop] => {"after": "5299a283432806ee8c79368831a44b5b6cbabbee", "before": "5299a283432806ee8c79368831a44b5b6cbabbee", "changed": false, "remote_url_changed": false, "warnings": []}
+2016-11-30 21:18:06,215 p=23933 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:06,657 p=23933 u=liam |  ok: [laptop] => {"changed": false, "chdir": "/home/liam/sys/source/bspwm", "failed": false, "params": null, "stderr": "", "stdout": "", "stdout_lines": [], "target": null}
+2016-11-30 21:18:06,692 p=23933 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:07,183 p=23933 u=liam |  changed: [laptop] => {"changed": true, "chdir": "/home/liam/sys/source/bspwm", "failed": false, "params": null, "stderr": "", "stdout": "mkdir -p \"/usr/local/bin\"\ncp -pf bspwm \"/usr/local/bin\"\ncp -pf bspc \"/usr/local/bin\"\nmkdir -p \"/usr/local/share/man\"/man1\ncp -p doc/bspwm.1 \"/usr/local/share/man\"/man1\ncp -Pp doc/bspc.1 \"/usr/local/share/man\"/man1\nmkdir -p \"/usr/local/share/bash-completion/completions\"\ncp -p contrib/bash_completion \"/usr/local/share/bash-completion/completions\"/bspc\nmkdir -p \"/usr/local/share/fish/vendor_completions.d\"\ncp -p contrib/fish_completion \"/usr/local/share/fish/vendor_completions.d\"/bspc.fish\nmkdir -p \"/usr/local/share/zsh/site-functions\"\ncp -p contrib/zsh_completion \"/usr/local/share/zsh/site-functions\"/_bspc\nmkdir -p \"/usr/local/share/doc/bspwm\"\ncp -p README.md doc/CHANGELOG.md doc/CONTRIBUTING.md doc/INSTALL.md doc/MISC.md doc/TODO.md \"/usr/local/share/doc/bspwm\"\ncp -pr examples \"/usr/local/share/doc/bspwm\"/examples\nmkdir -p \"/usr/local/share/xsessions\"\ncp -p contrib/freedesktop/bspwm.desktop \"/usr/local/share/xsessions\"", "stdout_lines": ["mkdir -p \"/usr/local/bin\"", "cp -pf bspwm \"/usr/local/bin\"", "cp -pf bspc \"/usr/local/bin\"", "mkdir -p \"/usr/local/share/man\"/man1", "cp -p doc/bspwm.1 \"/usr/local/share/man\"/man1", "cp -Pp doc/bspc.1 \"/usr/local/share/man\"/man1", "mkdir -p \"/usr/local/share/bash-completion/completions\"", "cp -p contrib/bash_completion \"/usr/local/share/bash-completion/completions\"/bspc", "mkdir -p \"/usr/local/share/fish/vendor_completions.d\"", "cp -p contrib/fish_completion \"/usr/local/share/fish/vendor_completions.d\"/bspc.fish", "mkdir -p \"/usr/local/share/zsh/site-functions\"", "cp -p contrib/zsh_completion \"/usr/local/share/zsh/site-functions\"/_bspc", "mkdir -p \"/usr/local/share/doc/bspwm\"", "cp -p README.md doc/CHANGELOG.md doc/CONTRIBUTING.md doc/INSTALL.md doc/MISC.md doc/TODO.md \"/usr/local/share/doc/bspwm\"", "cp -pr examples \"/usr/local/share/doc/bspwm\"/examples", "mkdir -p \"/usr/local/share/xsessions\"", "cp -p contrib/freedesktop/bspwm.desktop \"/usr/local/share/xsessions\""], "target": "install"}
+2016-11-30 21:18:07,219 p=23933 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:09,096 p=23933 u=liam |  ok: [laptop] => {"after": "74e5454f0c45db4cdcce6c98f9ce95a6f4e9f1da", "before": "74e5454f0c45db4cdcce6c98f9ce95a6f4e9f1da", "changed": false, "remote_url_changed": false, "warnings": []}
+2016-11-30 21:18:09,131 p=23933 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:09,391 p=23933 u=liam |  ok: [laptop] => {"changed": false, "chdir": "/home/liam/sys/source/sxhkd", "failed": false, "params": null, "stderr": "", "stdout": "", "stdout_lines": [], "target": null}
+2016-11-30 21:18:09,426 p=23933 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:09,748 p=23933 u=liam |  changed: [laptop] => {"changed": true, "chdir": "/home/liam/sys/source/sxhkd", "failed": false, "params": null, "stderr": "", "stdout": "mkdir -p \"/usr/local/bin\"\ncp -pf sxhkd \"/usr/local/bin\"\nmkdir -p \"/usr/local/share/man\"/man1\ncp -p doc/sxhkd.1 \"/usr/local/share/man\"/man1\nmkdir -p \"/usr/local/share/doc/sxhkd\"\ncp -pr examples \"/usr/local/share/doc/sxhkd\"/examples", "stdout_lines": ["mkdir -p \"/usr/local/bin\"", "cp -pf sxhkd \"/usr/local/bin\"", "mkdir -p \"/usr/local/share/man\"/man1", "cp -p doc/sxhkd.1 \"/usr/local/share/man\"/man1", "mkdir -p \"/usr/local/share/doc/sxhkd\"", "cp -pr examples \"/usr/local/share/doc/sxhkd\"/examples"], "target": "install"}
+2016-11-30 21:18:09,782 p=23933 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:11,474 p=23933 u=liam |  ok: [laptop] => {"after": "90b531a5daaa545c74c7d98974b54cbdb92659fc", "before": "90b531a5daaa545c74c7d98974b54cbdb92659fc", "changed": false, "remote_url_changed": false, "warnings": []}
+2016-11-30 21:18:11,508 p=23933 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:11,805 p=23933 u=liam |  changed: [laptop] => {"changed": true, "chdir": "/home/liam/sys/source/fasd", "failed": false, "params": null, "stderr": "", "stdout": "install -d /usr/local/bin\ninstall -m 755 fasd /usr/local/bin\ninstall -d /usr/local/share/man/man1\ninstall -m 644 fasd.1 /usr/local/share/man/man1", "stdout_lines": ["install -d /usr/local/bin", "install -m 755 fasd /usr/local/bin", "install -d /usr/local/share/man/man1", "install -m 644 fasd.1 /usr/local/share/man/man1"], "target": "install"}
+2016-11-30 21:18:11,840 p=23933 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:11,884 p=23933 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:11,919 p=23933 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:11,937 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:11,975 p=23933 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:11,992 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:12,043 p=23933 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:12,060 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:12,094 p=23933 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:12,112 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:12,147 p=23933 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:12,165 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:12,201 p=23933 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:12,220 p=23933 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:12,256 p=23933 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:12,284 p=23933 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:12,317 p=23933 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:13,457 p=23933 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst']) => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false, "item": ["xserver-xorg-core", "xmonad", "xinit", "xterm", "dunst"]}
+2016-11-30 21:18:13,492 p=23933 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:13,519 p=23933 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:13,554 p=23933 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:14,661 p=23933 u=liam |  ok: [laptop] => (item=[u'deluge', u'deluged', u'deluge-web']) => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false, "item": ["deluge", "deluged", "deluge-web"]}
+2016-11-30 21:18:14,694 p=23933 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:14,719 p=23933 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:18:14,780 p=23933 u=liam |   _______________________________________________________
+< TASK [8.htpc : Start, enable deluged systemd service] >
+ -------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:15,210 p=23933 u=liam |  ok: [laptop] => {"changed": false, "enabled": true, "name": "deluged", "state": "started", "status": {"ActiveEnterTimestamp": "Wed 2016-11-30 20:17:17 GMT", "ActiveEnterTimestampMonotonic": "8674600", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "local-fs.target remote-fs.target network-online.target systemd-journald.socket basic.target system.slice", "AllowIsolate": "no", "Before": "multi-user.target graphical.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "(null)", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "yes", "ConditionTimestamp": "Wed 2016-11-30 20:17:17 GMT", "ConditionTimestampMonotonic": "8224119", "Conflicts": "shutdown.target", "ControlGroup": "/system.slice/deluged.service", "ControlPID": "0", "DefaultDependencies": "yes", "Description": "LSB: Start or stop the Deluge BitTorrent daemon.", "DevicePolicy": "auto", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged start ; ignore_errors=no ; start_time=[Wed 2016-11-30 20:17:17 GMT] ; stop_time=[Wed 2016-11-30 20:17:17 GMT] ; pid=439 ; code=exited ; status=0 }", "ExecStop": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged stop ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FragmentPath": "/run/systemd/generator.late/deluged.service", "GuessMainPID": "no", "IOScheduling": "0", "Id": "deluged.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "no", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Wed 2016-11-30 20:17:17 GMT", "InactiveExitTimestampMonotonic": "8225298", "JobTimeoutUSec": "0", "KillMode": "process", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "1912", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "1912", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "deluged.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "yes", "Requires": "basic.target", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "SourcePath": "/etc/init.d/deluged", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StopWhenUnneeded": "no", "SubState": "exited", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "5min", "TimeoutStopUSec": "5min", "TimerSlackNSec": "50000", "Transient": "no", "Type": "forking", "UMask": "0022", "WantedBy": "graphical.target multi-user.target", "Wants": "network-online.target system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}, "warnings": []}
+2016-11-30 21:18:15,246 p=23933 u=liam |   ______________________________
+< TASK [8.htpc : Stop deluged] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:15,645 p=23933 u=liam |  changed: [laptop] => {"changed": true, "name": "deluged", "state": "stopped", "status": {"ActiveEnterTimestamp": "Wed 2016-11-30 20:17:17 GMT", "ActiveEnterTimestampMonotonic": "8674600", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "local-fs.target remote-fs.target network-online.target systemd-journald.socket basic.target system.slice", "AllowIsolate": "no", "Before": "multi-user.target graphical.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "(null)", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "yes", "ConditionTimestamp": "Wed 2016-11-30 20:17:17 GMT", "ConditionTimestampMonotonic": "8224119", "Conflicts": "shutdown.target", "ControlGroup": "/system.slice/deluged.service", "ControlPID": "0", "DefaultDependencies": "yes", "Description": "LSB: Start or stop the Deluge BitTorrent daemon.", "DevicePolicy": "auto", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged start ; ignore_errors=no ; start_time=[Wed 2016-11-30 20:17:17 GMT] ; stop_time=[Wed 2016-11-30 20:17:17 GMT] ; pid=439 ; code=exited ; status=0 }", "ExecStop": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged stop ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FragmentPath": "/run/systemd/generator.late/deluged.service", "GuessMainPID": "no", "IOScheduling": "0", "Id": "deluged.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "no", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Wed 2016-11-30 20:17:17 GMT", "InactiveExitTimestampMonotonic": "8225298", "JobTimeoutUSec": "0", "KillMode": "process", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "1912", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "1912", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "deluged.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "yes", "Requires": "basic.target", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "SourcePath": "/etc/init.d/deluged", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StopWhenUnneeded": "no", "SubState": "exited", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "5min", "TimeoutStopUSec": "5min", "TimerSlackNSec": "50000", "Transient": "no", "Type": "forking", "UMask": "0022", "WantedBy": "graphical.target multi-user.target", "Wants": "network-online.target system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}, "warnings": []}
+2016-11-30 21:18:15,697 p=23933 u=liam |   __________________________________________________
+< TASK [8.htpc : Add password to auth config file] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:15,977 p=23933 u=liam |  ok: [laptop] => {"backup": "", "changed": false, "msg": ""}
+2016-11-30 21:18:16,015 p=23933 u=liam |   ______________________________
+< TASK [8.htpc : Allow remote] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:16,294 p=23933 u=liam |  ok: [laptop] => {"backup": "", "changed": false, "msg": ""}
+2016-11-30 21:18:16,330 p=23933 u=liam |   ______________________________________________________
+< TASK [8.htpc : Copy deluge-web systemd service file] >
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:17,444 p=23933 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "checksum": "56350d5c2b2683322e6552faa56b97bce4e86e48", "failed": true, "msg": "unsupported parameter for module: become"}
+2016-11-30 21:18:17,494 p=23933 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:18:17,495 p=23933 u=liam |  laptop                     : ok=24   changed=6    unreachable=0    failed=1   
+2016-11-30 21:30:09,116 p=27831 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:09,189 p=27831 u=liam |   ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:10,536 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:10,571 p=27831 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:13,489 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:13,526 p=27831 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:13,964 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:14,014 p=27831 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:14,569 p=27831 u=liam |  changed: [laptop]
+2016-11-30 21:30:14,623 p=27831 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:15,014 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:15,049 p=27831 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:15,466 p=27831 u=liam |  changed: [laptop]
+2016-11-30 21:30:15,501 p=27831 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:15,862 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:15,900 p=27831 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:16,251 p=27831 u=liam |  ok: [laptop] => (item=root)
+2016-11-30 21:30:16,596 p=27831 u=liam |  ok: [laptop] => (item=liam)
+2016-11-30 21:30:16,633 p=27831 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,349 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:17,386 p=27831 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,403 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,438 p=27831 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,456 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,492 p=27831 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,509 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,546 p=27831 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,563 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,599 p=27831 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,616 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,653 p=27831 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,670 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,705 p=27831 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,734 p=27831 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:30:17,769 p=27831 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,786 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,821 p=27831 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:17,837 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:17,872 p=27831 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:19,113 p=27831 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-30 21:30:19,151 p=27831 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:21,199 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:21,236 p=27831 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:21,637 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:21,686 p=27831 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:22,178 p=27831 u=liam |  changed: [laptop]
+2016-11-30 21:30:22,214 p=27831 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:24,011 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:24,046 p=27831 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:24,344 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:24,380 p=27831 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:24,710 p=27831 u=liam |  changed: [laptop]
+2016-11-30 21:30:24,745 p=27831 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:26,461 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:26,497 p=27831 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:26,799 p=27831 u=liam |  changed: [laptop]
+2016-11-30 21:30:26,849 p=27831 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:26,891 p=27831 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:30:26,928 p=27831 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:26,950 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:26,985 p=27831 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:27,009 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:27,043 p=27831 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:27,059 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:27,094 p=27831 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:27,111 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:27,149 p=27831 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:27,166 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:27,200 p=27831 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:27,218 p=27831 u=liam |  skipping: [laptop]
+2016-11-30 21:30:27,252 p=27831 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:27,278 p=27831 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:30:27,312 p=27831 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:28,678 p=27831 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst'])
+2016-11-30 21:30:28,712 p=27831 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:28,738 p=27831 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:30:28,773 p=27831 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:29,959 p=27831 u=liam |  ok: [laptop] => (item=[u'deluge', u'deluged', u'deluge-web'])
+2016-11-30 21:30:29,994 p=27831 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:30,018 p=27831 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:30:30,053 p=27831 u=liam |   _______________________________________________________
+< TASK [8.htpc : Start, enable deluged systemd service] >
+ -------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:30,429 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:30,479 p=27831 u=liam |   ______________________________
+< TASK [8.htpc : Stop deluged] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:30,776 p=27831 u=liam |  changed: [laptop]
+2016-11-30 21:30:30,815 p=27831 u=liam |   __________________________________________________
+< TASK [8.htpc : Add password to auth config file] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:31,090 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:31,143 p=27831 u=liam |   ______________________________
+< TASK [8.htpc : Allow remote] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:31,416 p=27831 u=liam |  ok: [laptop]
+2016-11-30 21:30:31,467 p=27831 u=liam |   ______________________________________________________
+< TASK [8.htpc : Copy deluge-web systemd service file] >
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:32,490 p=27831 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "checksum": "56350d5c2b2683322e6552faa56b97bce4e86e48", "failed": true, "msg": "unsupported parameter for module: become"}
+2016-11-30 21:30:32,526 p=27831 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:30:32,527 p=27831 u=liam |  laptop                     : ok=24   changed=6    unreachable=0    failed=1   
+2016-11-30 21:32:18,729 p=28891 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:18,802 p=28891 u=liam |   ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:19,643 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:19,694 p=28891 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:21,083 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:21,118 p=28891 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:21,504 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:21,546 p=28891 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:22,045 p=28891 u=liam |  changed: [laptop]
+2016-11-30 21:32:22,082 p=28891 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:22,446 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:22,481 p=28891 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:22,814 p=28891 u=liam |  changed: [laptop]
+2016-11-30 21:32:22,849 p=28891 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:23,191 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:23,227 p=28891 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:23,653 p=28891 u=liam |  ok: [laptop] => (item=root)
+2016-11-30 21:32:24,005 p=28891 u=liam |  ok: [laptop] => (item=liam)
+2016-11-30 21:32:24,045 p=28891 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:24,744 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:24,780 p=28891 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:24,802 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:24,838 p=28891 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:24,859 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:24,894 p=28891 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:24,913 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:24,951 p=28891 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:24,968 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:25,003 p=28891 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:25,025 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:25,060 p=28891 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:25,077 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:25,125 p=28891 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:25,161 p=28891 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:32:25,198 p=28891 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:25,215 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:25,250 p=28891 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:25,267 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:25,304 p=28891 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:26,460 p=28891 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-30 21:32:26,494 p=28891 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:28,573 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:28,608 p=28891 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:28,974 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:29,014 p=28891 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:29,341 p=28891 u=liam |  changed: [laptop]
+2016-11-30 21:32:29,391 p=28891 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:31,168 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:31,204 p=28891 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:31,483 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:31,525 p=28891 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:31,837 p=28891 u=liam |  changed: [laptop]
+2016-11-30 21:32:31,876 p=28891 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:33,667 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:33,702 p=28891 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,037 p=28891 u=liam |  changed: [laptop]
+2016-11-30 21:32:34,073 p=28891 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,113 p=28891 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:32:34,154 p=28891 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,171 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:34,207 p=28891 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,225 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:34,259 p=28891 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,276 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:34,311 p=28891 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,330 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:34,363 p=28891 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,380 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:34,413 p=28891 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,430 p=28891 u=liam |  skipping: [laptop]
+2016-11-30 21:32:34,463 p=28891 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:34,490 p=28891 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:32:34,524 p=28891 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:35,645 p=28891 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst'])
+2016-11-30 21:32:35,680 p=28891 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:35,707 p=28891 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:32:35,741 p=28891 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:36,833 p=28891 u=liam |  ok: [laptop] => (item=[u'deluge', u'deluged', u'deluge-web'])
+2016-11-30 21:32:36,882 p=28891 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:36,914 p=28891 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:32:36,951 p=28891 u=liam |   _______________________________________________________
+< TASK [8.htpc : Start, enable deluged systemd service] >
+ -------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:37,324 p=28891 u=liam |  changed: [laptop]
+2016-11-30 21:32:37,359 p=28891 u=liam |   ______________________________
+< TASK [8.htpc : Stop deluged] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:37,697 p=28891 u=liam |  changed: [laptop]
+2016-11-30 21:32:37,733 p=28891 u=liam |   __________________________________________________
+< TASK [8.htpc : Add password to auth config file] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:38,037 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:38,073 p=28891 u=liam |   ______________________________
+< TASK [8.htpc : Allow remote] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:38,347 p=28891 u=liam |  ok: [laptop]
+2016-11-30 21:32:38,383 p=28891 u=liam |   ______________________________________________________
+< TASK [8.htpc : Copy deluge-web systemd service file] >
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:39,391 p=28891 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "checksum": "56350d5c2b2683322e6552faa56b97bce4e86e48", "failed": true, "msg": "unsupported parameter for module: become"}
+2016-11-30 21:32:39,427 p=28891 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:32:39,427 p=28891 u=liam |  laptop                     : ok=24   changed=7    unreachable=0    failed=1   
+2016-11-30 21:33:05,070 p=29739 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:05,139 p=29739 u=liam |   ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:05,850 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:05,888 p=29739 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:07,156 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:07,195 p=29739 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:07,573 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:07,623 p=29739 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:08,103 p=29739 u=liam |  changed: [laptop]
+2016-11-30 21:33:08,147 p=29739 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:08,508 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:08,559 p=29739 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:08,911 p=29739 u=liam |  changed: [laptop]
+2016-11-30 21:33:08,951 p=29739 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:09,309 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:09,347 p=29739 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:09,748 p=29739 u=liam |  ok: [laptop] => (item=root)
+2016-11-30 21:33:10,136 p=29739 u=liam |  ok: [laptop] => (item=liam)
+2016-11-30 21:33:10,189 p=29739 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:10,996 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:11,047 p=29739 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,065 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,101 p=29739 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,124 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,164 p=29739 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,186 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,226 p=29739 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,249 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,284 p=29739 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,307 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,357 p=29739 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,379 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,428 p=29739 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,464 p=29739 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:33:11,502 p=29739 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,520 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,557 p=29739 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:11,574 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:11,611 p=29739 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:12,749 p=29739 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-30 21:33:12,786 p=29739 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:14,152 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:14,232 p=29739 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:14,643 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:14,683 p=29739 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:14,997 p=29739 u=liam |  changed: [laptop]
+2016-11-30 21:33:15,032 p=29739 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:16,427 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:16,463 p=29739 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:16,749 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:16,785 p=29739 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:17,112 p=29739 u=liam |  changed: [laptop]
+2016-11-30 21:33:17,164 p=29739 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:18,597 p=29739 u=liam |  ok: [laptop]
+2016-11-30 21:33:18,635 p=29739 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:18,953 p=29739 u=liam |  changed: [laptop]
+2016-11-30 21:33:18,990 p=29739 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,047 p=29739 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:33:19,082 p=29739 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,105 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:19,149 p=29739 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,167 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:19,202 p=29739 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,225 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:19,274 p=29739 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,298 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:19,332 p=29739 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,351 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:19,386 p=29739 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,407 p=29739 u=liam |  skipping: [laptop]
+2016-11-30 21:33:19,441 p=29739 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:19,470 p=29739 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:33:19,505 p=29739 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:20,615 p=29739 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst'])
+2016-11-30 21:33:20,653 p=29739 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:20,680 p=29739 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:33:20,728 p=29739 u=liam |   _____________________________________________
+< TASK [6.x11 : Add auto-login service files] >
+ ---------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:20,744 p=29739 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find '/templates/autologin.j2' in expected paths."}
+2016-11-30 21:33:20,778 p=29739 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:33:20,778 p=29739 u=liam |  laptop                     : ok=19   changed=5    unreachable=0    failed=1   
+2016-11-30 21:34:39,311 p=30626 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:39,378 p=30626 u=liam |   ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:40,275 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:40,310 p=30626 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:41,475 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:41,510 p=30626 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:41,927 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:41,972 p=30626 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:42,475 p=30626 u=liam |  changed: [laptop]
+2016-11-30 21:34:42,509 p=30626 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:42,857 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:42,895 p=30626 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:43,244 p=30626 u=liam |  changed: [laptop]
+2016-11-30 21:34:43,278 p=30626 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:43,604 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:43,645 p=30626 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:44,007 p=30626 u=liam |  ok: [laptop] => (item=root)
+2016-11-30 21:34:44,321 p=30626 u=liam |  ok: [laptop] => (item=liam)
+2016-11-30 21:34:44,357 p=30626 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,022 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:45,057 p=30626 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,075 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,110 p=30626 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,128 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,170 p=30626 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,187 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,223 p=30626 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,240 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,274 p=30626 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,293 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,327 p=30626 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,343 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,377 p=30626 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,406 p=30626 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:34:45,440 p=30626 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,456 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,490 p=30626 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:45,507 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:45,540 p=30626 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:46,646 p=30626 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-30 21:34:46,680 p=30626 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:49,208 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:49,242 p=30626 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:49,577 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:49,611 p=30626 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:49,911 p=30626 u=liam |  changed: [laptop]
+2016-11-30 21:34:49,951 p=30626 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:51,723 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:51,757 p=30626 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:52,023 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:52,074 p=30626 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:52,400 p=30626 u=liam |  changed: [laptop]
+2016-11-30 21:34:52,450 p=30626 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:54,409 p=30626 u=liam |  ok: [laptop]
+2016-11-30 21:34:54,459 p=30626 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:54,734 p=30626 u=liam |  changed: [laptop]
+2016-11-30 21:34:54,771 p=30626 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:54,812 p=30626 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:34:54,847 p=30626 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:54,869 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:54,904 p=30626 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:54,923 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:54,960 p=30626 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:54,978 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:55,011 p=30626 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:55,035 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:55,069 p=30626 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:55,091 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:55,126 p=30626 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:55,149 p=30626 u=liam |  skipping: [laptop]
+2016-11-30 21:34:55,185 p=30626 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:55,211 p=30626 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:34:55,247 p=30626 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:56,340 p=30626 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst'])
+2016-11-30 21:34:56,376 p=30626 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:56,404 p=30626 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:34:56,439 p=30626 u=liam |   _____________________________________________
+< TASK [6.x11 : Add auto-login service files] >
+ ---------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:57,201 p=30626 u=liam |  fatal: [laptop]: FAILED! => {"changed": true, "failed": true, "msg": "Destination directory /etc/systemd/system/getty@tty1.service.d does not exist"}
+2016-11-30 21:34:57,237 p=30626 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:34:57,242 p=30626 u=liam |  laptop                     : ok=19   changed=5    unreachable=0    failed=1   
+2016-11-30 21:36:40,721 p=31302 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:40,791 p=31302 u=liam |   ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:41,618 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:41,656 p=31302 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:42,945 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:42,993 p=31302 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:43,387 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:43,423 p=31302 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:43,863 p=31302 u=liam |  changed: [laptop]
+2016-11-30 21:36:43,902 p=31302 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:44,308 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:44,344 p=31302 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:44,737 p=31302 u=liam |  changed: [laptop]
+2016-11-30 21:36:44,774 p=31302 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:45,187 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:45,224 p=31302 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:45,572 p=31302 u=liam |  ok: [laptop] => (item=root)
+2016-11-30 21:36:46,008 p=31302 u=liam |  ok: [laptop] => (item=liam)
+2016-11-30 21:36:46,043 p=31302 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:46,794 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:46,828 p=31302 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:46,845 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:46,894 p=31302 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:46,913 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:46,952 p=31302 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:46,970 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:47,004 p=31302 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:47,021 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:47,055 p=31302 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:47,073 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:47,106 p=31302 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:47,122 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:47,163 p=31302 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:47,192 p=31302 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:36:47,227 p=31302 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:47,243 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:47,277 p=31302 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:47,294 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:47,327 p=31302 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:48,459 p=31302 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2'])
+2016-11-30 21:36:48,494 p=31302 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:50,397 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:50,432 p=31302 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:50,783 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:50,820 p=31302 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:51,174 p=31302 u=liam |  changed: [laptop]
+2016-11-30 21:36:51,212 p=31302 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:52,873 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:52,909 p=31302 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:53,249 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:53,284 p=31302 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:53,584 p=31302 u=liam |  changed: [laptop]
+2016-11-30 21:36:53,619 p=31302 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:55,495 p=31302 u=liam |  ok: [laptop]
+2016-11-30 21:36:55,538 p=31302 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:55,876 p=31302 u=liam |  changed: [laptop]
+2016-11-30 21:36:55,913 p=31302 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:55,959 p=31302 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:36:55,993 p=31302 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:56,011 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:56,045 p=31302 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:56,062 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:56,096 p=31302 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:56,114 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:56,149 p=31302 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:56,166 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:56,201 p=31302 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:56,220 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:56,254 p=31302 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:56,272 p=31302 u=liam |  skipping: [laptop]
+2016-11-30 21:36:56,307 p=31302 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:56,334 p=31302 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:36:56,367 p=31302 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:57,514 p=31302 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst'])
+2016-11-30 21:36:57,549 p=31302 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:57,577 p=31302 u=liam |  skipping: [laptop] => (item=[]) 
+2016-11-30 21:36:57,612 p=31302 u=liam |   _____________________________________________
+< TASK [6.x11 : Add auto-login service files] >
+ ---------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:58,368 p=31302 u=liam |  fatal: [laptop]: FAILED! => {"changed": true, "failed": true, "msg": "Destination directory /etc/systemd/system/getty@tty1.service.d does not exist"}
+2016-11-30 21:36:58,404 p=31302 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:36:58,404 p=31302 u=liam |  laptop                     : ok=19   changed=5    unreachable=0    failed=1   
+2016-11-30 21:38:00,429 p=31997 u=liam |  Using /home/liam/sys/automation/laptop/ansible.cfg as config file
+2016-11-30 21:38:00,615 p=31997 u=liam |   _____________________________________
+< PLAY [Laptop customization ansible] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:00,685 p=31997 u=liam |   ________________________
+< TASK [Gathering Facts] >
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:01,555 p=31997 u=liam |  ok: [laptop]
+2016-11-30 21:38:01,593 p=31997 u=liam |   _______________________________
+< TASK [1.preup : install sudo] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:02,896 p=31997 u=liam |  ok: [laptop] => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false}
+2016-11-30 21:38:02,932 p=31997 u=liam |   ____________________________________________________
+< TASK [1.preup : Make sure there's a 'wheel' group] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:03,362 p=31997 u=liam |  ok: [laptop] => {"changed": false, "gid": 1001, "name": "wheel", "state": "present", "system": false}
+2016-11-30 21:38:03,397 p=31997 u=liam |   ___________________________________________________
+< TASK [1.preup : Add sudoers users to wheel group] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:03,867 p=31997 u=liam |  changed: [laptop] => {"append": true, "changed": true, "comment": "", "group": 1001, "groups": "wheel", "home": "/home/liam", "move_home": false, "name": "liam", "password": "NOT_LOGGING_PASSWORD", "shell": "/bin/bash", "state": "present", "uid": 1001}
+2016-11-30 21:38:03,905 p=31997 u=liam |   __________________________________________________________
+/ TASK [1.preup : Allow 'wheel' group to have passwordless \
+\ sudo]                                                    /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:04,336 p=31997 u=liam |  ok: [laptop] => {"backup": "", "changed": false, "msg": ""}
+2016-11-30 21:38:04,385 p=31997 u=liam |   __________________________________________________________
+/ TASK [1.preup : Add liam as a user and to wheel (sudo no \
+\ password)]                                               /
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:04,787 p=31997 u=liam |  changed: [laptop] => {"append": false, "changed": true, "comment": "", "group": 1001, "home": "/home/liam", "move_home": false, "name": "liam", "password": "NOT_LOGGING_PASSWORD", "shell": "/bin/bash", "state": "present", "uid": 1001}
+2016-11-30 21:38:04,821 p=31997 u=liam |   _____________________________________
+< TASK [1.preup : Change su password] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:05,147 p=31997 u=liam |  ok: [laptop] => {"append": false, "changed": false, "comment": "root", "group": 0, "home": "/root", "move_home": false, "name": "root", "password": "NOT_LOGGING_PASSWORD", "shell": "/bin/bash", "state": "present", "uid": 0}
+2016-11-30 21:38:05,186 p=31997 u=liam |   ____________________________________
+< TASK [1.preup : Generate ssh keys] >
+ ------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:05,553 p=31997 u=liam |  ok: [laptop] => (item=root) => {"append": false, "changed": false, "comment": "root", "group": 0, "home": "/root", "item": "root", "move_home": false, "name": "root", "shell": "/bin/bash", "ssh_fingerprint": "2048 f4:19:4f:55:4f:b8:11:5e:af:4b:e2:61:18:93:e5:dc /root/.ssh/id_rsa.pub (RSA)", "ssh_key_file": "/root/.ssh/id_rsa", "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDi4oN6YI+li0p9NxlpDb8HiqZlFIHypfYrwl+LHsTIbOK8zc5ak0E/CczJkhlQBih43cXOqRRpccBBoNpmAWgOVjqWfBq7TMlTwvjIqVkzaMIs0ftYRLeLHYrCP0zWeP8tecZ/EsnMaYzm3R80jNX886nJhGf5BGs7n41xVKU2n/GI/K7jJL00qExvjOAqq3ni/w4YWfgN9YiD4+Ug6wEDqLkWqVvgjAU71+y4j/Znb/KF2AdSKQ7W+EcH2I/A3b5zFnstGN9DBscSOhNKcuprWqnrnsBsKSBAjpHeJ5nilYnh7UlfkvfQ0W+Abp9kj/D0Ih6e37DREoNlVPDmmA8P ansible-generated on jessie", "state": "present", "uid": 0}
+2016-11-30 21:38:05,880 p=31997 u=liam |  ok: [laptop] => (item=liam) => {"append": false, "changed": false, "comment": "", "group": 1001, "home": "/home/liam", "item": "liam", "move_home": false, "name": "liam", "shell": "/bin/bash", "ssh_fingerprint": "2048 1f:c8:a9:86:b3:63:4b:f8:be:5b:0e:b8:47:00:d3:b0 /home/liam/.ssh/id_rsa.pub (RSA)", "ssh_key_file": "/home/liam/.ssh/id_rsa", "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCib93mOXcUBScsPPhqDasvcnelTgRmXrtB794LUmVsBsemzgIDgaUhQ0NJIMgER1n2VKdSIwt7S2yeS17jBL9RzdNomaz9ag9+U/9YKf7DnUXIOS8FGIEJZY7twTU/9/1aY///k15Q9c/71KJ9qwnd4IHCm8kala52TkB/Efnl3jsX19HfQrjDadIhLureMtLrJ7C4vIqf4WxdgvEb/ULunnPfav7XPJDw6zYR3cx7tTgdvHyITfao5AYzX0CfUTFWiLPfLNVmBuug8e8n9a6ZMCXdh13gf0GGbC+xXxdrRJRUwZiVLAmHoC59saKg8TculCi9k7B2L6SVc6R1qWRl ansible-generated on jessie", "state": "present", "uid": 1001}
+2016-11-30 21:38:05,917 p=31997 u=liam |   ___________________________________
+< TASK [1.preup : Set the hostname] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:06,853 p=31997 u=liam |  ok: [laptop] => {"ansible_facts": {"ansible_domain": "", "ansible_fqdn": "laptop", "ansible_hostname": "laptop", "ansible_nodename": "laptop"}, "changed": false, "name": "laptop"}
+2016-11-30 21:38:06,904 p=31997 u=liam |   ___________________________________
+< TASK [1.preup : Set the keyboard] >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:06,922 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:06,962 p=31997 u=liam |   ___________________________________________
+< TASK [2.pacman : Set up apt/sources-list] >
+ -------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:06,982 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,018 p=31997 u=liam |   ________________________________
+< TASK [2.pacman : Clone packer] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:07,036 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,071 p=31997 u=liam |   ____________________________
+< TASK [2.pacman : Make pkg] >
+ ----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:07,089 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,128 p=31997 u=liam |   ________________________________________________
+< TASK [2.pacman : Synchronize package database] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:07,150 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,185 p=31997 u=liam |   _____________________________________
+< TASK [2.pacman : Update Arch Linux] >
+ -------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:07,202 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,236 p=31997 u=liam |   __________________________________________________
+/ TASK [3.usable : Install packages to set up base \
+\ environment]                                     /
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:07,266 p=31997 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,300 p=31997 u=liam |   __________________________________________________
+< TASK [3.usable : Clone dotfiles from gitlab.com] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:07,317 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,351 p=31997 u=liam |   ________________________________________________
+< TASK [3.usable : Install dotfiles with dotbot] >
+ ------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:07,368 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:07,402 p=31997 u=liam |   ________________________________________
+< TASK [4.software : Install bspwm deps] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:08,734 p=31997 u=liam |  ok: [laptop] => (item=[u'git', u'gcc', u'make', u'xcb', u'libxcb-util0-dev', u'libxcb-ewmh-dev', u'libxcb-randr0-dev', u'libxcb-icccm4-dev', u'libxcb-keysyms1-dev', u'libxcb-xinerama0-dev', u'libxcb-ewmh2']) => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false, "item": ["git", "gcc", "make", "xcb", "libxcb-util0-dev", "libxcb-ewmh-dev", "libxcb-randr0-dev", "libxcb-icccm4-dev", "libxcb-keysyms1-dev", "libxcb-xinerama0-dev", "libxcb-ewmh2"]}
+2016-11-30 21:38:08,781 p=31997 u=liam |   _________________________________
+< TASK [4.software : Clone bspwm] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:12,110 p=31997 u=liam |  ok: [laptop] => {"after": "5299a283432806ee8c79368831a44b5b6cbabbee", "before": "5299a283432806ee8c79368831a44b5b6cbabbee", "changed": false, "remote_url_changed": false, "warnings": []}
+2016-11-30 21:38:12,152 p=31997 u=liam |   ________________________________
+< TASK [4.software : make bspwm] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:12,508 p=31997 u=liam |  ok: [laptop] => {"changed": false, "chdir": "/home/liam/sys/source/bspwm", "failed": false, "params": null, "stderr": "", "stdout": "", "stdout_lines": [], "target": null}
+2016-11-30 21:38:12,542 p=31997 u=liam |   ________________________________________
+< TASK [4.software : make install bspwm] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:12,897 p=31997 u=liam |  changed: [laptop] => {"changed": true, "chdir": "/home/liam/sys/source/bspwm", "failed": false, "params": null, "stderr": "", "stdout": "mkdir -p \"/usr/local/bin\"\ncp -pf bspwm \"/usr/local/bin\"\ncp -pf bspc \"/usr/local/bin\"\nmkdir -p \"/usr/local/share/man\"/man1\ncp -p doc/bspwm.1 \"/usr/local/share/man\"/man1\ncp -Pp doc/bspc.1 \"/usr/local/share/man\"/man1\nmkdir -p \"/usr/local/share/bash-completion/completions\"\ncp -p contrib/bash_completion \"/usr/local/share/bash-completion/completions\"/bspc\nmkdir -p \"/usr/local/share/fish/vendor_completions.d\"\ncp -p contrib/fish_completion \"/usr/local/share/fish/vendor_completions.d\"/bspc.fish\nmkdir -p \"/usr/local/share/zsh/site-functions\"\ncp -p contrib/zsh_completion \"/usr/local/share/zsh/site-functions\"/_bspc\nmkdir -p \"/usr/local/share/doc/bspwm\"\ncp -p README.md doc/CHANGELOG.md doc/CONTRIBUTING.md doc/INSTALL.md doc/MISC.md doc/TODO.md \"/usr/local/share/doc/bspwm\"\ncp -pr examples \"/usr/local/share/doc/bspwm\"/examples\nmkdir -p \"/usr/local/share/xsessions\"\ncp -p contrib/freedesktop/bspwm.desktop \"/usr/local/share/xsessions\"", "stdout_lines": ["mkdir -p \"/usr/local/bin\"", "cp -pf bspwm \"/usr/local/bin\"", "cp -pf bspc \"/usr/local/bin\"", "mkdir -p \"/usr/local/share/man\"/man1", "cp -p doc/bspwm.1 \"/usr/local/share/man\"/man1", "cp -Pp doc/bspc.1 \"/usr/local/share/man\"/man1", "mkdir -p \"/usr/local/share/bash-completion/completions\"", "cp -p contrib/bash_completion \"/usr/local/share/bash-completion/completions\"/bspc", "mkdir -p \"/usr/local/share/fish/vendor_completions.d\"", "cp -p contrib/fish_completion \"/usr/local/share/fish/vendor_completions.d\"/bspc.fish", "mkdir -p \"/usr/local/share/zsh/site-functions\"", "cp -p contrib/zsh_completion \"/usr/local/share/zsh/site-functions\"/_bspc", "mkdir -p \"/usr/local/share/doc/bspwm\"", "cp -p README.md doc/CHANGELOG.md doc/CONTRIBUTING.md doc/INSTALL.md doc/MISC.md doc/TODO.md \"/usr/local/share/doc/bspwm\"", "cp -pr examples \"/usr/local/share/doc/bspwm\"/examples", "mkdir -p \"/usr/local/share/xsessions\"", "cp -p contrib/freedesktop/bspwm.desktop \"/usr/local/share/xsessions\""], "target": "install"}
+2016-11-30 21:38:12,938 p=31997 u=liam |   _________________________________
+< TASK [4.software : Clone sxhkd] >
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:14,850 p=31997 u=liam |  ok: [laptop] => {"after": "74e5454f0c45db4cdcce6c98f9ce95a6f4e9f1da", "before": "74e5454f0c45db4cdcce6c98f9ce95a6f4e9f1da", "changed": false, "remote_url_changed": false, "warnings": []}
+2016-11-30 21:38:14,892 p=31997 u=liam |   ________________________________
+< TASK [4.software : make sxhkd] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:15,179 p=31997 u=liam |  ok: [laptop] => {"changed": false, "chdir": "/home/liam/sys/source/sxhkd", "failed": false, "params": null, "stderr": "", "stdout": "", "stdout_lines": [], "target": null}
+2016-11-30 21:38:15,224 p=31997 u=liam |   ________________________________________
+< TASK [4.software : make install sxhkd] >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:15,531 p=31997 u=liam |  changed: [laptop] => {"changed": true, "chdir": "/home/liam/sys/source/sxhkd", "failed": false, "params": null, "stderr": "", "stdout": "mkdir -p \"/usr/local/bin\"\ncp -pf sxhkd \"/usr/local/bin\"\nmkdir -p \"/usr/local/share/man\"/man1\ncp -p doc/sxhkd.1 \"/usr/local/share/man\"/man1\nmkdir -p \"/usr/local/share/doc/sxhkd\"\ncp -pr examples \"/usr/local/share/doc/sxhkd\"/examples", "stdout_lines": ["mkdir -p \"/usr/local/bin\"", "cp -pf sxhkd \"/usr/local/bin\"", "mkdir -p \"/usr/local/share/man\"/man1", "cp -p doc/sxhkd.1 \"/usr/local/share/man\"/man1", "mkdir -p \"/usr/local/share/doc/sxhkd\"", "cp -pr examples \"/usr/local/share/doc/sxhkd\"/examples"], "target": "install"}
+2016-11-30 21:38:15,569 p=31997 u=liam |   ______________________________________________
+< TASK [4.software : Clone fasd to sys/source] >
+ ----------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:17,764 p=31997 u=liam |  ok: [laptop] => {"after": "90b531a5daaa545c74c7d98974b54cbdb92659fc", "before": "90b531a5daaa545c74c7d98974b54cbdb92659fc", "changed": false, "remote_url_changed": false, "warnings": []}
+2016-11-30 21:38:17,815 p=31997 u=liam |   _______________________________________
+< TASK [4.software : Make install fasd] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,216 p=31997 u=liam |  changed: [laptop] => {"changed": true, "chdir": "/home/liam/sys/source/fasd", "failed": false, "params": null, "stderr": "", "stdout": "install -d /usr/local/bin\ninstall -m 755 fasd /usr/local/bin\ninstall -d /usr/local/share/man/man1\ninstall -m 644 fasd.1 /usr/local/share/man/man1", "stdout_lines": ["install -d /usr/local/bin", "install -m 755 fasd /usr/local/bin", "install -d /usr/local/share/man/man1", "install -m 644 fasd.1 /usr/local/share/man/man1"], "target": "install"}
+2016-11-30 21:38:18,262 p=31997 u=liam |   ___________________________________________________
+< TASK [4.software : Install dependencies for Rofi] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,310 p=31997 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,350 p=31997 u=liam |   __________________________________________
+< TASK [4.software : Get Rofi source code] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,372 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,408 p=31997 u=liam |   ______________________________________________________
+/ TASK [4.software : Install dependencies for building \
+\ software from source]                                /
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,432 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,468 p=31997 u=liam |   ________________________________
+< TASK [4.software : autoreconf] >
+ --------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,486 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,526 p=31997 u=liam |   _______________________________
+< TASK [4.software : configure] >
+ -------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,544 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,579 p=31997 u=liam |   __________________________
+< TASK [4.software : make] >
+ --------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,595 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,630 p=31997 u=liam |   __________________________________
+< TASK [4.software : make install] >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,653 p=31997 u=liam |  skipping: [laptop] => {"changed": false, "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,686 p=31997 u=liam |   ____________________________________________________
+< TASK [4.software : Install arch userland programs] >
+ ----------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:18,714 p=31997 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:18,748 p=31997 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:22,386 p=31997 u=liam |  ok: [laptop] => (item=[u'xserver-xorg-core', u'xmonad', u'xinit', u'xterm', u'dunst']) => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false, "item": ["xserver-xorg-core", "xmonad", "xinit", "xterm", "dunst"]}
+2016-11-30 21:38:22,430 p=31997 u=liam |   _______________________________________
+< TASK [6.x11 : Install packages for x] >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:22,459 p=31997 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:22,494 p=31997 u=liam |   ______________________________
+< TASK [6.x11 : Add directory] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:22,917 p=31997 u=liam |  changed: [laptop] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/etc/systemd/system/getty@tty1.service.d", "size": 4096, "state": "directory", "uid": 0}
+2016-11-30 21:38:22,966 p=31997 u=liam |   _____________________________________________
+< TASK [6.x11 : Add auto-login service files] >
+ ---------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:23,972 p=31997 u=liam |  changed: [laptop] => {"changed": true, "checksum": "5daea5190ea6e6f04c6a5a4d66caa5c0d80b6b8c", "dest": "/etc/systemd/system/getty@tty1.service.d/autologin.conf", "gid": 0, "group": "root", "md5sum": "fe19a1e46770a28b9520b89269a72ce6", "mode": "0644", "owner": "root", "size": 86, "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1480538302.99-23438210216005/source", "state": "file", "uid": 0}
+2016-11-30 21:38:24,006 p=31997 u=liam |   ___________________________________________________
+< TASK [6.x11 : Configure auto-login (dot profile)] >
+ ---------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:24,373 p=31997 u=liam |  changed: [laptop] => {"backup": "", "changed": true, "msg": "line added"}
+2016-11-30 21:38:24,407 p=31997 u=liam |   __________________________________________
+< TASK [6.x11 : Enable auto-login service] >
+ ------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:24,827 p=31997 u=liam |  ok: [laptop] => {"changed": false, "enabled": true, "name": "getty@tty1", "status": {"ActiveEnterTimestamp": "Wed 2016-11-30 20:29:49 GMT", "ActiveEnterTimestampMonotonic": "6596122", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "systemd-user-sessions.service plymouth-quit-wait.service rc-local.service systemd-journald.socket basic.target system-getty.slice", "AllowIsolate": "no", "Before": "getty.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "(null)", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "yes", "ConditionTimestamp": "Wed 2016-11-30 20:29:49 GMT", "ConditionTimestampMonotonic": "6595782", "Conflicts": "shutdown.target", "ControlGroup": "/system.slice/system-getty.slice/getty@tty1.service", "ControlPID": "0", "DefaultDependencies": "yes", "Description": "Getty on tty1", "DevicePolicy": "auto", "Documentation": "man:agetty(8) man:systemd-getty-generator(8) http://0pointer.de/blog/projects/serial-console.html", "Environment": "LANG= LANGUAGE= LC_CTYPE= LC_NUMERIC= LC_TIME= LC_COLLATE= LC_MONETARY= LC_MESSAGES= LC_PAPER= LC_NAME= LC_ADDRESS= LC_TELEPHONE= LC_MEASUREMENT= LC_IDENTIFICATION=", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "685", "ExecMainStartTimestamp": "Wed 2016-11-30 20:29:49 GMT", "ExecMainStartTimestampMonotonic": "6596072", "ExecMainStatus": "0", "ExecStart": "{ path=/sbin/agetty ; argv[]=/sbin/agetty --noclear %I $TERM ; ignore_errors=yes ; start_time=[Wed 2016-11-30 20:29:49 GMT] ; stop_time=[n/a] ; pid=685 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FragmentPath": "/lib/systemd/system/getty@.service", "GuessMainPID": "yes", "IOScheduling": "0", "Id": "getty@tty1.service", "IgnoreOnIsolate": "yes", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "no", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Wed 2016-11-30 20:29:49 GMT", "InactiveExitTimestampMonotonic": "6596122", "JobTimeoutUSec": "0", "KillMode": "process", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "1912", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "1912", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "685", "MemoryAccounting": "no", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "getty@tty1.service", "NeedDaemonReload": "yes", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "Requires": "basic.target", "Restart": "always", "RestartUSec": "0", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "yes", "SendSIGKILL": "yes", "Slice": "system-getty.slice", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StopWhenUnneeded": "no", "SubState": "running", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYPath": "/dev/tty1", "TTYReset": "yes", "TTYVHangup": "yes", "TTYVTDisallocate": "yes", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "idle", "UMask": "0022", "UnitFileState": "enabled", "UtmpIdentifier": "tty1", "WantedBy": "getty.target", "Wants": "system-getty.slice", "WatchdogTimestamp": "Wed 2016-11-30 20:29:49 GMT", "WatchdogTimestampMonotonic": "6596106", "WatchdogUSec": "0"}, "warnings": []}
+2016-11-30 21:38:24,871 p=31997 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:26,037 p=31997 u=liam |  ok: [laptop] => (item=[u'deluge', u'deluged', u'deluge-web']) => {"cache_update_time": 1480267684, "cache_updated": false, "changed": false, "item": ["deluge", "deluged", "deluge-web"]}
+2016-11-30 21:38:26,072 p=31997 u=liam |   _________________________________________
+< TASK [8.htpc : Install deluge + web-ui] >
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:26,097 p=31997 u=liam |  skipping: [laptop] => (item=[])  => {"changed": false, "item": [], "skip_reason": "Conditional check failed", "skipped": true}
+2016-11-30 21:38:26,132 p=31997 u=liam |   _______________________________________________________
+< TASK [8.htpc : Start, enable deluged systemd service] >
+ -------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:26,441 p=31997 u=liam |  changed: [laptop] => {"changed": true, "enabled": true, "name": "deluged", "state": "started", "status": {"ActiveEnterTimestamp": "Wed 2016-11-30 20:32:36 GMT", "ActiveEnterTimestampMonotonic": "173093479", "ActiveExitTimestamp": "Wed 2016-11-30 20:32:36 GMT", "ActiveExitTimestampMonotonic": "173453931", "ActiveState": "inactive", "After": "local-fs.target remote-fs.target network-online.target systemd-journald.socket basic.target system.slice", "AllowIsolate": "no", "Before": "multi-user.target graphical.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "(null)", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "yes", "ConditionTimestamp": "Wed 2016-11-30 20:32:36 GMT", "ConditionTimestampMonotonic": "173088251", "Conflicts": "shutdown.target", "ControlPID": "0", "DefaultDependencies": "yes", "Description": "LSB: Start or stop the Deluge BitTorrent daemon.", "DevicePolicy": "auto", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged start ; ignore_errors=no ; start_time=[Wed 2016-11-30 20:32:36 GMT] ; stop_time=[Wed 2016-11-30 20:32:36 GMT] ; pid=2679 ; code=exited ; status=0 }", "ExecStop": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged stop ; ignore_errors=no ; start_time=[Wed 2016-11-30 20:32:36 GMT] ; stop_time=[Wed 2016-11-30 20:32:36 GMT] ; pid=2708 ; code=exited ; status=0 }", "FailureAction": "none", "FragmentPath": "/run/systemd/generator.late/deluged.service", "GuessMainPID": "no", "IOScheduling": "0", "Id": "deluged.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "no", "InactiveEnterTimestamp": "Wed 2016-11-30 20:32:36 GMT", "InactiveEnterTimestampMonotonic": "173461538", "InactiveExitTimestamp": "Wed 2016-11-30 20:32:36 GMT", "InactiveExitTimestampMonotonic": "173089437", "JobTimeoutUSec": "0", "KillMode": "process", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "1912", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "1912", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "deluged.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "yes", "Requires": "basic.target", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "SourcePath": "/etc/init.d/deluged", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StopWhenUnneeded": "no", "SubState": "dead", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "5min", "TimeoutStopUSec": "5min", "TimerSlackNSec": "50000", "Transient": "no", "Type": "forking", "UMask": "0022", "WantedBy": "graphical.target multi-user.target", "Wants": "network-online.target system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}, "warnings": []}
+2016-11-30 21:38:26,481 p=31997 u=liam |   ______________________________
+< TASK [8.htpc : Stop deluged] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:26,838 p=31997 u=liam |  changed: [laptop] => {"changed": true, "name": "deluged", "state": "stopped", "status": {"ActiveEnterTimestamp": "Wed 2016-11-30 20:38:25 GMT", "ActiveEnterTimestampMonotonic": "522209348", "ActiveExitTimestamp": "Wed 2016-11-30 20:32:36 GMT", "ActiveExitTimestampMonotonic": "173453931", "ActiveState": "active", "After": "local-fs.target remote-fs.target network-online.target systemd-journald.socket basic.target system.slice", "AllowIsolate": "no", "Before": "multi-user.target graphical.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "(null)", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "yes", "ConditionTimestamp": "Wed 2016-11-30 20:38:25 GMT", "ConditionTimestampMonotonic": "522205680", "Conflicts": "shutdown.target", "ControlPID": "0", "DefaultDependencies": "yes", "Description": "LSB: Start or stop the Deluge BitTorrent daemon.", "DevicePolicy": "auto", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged start ; ignore_errors=no ; start_time=[Wed 2016-11-30 20:38:25 GMT] ; stop_time=[Wed 2016-11-30 20:38:25 GMT] ; pid=5816 ; code=exited ; status=0 }", "ExecStop": "{ path=/etc/init.d/deluged ; argv[]=/etc/init.d/deluged stop ; ignore_errors=no ; start_time=[Wed 2016-11-30 20:32:36 GMT] ; stop_time=[Wed 2016-11-30 20:32:36 GMT] ; pid=2708 ; code=exited ; status=0 }", "FailureAction": "none", "FragmentPath": "/run/systemd/generator.late/deluged.service", "GuessMainPID": "no", "IOScheduling": "0", "Id": "deluged.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "no", "InactiveEnterTimestamp": "Wed 2016-11-30 20:32:36 GMT", "InactiveEnterTimestampMonotonic": "173461538", "InactiveExitTimestamp": "Wed 2016-11-30 20:38:25 GMT", "InactiveExitTimestampMonotonic": "522206021", "JobTimeoutUSec": "0", "KillMode": "process", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "1912", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "1912", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "deluged.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "yes", "Requires": "basic.target", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "SourcePath": "/etc/init.d/deluged", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StopWhenUnneeded": "no", "SubState": "exited", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "5min", "TimeoutStopUSec": "5min", "TimerSlackNSec": "50000", "Transient": "no", "Type": "forking", "UMask": "0022", "WantedBy": "graphical.target multi-user.target", "Wants": "network-online.target system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}, "warnings": []}
+2016-11-30 21:38:26,876 p=31997 u=liam |   __________________________________________________
+< TASK [8.htpc : Add password to auth config file] >
+ --------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:27,172 p=31997 u=liam |  ok: [laptop] => {"backup": "", "changed": false, "msg": ""}
+2016-11-30 21:38:27,206 p=31997 u=liam |   ______________________________
+< TASK [8.htpc : Allow remote] >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:27,496 p=31997 u=liam |  ok: [laptop] => {"backup": "", "changed": false, "msg": ""}
+2016-11-30 21:38:27,533 p=31997 u=liam |   ______________________________________________________
+< TASK [8.htpc : Copy deluge-web systemd service file] >
+ ------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:28,453 p=31997 u=liam |  changed: [laptop] => {"changed": true, "checksum": "56350d5c2b2683322e6552faa56b97bce4e86e48", "dest": "/etc/systemd/system/multi-user.target.wants/deluge-web.service", "gid": 0, "group": "root", "md5sum": "1a4d32e5e2399fd6717c0ccb90312de6", "mode": "0644", "owner": "root", "size": 234, "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1480538308.13-48450444720465/source", "state": "file", "uid": 0}
+2016-11-30 21:38:28,494 p=31997 u=liam |   __________________________________________________________
+< TASK [8.htpc : Start, enable deluge-web systemd service] >
+ ----------------------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:28,783 p=31997 u=liam |  fatal: [laptop]: FAILED! => {"changed": false, "failed": true, "msg": "Could not find the requested service deluge-web: cannot enable"}
+2016-11-30 21:38:28,816 p=31997 u=liam |   ____________
+< PLAY RECAP >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+
+2016-11-30 21:38:28,817 p=31997 u=liam |  laptop                     : ok=29   changed=11   unreachable=0    failed=1   

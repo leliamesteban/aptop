@@ -16,8 +16,8 @@ Vagrant.configure('2') do |config|
             host.vm.network 'private_network', ip: ip
 #           host.vm.hostname = "#{short_name}"
             host.vm.provision :ansible do |ansible|
-                ansible.playbook = "#{short_name}.yml"
                 ansible.verbose = "v"
+                ansible.playbook = "#{short_name}.yml"
             end
             host.vm.provider :virtualbox do |vbox|
                 vbox.name = "#{short_name}"

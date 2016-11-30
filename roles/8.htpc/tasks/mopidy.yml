@@ -9,7 +9,14 @@
 
 - name: Install web interfaces
   # depends: pip installed
-  shell: become=yes pip install Mopidy-Mopify Mopidy-Local-Images Mopidy-Moped Mopidy-SpotMop Mopidy-Beets
+  shell: sudo pip install Mopidy-Mopify Mopidy-Local-Images Mopidy-Moped Mopidy-SpotMop Mopidy-Beets
+  pip: become=yes name={{ item }}
+  with_items:
+    - Mopidy-Mopify
+    - Mopidy-Local-Images 
+    - Mopidy-Moped 
+    - Mopidy-SpotMop 
+    - Mopidy-Beets
 
 - name: Install beets
   pacman: name=beets state=present

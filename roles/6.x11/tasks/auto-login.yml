@@ -1,0 +1,13 @@
+---
+
+- name: Add directory
+  file: path=/etc/systemd/system/getty@tty1.service.d state=directory
+
+- name: Add auto-login service files
+  template: src=autologin.j2 dest=/etc/systemd/system/getty@tty1.service.d/autologin.conf
+
+- name: Configure auto-login (dot profile)
+  lineinfile: dest=/home/liam/.profile line="[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx"
+
+- name: Enable auto-login service
+  service: name=getty@tty1 enabled=yes
