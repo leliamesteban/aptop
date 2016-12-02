@@ -1,7 +1,7 @@
 ---
 
 - name: Laptop customization ansible
-  hosts: all
+  hosts: laptop
   roles: 
     - 1.preup
     - 2.pacman

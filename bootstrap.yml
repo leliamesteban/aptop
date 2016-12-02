@@ -1,7 +1,7 @@
 ---
 
 - name: Basic - base
-  hosts: all
+  hosts: localhost
   roles: 
     - 1.preup
     - 2.pacman

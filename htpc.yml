@@ -1,7 +1,7 @@
 ---
 
 - name: HTPC (Home Media PC)
-  hosts: all
+  hosts: htpc
   roles: 
     - 1.preup
     - 2.usable
