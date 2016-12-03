@@ -1,14 +1,14 @@
 ---
 
 - name: install sudo
-  package:  name=sudo state=installed
+  package: name=sudo state=installed
 
 - name: "Make sure there's a 'wheel' group"
   group:
     name: wheel
     state: present
 
-- name: Add sudoers users to wheel group
+- name: Make user liam
   user: name=liam password="pass.enact" groups=wheel append=yes state=present createhome=yes
 
 - name: Allow 'wheel' group to have passwordless sudo
@@ -17,3 +17,6 @@
     state: present
     regexp: '^%wheel'
     line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+
+- name: Edit /etc/hosts for sudo hostname
+  lineinfile: dest=/etc/hosts insertafter='127.0.0.1' line='127.0.1.1   laptop'

@@ -9,4 +9,4 @@
  ansible: 
   script:
     - ansible-playbook --syntax-check bootstrap.yml -i hosts
-    - ansible-playbook --check bootstrap.yml -i hosts
+#   - ansible-playbook --check bootstrap.yml -i hosts
