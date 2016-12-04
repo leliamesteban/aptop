@@ -24,7 +24,7 @@
 - name: Stop deluged
   service: name=deluged state=stopped
 
-  # deluged must not be running (see above) 
+  # deluged must not be running (above) 
   # 10 is for admin
 - name: Add password to auth config file
   lineinfile: dest=/home/liam/.config/deluge/auth line="liam:password:10" state=present create=True
@@ -44,6 +44,9 @@
 
 - name: Start, enable deluge-web systemd service
   service: name=deluge-web state=started
+
+- name: Copy deluged systemd service file
+  copy: src=deluged.service dest=/etc/systemd/system
 
 - name: Start deluged
   service: name=deluged state=started

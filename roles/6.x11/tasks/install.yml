@@ -16,4 +16,16 @@
     - xorg-xinit
     - xterm
     - dunst
-  when: ansible_os_family == "ArchLinux"
+    - feh
+    - bspwm
+    - sxhkd
+    - nautilus
+    - lxappearance
+  when: ansible_os_family != "Debian"
+
+- name: edit /etc/X11/Xwrapper.config
+  blockinfile: 
+    dest: /etc/X11/Xwrapper.config 
+    block: |
+      allowed_users=anybody
+      needs_root_rights=yes

@@ -1,5 +1,5 @@
 ---
 
 - include: packages.yml
-- include: dotfiles.yml
-  when: gitlab_key is defined
+  when: ansible_os_family != "Debian"
+  #- include: dotfiles.yml

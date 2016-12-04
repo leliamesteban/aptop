@@ -2,9 +2,5 @@
 
 # depends on package manager being set up +
 # - python-pip, ruby, make etc
-- include: bspwm.yml
-  when: ansible_os_family == "Debian"
-- include: fasd.yml
-  when: ansible_os_family == "Debian"
-- include: arch.yml
-  when: ansible_os_family == "ArchLinux"
+  #- include: aur.yml
+  #when: ansible_os_family != "Debian"

@@ -6,6 +6,7 @@
 - name: Add auto-login service files
   template: src=autologin.j2 dest=/etc/systemd/system/getty@tty1.service.d/autologin.conf
 
+  # depends on dotfiles
 - name: Configure auto-login (dot profile)
   lineinfile: dest=/home/liam/.profile line="[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx"
 

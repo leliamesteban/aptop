@@ -1,7 +1,8 @@
 Ansible configuration for HTPC
 
 Not yet ready for testing // In feature lock-down
-Roles 1-5 will be the base, anything else is extra
+
+Roles 1-5 more or less are for making a machine usable. Rest are for features
 
 See the wiki for more
 

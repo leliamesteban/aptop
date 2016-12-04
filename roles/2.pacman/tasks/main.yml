@@ -1,5 +1,5 @@
 ---
 
-- include: apt.yml
-- include: aur.yml
-  when: ansible_os_family == "NA"
+- include: packer.yml
+  sudo: no
+  when: ansible_os_family != "Debian" and something_else is defined

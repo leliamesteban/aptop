@@ -5,3 +5,4 @@
 - include: ssh.yml
 - include: hostname.yml
 - include: keyboard.yml
+- include: base.yml

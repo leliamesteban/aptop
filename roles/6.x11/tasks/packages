@@ -1,0 +1,9 @@
+packer 
+    virtualbox
+    redshift
+    arc-gtk-theme
+    arc-icon-theme
+    ttf-google-fonts-git
+    archdroid-icon-theme
+    fingerprint-gui
+notify-send

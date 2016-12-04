@@ -1,3 +1,6 @@
 ---
 
-- include: packages.yml
+- include: install.yml
+- include: auto-login.yml
+- include: virtualbox.yml
+  when: virtualbox is defined

@@ -1,0 +1,4 @@
+- name: Install base packages
+  package: name={{ item }} state=present
+  with_items: 
+    - git

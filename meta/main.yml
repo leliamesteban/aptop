@@ -4,4 +4,4 @@ galaxy_info:
   description: Ansible roles to set up debian, arch, rasbpian, alarm, void etc ...
   license: MIT
   min_ansible_version: 1.9
-  dependencies: []
+  dependencies: [ansible, vagrant, python2, ansible-packer]

@@ -8,7 +8,6 @@
     - 3.shell
     - 4.software
     - 6.x11
-    - 8.htpc
   sudo: yes
   vars: 
     hostname: laptop
