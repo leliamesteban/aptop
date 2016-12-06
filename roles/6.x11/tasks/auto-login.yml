@@ -7,8 +7,15 @@
   template: src=autologin.j2 dest=/etc/systemd/system/getty@tty1.service.d/autologin.conf
 
   # depends on dotfiles
+  # unless already there
 - name: Configure auto-login (dot profile)
-  lineinfile: dest=/home/liam/.profile line="[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx"
+  blockinfile: 
+    dest: /home/liam/.profile 
+    create: yes 
+    block: |
+      if [ -z $DISPLAY ] && [ -n $XGD_VTNR ] && [ $XDG_VTNR -eq 1 ];then
+        xinit awesome
+      fi
 
 - name: Enable auto-login service
   service: name=getty@tty1 enabled=yes
