@@ -1,4 +1,4 @@
 ---
 
-- include: torrents.yml
+- include: deluge.yml
 # see ~/bin/pi_install

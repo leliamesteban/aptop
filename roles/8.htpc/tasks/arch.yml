@@ -1,2 +1,0 @@
-- name: Install mopidy
-  pacman: name=mopidy state=present

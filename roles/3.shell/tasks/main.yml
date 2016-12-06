@@ -2,4 +2,4 @@
 
 - include: packages.yml
   when: ansible_os_family != "Debian"
-  #- include: dotfiles.yml
+- include: dotfiles.yml

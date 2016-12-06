@@ -1,5 +1,4 @@
 ---
 
 - include: packer.yml
-  sudo: no
-  when: ansible_os_family != "Debian" and something_else is defined
+  when: ansible_os_family != "Debian"

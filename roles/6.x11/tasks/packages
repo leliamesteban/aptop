@@ -8,3 +8,4 @@ packer
     fingerprint-gui
 notify-send
 filezilla
+pandoc

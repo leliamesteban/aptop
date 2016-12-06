@@ -9,6 +9,8 @@
   # depends on dotfiles
   # unless already there
 - name: Configure auto-login (dot profile)
+  become: true
+  become_user: liam
   blockinfile: 
     dest: /home/liam/.profile 
     create: yes 

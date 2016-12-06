@@ -26,6 +26,7 @@
 - name: edit /etc/X11/Xwrapper.config
   blockinfile: 
     dest: /etc/X11/Xwrapper.config 
+    create: yes
     block: |
       allowed_users=anybody
       needs_root_rights=yes

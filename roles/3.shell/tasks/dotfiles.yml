@@ -1,12 +1,10 @@
 ---
 
-# prompt https://www.claudiokuenzler.com/blog/604/clone-a-private-git-repository-with-ansible-password-prompt#.WDSh63UrKCg
-# copy ssh keys https://github.com/jcalazan/ansible-django-stack/issues/11
-# depends on python being installed
-- name: Clone dotfiles from gitlab.com
-  git: repo=https://gitlab.com/liamesteban/dotfiles.git dest=/home/liam/.dotfiles accept_hostkey=yes
-  become: true
-  become_user: liam
+#- name: Clone dotfiles from public github repo
+#  git: repo=https://github.com/liamesteban/dotfiles.git dest=/home/liam/.dotfiles # accept_hostkey=yes
+#  become: true
+#  become_user: liam
 
 - name: Install dotfiles with dotbot
+  # if dotfiles exists
   shell: chdir=/home/liam/.dotfiles bash ./install

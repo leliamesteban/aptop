@@ -2,8 +2,8 @@
   include: remote.yml
   include: network.yml
 
-- name: Laptop
-  include: docker.yml
 - name: animation
 
 - name: midi
+
+- include: docker.yml

@@ -1,20 +1,12 @@
 ---
 
-# https://github.com/gunzy83/ansible-makepkg
 - name: Clone packer
-  git: repo=https://aur.archlinux.org/packer.git dest=/tmp/packer update=no
-  sudo: yes
+  git: repo=https://aur.archlinux.org/packer.git dest=/tmp/packer
 
-- name: Make pkg
-  # -s install missing deps with pacman
-  # -i install after successful build
-  command: makepkg -si --noconfirm 
-  args:
-    chdir: /tmp/packer
-
-    #- name: Synchronize package database
-    #  shell: packer -Syu
-
-- name: Update Arch Linux
-  become: yes
-  pacman: update_cache=yes upgrade=yes
+  #- name: Install packer (arch linux aur)
+  #  makepkg: name=/tmp/packer state=present
+  #  sudo: yes
+  #
+  #- name: Update Arch Linux
+  #  become: yes
+  #  pacman: update_cache=yes upgrade=yes

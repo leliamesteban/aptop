@@ -1,0 +1,9 @@
+- name: Install stuff from the aur
+  packer: name={{ item }} state=present
+  with_items:
+    - redshift
+    - arc-gtk-theme
+    - arc-icon-theme
+    - archdroid-icon-theme
+    - fingerprint-gui
+    - ttf-roboto
