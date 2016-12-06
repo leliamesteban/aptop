@@ -1,7 +1,7 @@
 ---
 
 - name: Set the keyboard
-  command: loadkeys uk
+  command: localectl set-keymap --no-convert uk
   become: yes
   when: ansible_os_family != "Debian"
   # /etc/vconsole.conf
