@@ -8,6 +8,7 @@ Vagrant.configure('2') do |config|
 #   config.vm.box = 'debian/jessie64'
 #   config.vm.box = 'bugyt/archlinux'
     config.vm.box = 'arch'
+    config.vm.synced_folder "/home/liam/drive/Music/Collection/beets", "/home/liam/Music"
     {
         'laptop'    => '192.168.2.42',
         'htpc'   => '192.168.2.39',
@@ -21,17 +22,15 @@ Vagrant.configure('2') do |config|
                 ansible.groups = {
                     "laptop" => ['192.168.2.42'],
                     "vagrant" => ["192.168.2.[39:42]"],
-                    "group3" => ["machine[1:2]"],
-                    "group4" => ["other_node-[a:d]"], # silly group definition
-                    "all_groups:children" => ["group1", "group2"],
                     "group3:vars" => {"variable1" => 9,
                                       "variable2" => "example"}
                     }
             end
             host.vm.provider :virtualbox do |vbox|
                 vbox.name = "#{short_name}"
-                vbox.memory = 1024
+                vbox.memory = 2048
                 vbox.cpus = 2
+                vbox.customize ["modifyvm", :id, '--audio', 'coreaudio', '--audiocontroller', 'hda']
             end
         end
     end

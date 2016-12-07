@@ -6,15 +6,3 @@ laptop ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_user='vagran
 
 [vagrant]
 192.168.2.[39:42]
-
-[group3]
-machine[1:2]
-
-[group4]
-other_node-[a:d]
-
-[all_groups:children]
-
-[group3:vars]
-variable1=9
-variable2=example

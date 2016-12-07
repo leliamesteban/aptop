@@ -6,6 +6,7 @@ packer
     ttf-google-fonts-git
     archdroid-icon-theme
     fingerprint-gui
+    i3-gaps
 notify-send
 filezilla
 pandoc
