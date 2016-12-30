@@ -3,10 +3,10 @@
 - name: Clone packer
   git: repo=https://aur.archlinux.org/packer.git dest=/tmp/packer
 
-  #- name: Install packer (arch linux aur)
-  #  makepkg: name=/tmp/packer state=present
-  #  sudo: yes
-  #
-  #- name: Update Arch Linux
-  #  become: yes
-  #  pacman: update_cache=yes upgrade=yes
+- name: Install packer (arch linux aur)
+  makepkg: name=/tmp/packer state=present
+  sudo: yes
+  
+- name: Update Arch Linux
+  become: yes
+  pacman: update_cache=yes upgrade=yes

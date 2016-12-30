@@ -6,9 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure('2') do |config|
 #   config.vm.box = 'debian/jessie64'
-#   config.vm.box = 'bugyt/archlinux'
     config.vm.box = 'arch'
-    config.vm.synced_folder "/home/liam/drive/Music/Collection/beets", "/home/liam/Music"
+#   config.vm.synced_folder "/home/liam/drive/Music/Collection/beets", "/home/liam/Music"
     {
         'laptop'    => '192.168.2.42',
         'htpc'   => '192.168.2.39',
@@ -30,7 +29,7 @@ Vagrant.configure('2') do |config|
                 vbox.name = "#{short_name}"
                 vbox.memory = 2048
                 vbox.cpus = 2
-                vbox.customize ["modifyvm", :id, '--audio', 'coreaudio', '--audiocontroller', 'hda']
+                vbox.customize ["modifyvm", :id, '--audio', 'pulse', '--audiocontroller', 'hda']
             end
         end
     end

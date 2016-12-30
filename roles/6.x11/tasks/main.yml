@@ -2,5 +2,10 @@
 
 - include: install.yml
 - include: auto-login.yml
+- include: infinality.yml
 - include: virtualbox.yml
   when: virtualbox is defined
+- include: audio.yml
+  when: virtualbox is defined
+
+# script lxappearance

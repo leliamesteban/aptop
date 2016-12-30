@@ -1,6 +1,6 @@
 ---
 
-- name: Set the keyboard
+- name: Set the keyboard for the tty
   command: localectl set-keymap --no-convert uk
   become: yes
   when: ansible_os_family != "Debian"

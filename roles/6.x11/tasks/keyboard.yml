@@ -1,0 +1,2 @@
+- name: Set the keyboard for X11
+  shell: setxkbmap gb

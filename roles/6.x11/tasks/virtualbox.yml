@@ -2,5 +2,5 @@
 - name: Change resolution to 1600x900
   shell: echo Use arandr gui config
 
-  - name: Change tty resolution 
-    shell: echo "https://www.reddit.com/r/archlinux/comments/3i1llb/what_is_a_good_way_to_set_high_resolution_for_tty/"
+- name: Change tty resolution 
+  shell: echo "https://www.reddit.com/r/archlinux/comments/3i1llb/what_is_a_good_way_to_set_high_resolution_for_tty/"

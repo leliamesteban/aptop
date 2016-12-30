@@ -1,0 +1,20 @@
+---
+
+- name: Install required packages for sound
+  pacman: name={{ item }} state=present
+  with_items:
+      - pulseaudio
+      - alsa-utils
+
+- name: Unmute the ALSA channels
+  shell: amixer sset Master unmute
+
+- name: Install asoundconf from the AUR
+  packer: name=asoundconf state=present
+
+- name: Set default card to Intel
+  shell: asoundconf set-default-card Intel
+
+- name: Initiate ALSA
+  shell: alsactl init
+  become: yes
