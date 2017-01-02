@@ -6,6 +6,7 @@
     - xinit
     - xterm
     - dunst
+    - filelight
   when: ansible_os_family == "Debian"
 
 - name: Install packages for x

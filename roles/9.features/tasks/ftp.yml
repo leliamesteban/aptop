@@ -1,0 +1,6 @@
+---
+- name: Install the daemon
+pacman: name={{ item }} state=present
+with_items: bftpd, or vsftpd
+    set up config
+    bftpd = /etc/ftpdpassword

@@ -7,6 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure('2') do |config|
 #   config.vm.box = 'debian/jessie64'
     config.vm.box = 'arch'
+#   config.ssh.username = 'liam'
 #   config.vm.synced_folder "/home/liam/drive/Music/Collection/beets", "/home/liam/Music"
     {
         'laptop'    => '192.168.2.42',

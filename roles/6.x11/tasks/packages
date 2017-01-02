@@ -10,3 +10,9 @@ packer
 notify-send
 filezilla
 pandoc
+ranger
+w3m
+highlight
+mediainfo
+poppler
+restview
