@@ -18,5 +18,4 @@
   with_items:
     - percol
     - fasd
-    - silversearcher-ag
   when: ansible_os_family != "Debian"
