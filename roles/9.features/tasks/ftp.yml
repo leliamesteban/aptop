@@ -1,6 +1,8 @@
 ---
 - name: Install the daemon
-pacman: name={{ item }} state=present
-with_items: bftpd, or vsftpd
-    set up config
-    bftpd = /etc/ftpdpassword
+  pacman: name={{ bftpd }} state=present
+      # or vsftpd
+- name: Set up the config from a template
+      # bftpd = /etc/ftpdpassword
+
+- name: Start and enable the services
