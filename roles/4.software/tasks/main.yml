@@ -1,8 +1,4 @@
 ---
 
-# depends on package manager being set up +
-# - python-pip, ruby, make etc
-# - include: aur.yml
-  #when: ansible_os_family != "Debian"
-
-- include: docker.yml
+- include: aur.yml
+  when: ansible_os_family != "Debian"

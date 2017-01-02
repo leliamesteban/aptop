@@ -1,2 +1,0 @@
-- name: Programs that can be installed with jessie
-  apt: name=ranger state=present

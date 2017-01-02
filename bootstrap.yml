@@ -4,7 +4,6 @@
   hosts: localhost
   roles: 
     - 1.preup
-    - 2.pacman
     - 3.shell
     - 4.software
   sudo: yes
