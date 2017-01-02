@@ -1,2 +1,0 @@
-aptitude search '~i!~M' | less
-pacman -Q
