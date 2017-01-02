@@ -9,4 +9,14 @@
     - zsh
     - lsof
     - htop
+    - ranger
+    - neovim
+  when: ansible_os_family != "Debian"
+
+- name: Install packages to set up base environment
+  packer: name="{{item}}" state=present
+  with_items:
+    - percol
+    - fasd
+    - silversearcher-ag
   when: ansible_os_family != "Debian"

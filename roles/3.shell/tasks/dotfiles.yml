@@ -1,9 +1,7 @@
 ---
 
-#- name: Clone dotfiles from public github repo
-#  git: repo=https://github.com/liamesteban/dotfiles.git dest=/home/liam/.dotfiles # accept_hostkey=yes
-#  become: true
-#  become_user: liam
+- name: Clone dotfiles from public github repo
+  git: repo=https://github.com/liamesteban/dotfiles.git dest=/home/liam/.dotfiles accept_hostkey=yes
 
 - name: Install dotfiles with dotbot
   # if dotfiles exists
