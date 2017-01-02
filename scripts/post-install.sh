@@ -9,6 +9,7 @@ echo "1. lxappearance
       3. sign in to chrome
       4. set a background
      "
+
 human, rofi, gns3, wireshark, gource, nix, fpm, pythonpy
 
 packer

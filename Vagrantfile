@@ -28,7 +28,7 @@ Vagrant.configure('2') do |config|
             end
             host.vm.provider :virtualbox do |vbox|
                 vbox.name = "#{short_name}"
-                vbox.memory = 2048
+                vbox.memory = 4068
                 vbox.cpus = 2
                 vbox.customize ["modifyvm", :id, '--audio', 'pulse', '--audiocontroller', 'hda']
             end

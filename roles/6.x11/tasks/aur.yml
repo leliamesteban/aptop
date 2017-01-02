@@ -2,6 +2,7 @@
   packer: name={{ item }} state=present
   with_items:
     - redshift
+    - rofi
     - ttf-roboto
     - arc-gtk-theme
     - arc-icon-theme

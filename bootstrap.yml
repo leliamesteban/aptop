@@ -5,5 +5,4 @@
   roles: 
     - 1.preup
     - 3.shell
-    - 4.software
   sudo: yes

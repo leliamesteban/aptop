@@ -5,6 +5,8 @@
 - include: fonts.yml
 # order is important: audio, virtualbox
 - include: audio.yml
+  when: final_tests is defined
 - include: virtualbox.yml
+  when: final_tests is defined
 - include: aur.yml
   when: ansible_os_family != "Debian"
