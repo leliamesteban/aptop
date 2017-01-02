@@ -1,10 +1,3 @@
 ---
 
 ansible_python_interpreter: /usr/bin/python2
-hostname: laptop
-timezone: Europe/Madrid
-user: liam
-# password: 
-# sudo_password: 
-# timezone, keyboard, date
-language: 'en_GB:en'
