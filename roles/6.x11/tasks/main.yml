@@ -2,10 +2,9 @@
 
 - include: install.yml
 - include: auto-login.yml
-- include: infinality.yml
-- include: virtualbox.yml
-  when: virtualbox is defined
+- include: fonts.yml
+# order is important: audio, virtualbox
 - include: audio.yml
-  when: virtualbox is defined
-
-# script lxappearance
+- include: virtualbox.yml
+- include: aur.yml
+  when: ansible_os_family != "Debian"

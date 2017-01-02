@@ -12,9 +12,6 @@
 - name: Install asoundconf from the AUR
   packer: name=asoundconf state=present
 
-- name: Set default card to Intel
-  shell: asoundconf set-default-card Intel
-
 - name: Initiate ALSA
   shell: alsactl init
   become: yes

@@ -7,6 +7,9 @@
     - xterm
     - dunst
     - filelight
+    - mpv
+    - scrot
+    - xbacklight
   when: ansible_os_family == "Debian"
 
 - name: Install packages for x
@@ -23,7 +26,8 @@
     - nautilus
     - lxappearance
     - awesome
-    - google-chrome
+    - mpv
+    - scrot
   when: ansible_os_family != "Debian"
 
 - name: edit /etc/X11/Xwrapper.config

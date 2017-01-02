@@ -21,3 +21,4 @@
 
 - name: install
   pacman: name=infinality-bundle state=present
+  when: final_tests is defined

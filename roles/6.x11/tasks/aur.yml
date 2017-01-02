@@ -2,8 +2,16 @@
   packer: name={{ item }} state=present
   with_items:
     - redshift
+    - ttf-roboto
     - arc-gtk-theme
     - arc-icon-theme
     - archdroid-icon-theme
     - fingerprint-gui
-    - ttf-roboto
+    - google-chrome
+    - silversearcher-ag
+    - filezilla
+    - lemonbar
+    - arbtt
+    - gource
+    - spotify
+    - tomahawk-git
