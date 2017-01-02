@@ -1,0 +1,15 @@
+---
+
+- name: Install docker on Arch Linux
+  pacman: name=docker state=present
+  when: ansible_os_family == "Archlinux"
+
+- name: Install on OSMC
+  shell: curl https://packagecloud.io/install/repositories/Hypriot/Schatzkiste/script.deb.sh && chmod +x ./script.deb.sh && os=raspbian distro=jessie ./script.deb.sh
+  when: ansible_os_family == "OSMC"
+
+- name: Add user to docker group
+  user: name=liam group=docker append=yes
+
+- name: Start and enable docker service
+  service: name=docker state=started enabled=yes
