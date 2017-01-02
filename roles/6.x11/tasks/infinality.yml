@@ -1,13 +1,23 @@
 ---
 
-- edit /etc/pacman.conf
+- name: edit /etc/pacman.conf
+  become: true
+  blockinfile: 
+    dest: /etc/pacman.conf
+    block: |
+      [infinality-bundle]
+      Server = http://bohoomil.com/repo/$arch
 
-- import and sign the keys
-  # pacman-key -r 962DDE58
-  # pacman-key --lsign-key 962DDE58
-  
-- upgrade
+- name: import the keys
+  shell: pacman-key -r 962DDE58
+  become: yes
 
-- install
+- name: sign the keys
+  shell: pacman-key --lsign-key 962DDE58
+  become: yes
 
-- reboot
+- name: Upgrade
+  pacman: update_cache=yes upgrade=yes
+
+- name: install
+  pacman: name=infinality-bundle state=present

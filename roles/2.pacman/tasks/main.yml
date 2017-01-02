@@ -1,4 +1,0 @@
----
-
-- include: packer.yml
-  when: ansible_os_family != "Debian"
