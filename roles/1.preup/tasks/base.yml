@@ -1,4 +1,24 @@
+---
+
 - name: Install base packages
   package: name={{ item }} state=present
   with_items: 
     - git
+
+- name: Download PKGBUILD for packer
+  become: yes
+  become_user: liam
+  git: >
+      repo=https://aur.archlinux.org/packer.git
+      clone=yes
+      dest=/home/liam/packer
+      force=yes
+  when: ansible_os_family != "Debian"
+
+- name: Install packer from the PKGBUILD
+  become: yes
+  become_user: liam
+  command: >
+    chdir=/home/liam/packer
+    makepkg --noconfirm --noprogressbar -mfsi
+  when: ansible_os_family != "Debian"

@@ -1,9 +1,6 @@
 [submodule "packer-arch"]
 	path = packer-arch
 	url = https://github.com/elasticdog/packer-arch
-[submodule "library/ansible-makepkg"]
-	path = library/ansible-makepkg
-	url = https://github.com/gunzy83/ansible-makepkg
 [submodule "library/ansible-packer"]
 	path = library/ansible-packer
 	url = https://github.com/austinhyde/ansible-packer
