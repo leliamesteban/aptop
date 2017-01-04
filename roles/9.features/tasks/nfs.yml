@@ -1,7 +1,37 @@
 ---
 
-https://wiki.archlinux.org/index.php/NFS
+- name: Set up the directories
+file:
+    path: /srv/nfs/hd
+    state: directory
+    mode: ?
 
-http://www.whaleblubber.ca/boot-raspberry-pi-nfs/
+- name: Mount (bind) for security purposes
+mount: opts=bind src=/srv/nfs/music name=/mnt/music 
 
-http://raspberrypi.stackexchange.com/questions/628/how-do-i-configure-the-raspberry-pi-to-boot-with-an-nfs-root
+- name: Ensure that the drive is set to automount
+lineinfile: ?
+
+- name: Ensure that only /boot is in fstab
+lineinfile: ?
+
+- name: Set up persistence in fstab
+lineinfile:
+    dest: /etc/fstab
+    become: yes
+    line: /media/hd /srv/nfs/hd  none   bind   0   0
+
+- name: Set up the exports
+  # use jinja template exports.j2
+  
+- name: Start and enable the services
+  # with items nfs-server, rpbcind
+ 
+- name: Export the filesystems
+shell: exportfs -rav
+become: yes
+
+# Share the hard drive attached to the pi on the LAN
+# and boot the pi from rootfs on the laptop
+# http://www.whaleblubber.ca/boot-raspberry-pi-nfs/
+# http://raspberrypi.stackexchange.com/questions/628/how-do-i-configure-the-raspberry-pi-to-boot-with-an-nfs-root
