@@ -10,3 +10,5 @@
   vars: 
     hostname: laptop
     username: liam
+    timezome: Europe/Madrid
+    language: en_GB:en
