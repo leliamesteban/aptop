@@ -3,17 +3,8 @@
   with_items:
     - redshift
     - rofi
+    - google-chrome
     - ttf-roboto
     - arc-gtk-theme
     - arc-icon-theme
     - archdroid-icon-theme
-    - fingerprint-gui
-    - google-chrome
-    - silversearcher-ag
-    - filezilla
-    - lemonbar
-    - arbtt
-    - gource
-    - spotify
-    - tomahawk-git
-    - arandr
