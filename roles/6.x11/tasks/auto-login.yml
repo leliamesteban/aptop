@@ -12,7 +12,7 @@
   become: true
   become_user: liam
   blockinfile: 
-    dest: /home/liam/.profile 
+    dest: /home/liam/.bash_profile 
     create: yes 
     block: |
       if [ -z $DISPLAY ] && [ -n $XGD_VTNR ] && [ $XDG_VTNR -eq 1 ];then

@@ -1,6 +1,6 @@
 ---
 
-- name: | Infinality | edit /etc/pacman.conf
+- name: "| Infinality | edit /etc/pacman.conf"
   become: true
   blockinfile: 
     dest: /etc/pacman.conf
@@ -8,17 +8,17 @@
       [infinality-bundle]
       Server = http://bohoomil.com/repo/$arch
 
-- name: | Infinality | import the keys
+- name: "| Infinality | import the keys"
   shell: pacman-key -r 962DDE58
   become: yes
 
-- name: | Infinality | sign the keys
+- name: "| Infinality | sign the keys"
   shell: pacman-key --lsign-key 962DDE58
   become: yes
 
-- name: | Infinality | Upgrade
+- name: "| Infinality | Upgrade"
   pacman: update_cache=yes upgrade=yes
 
-- name: | Infinality | install
+- name: "| Infinality | install"
   pacman: name=infinality-bundle state=present
   when: final_tests is defined

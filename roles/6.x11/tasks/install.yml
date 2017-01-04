@@ -28,6 +28,7 @@
     - awesome
     - mpv
     - scrot
+    - mupdf
   when: ansible_os_family != "Debian"
 
 - name: edit /etc/X11/Xwrapper.config

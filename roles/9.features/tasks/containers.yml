@@ -1,7 +1,10 @@
 ---
 
 - name: Lxc
-  shell: pacman -S lxd
-  service: enable lxd
-  shell: add user to lxd
-    logout and log back in
+  # depends on go, dnsmasq, squashfs
+  packer: name={{ item }} state=present
+  with_items: 
+    - lxc
+    - lxd
+  service: name=lxd state=started
+  # if Archlinux: compile kernel(?), log out and back in, configure networking
