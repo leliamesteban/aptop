@@ -12,6 +12,13 @@ sudo pacman -S virtualbox lxd qemu
 
 packer -S ansible-git packer-io
 
+# Getting an ISO / automating the initial steps of the installation
+See [arch-anywhere](https://arch-anywhere.org/download/) or
+[packer-arch](https://github.com/elasticdog/packer-arch)
+
+# Running
+vagrant up laptop && vagrant reload laptop
+
 # Why this is useful
 Provision an SD card inside a VM (necessarily QEMU/KVM), get everything up and running and then put on a pi
 

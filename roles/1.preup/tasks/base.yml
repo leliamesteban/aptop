@@ -22,3 +22,6 @@
     chdir=/home/liam/packer
     makepkg --noconfirm --noprogressbar -mfsi
   when: ansible_os_family != "Debian"
+
+- name: Remove ~/packer
+  file: path=/home/liam/packer state=absent
