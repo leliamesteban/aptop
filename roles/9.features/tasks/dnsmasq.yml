@@ -1,0 +1,36 @@
+---
+
+# groups : dnsmasq (caching dns entries for faster browsing)
+# dhcp and tftp for PXE booting
+# testing happens at the end of each group (or is testing superfluous?)
+- name: Install dnsmasq
+
+- name: Edit dnsmasq.conf
+  #/etc/dnsmasq.conf
+  #listen-address=ip
+
+- name: Edit resolv.conf
+  # maximum of three nameservers
+  # add block 'nameserver 127.0.0.1' and google stuff (8.8.8.8 and 8.8.4.4)
+
+- name: Edit dhcpcd configuration so that it won't overwrite resolv.conf
+  # nohook resolv.conf
+  # or: chattr +i /etc/resolv.conf
+
+- name: Start and enable the services
+  # possibly also restart the network
+
+- name: Edit the configuration to enable dhcp
+  # /etc/dnsmasq.conf
+
+- name: create the tftp root directory
+  # chown to dnsmasq user
+
+- name: Enable tftp in the dnsmasq configuration
+  # blockinfile
+
+- name: Copy and configure a PXE compatible bootloader on TFTP root
+
+- name: Enable pxe in the dnsmasq configuration
+
+- name: Reload the services
