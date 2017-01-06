@@ -2,7 +2,7 @@
 # [group: how machine will be used: corresponds to a playbook]
 # machine
 [any/testing]
-laptop
+vlaptop
 
 [htpc]
 htpc

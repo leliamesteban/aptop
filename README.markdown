@@ -17,11 +17,16 @@ See [arch-anywhere](https://arch-anywhere.org/download/) or
 [packer-arch](https://github.com/elasticdog/packer-arch)
 
 # Running
-vagrant up laptop && vagrant reload laptop
+vagrant up laptop
 
 # Why this is useful
 Provision an SD card inside a VM (necessarily QEMU/KVM), get everything up and running and then put on a pi
 
-One consistent implementation rather than following a bunch of guides
+One consistent implementation for features rather than following a bunch of guides
 
 No need for big, clunky virtualboxes or backing up binary files
+
+# Extending
+Run individual tasks
+Converting between frameworks
+An undo feature

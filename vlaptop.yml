@@ -1,14 +1,16 @@
 ---
 
 - name: Laptop customization ansible
-  hosts: laptop
+  hosts: vlaptop
   roles: 
     - 1.preup
     - 3.shell
+    - 4.compile
+#   - 5.wifi
     - 6.x11
   sudo: yes
   vars: 
-    hostname: laptop
+    hostname: vlaptop
     username: liam
     timezome: Europe/Madrid
     language: en_GB:en
