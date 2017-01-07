@@ -1,6 +1,6 @@
 ---
 
-- name: Install packages to set up base environment
+- name: Install programs for the shell
   become: yes
   pacman: name={{ item }} state=present
   with_items:
@@ -13,7 +13,7 @@
     - neovim
   when: ansible_os_family != "Debian"
 
-- name: Install packages to set up base environment
+- name: Install programs for the shell
   packer: name={{ item }} state=present
   with_items:
     - percol

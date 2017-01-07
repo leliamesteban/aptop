@@ -1,8 +1,8 @@
 # machines pi, laptop and virtual versions of each
 # [group: how machine will be used: corresponds to a playbook]
 # machine
-[any/testing]
-vlaptop
+[local]
+localhost
 
 [htpc]
 htpc
@@ -10,6 +10,6 @@ htpc
 [server]
 pi
 
-[vagrant]
-virtual
+[virtual]
+vlaptop
 htpc

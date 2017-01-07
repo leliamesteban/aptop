@@ -3,6 +3,7 @@
 - include: sudo.yml
 - include: users.yml
 - include: ssh.yml
+  when: final_tests is defined
 - include: hostname.yml
 - include: keyboard.yml
 - include: base.yml
