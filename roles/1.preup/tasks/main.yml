@@ -4,5 +4,7 @@
 - include: users.yml
 - include: ssh.yml
   when: final_tests is defined
+- include: hostname.yml
+  when: final_tests is defined
 - include: base.yml
 - include: misc.yml

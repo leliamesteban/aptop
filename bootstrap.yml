@@ -6,3 +6,7 @@
     - 1.preup
     - 3.shell
   sudo: yes
+  vars:
+      username: liam
+      timezone: Europe/Madrid
+      language: en_GB:en

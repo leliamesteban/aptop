@@ -18,6 +18,7 @@ See [arch-anywhere](https://arch-anywhere.org/download/) or
 
 # Running
 vagrant up laptop
+
 ansible-playbook -i localhost, -c local bootstrap.yml
 
 # Why this is useful
@@ -29,5 +30,7 @@ No need for big, clunky virtualboxes or backing up binary files
 
 # Extending
 Run individual tasks
+
 Converting between frameworks
+
 An undo feature
