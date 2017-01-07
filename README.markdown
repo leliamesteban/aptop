@@ -18,6 +18,7 @@ See [arch-anywhere](https://arch-anywhere.org/download/) or
 
 # Running
 vagrant up laptop
+ansible-playbook -i localhost, -c local bootstrap.yml
 
 # Why this is useful
 Provision an SD card inside a VM (necessarily QEMU/KVM), get everything up and running and then put on a pi
